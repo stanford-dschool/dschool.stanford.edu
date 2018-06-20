@@ -1,0 +1,31 @@
+.LoadMore-button {
+  align-items: center;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 100%;
+
+  &::before {
+    background: currentColor;
+    content: '';
+    display: block;
+    flex: 1 0 auto;
+    height: 1px;
+    margin-right: 8px;
+  }
+
+  &[disabled] {
+    cursor: wait;
+  }
+}
+
+.LoadMore-buttonPlus {
+  color: @Color-redOrange;
+  font-size: 18px;
+  font-weight: 100;
+  margin-left: 5px;
+}

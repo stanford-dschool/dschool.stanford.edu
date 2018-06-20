@@ -1,0 +1,170 @@
+<div class="PageResourceOverview">
+  {.if tagFilter}
+  <section id="all-resources" class="p-AllResources u-expanded u-bg u-bgGray">
+    <div class="Container Container--narrow">
+      <div class="Grid">
+        <div class="Grid-cell u-size16 u-sm-size11">
+          <h1 class="t-heading">All {categoryFilter} Resources</h1>
+          {item.excerpt}
+        </div>
+        <squarespace:query collection="{collection.urlId}" tag="{tagFilter}">
+          <div class="p-AllResourcesFilterable Grid-cell u-siz16">
+            {.var @hasItems items|count}
+            {.if @hasItems}
+            <div class="Columns Columns--small">
+              {.repeated section items}
+                <div class="Columns-item">
+                  <div class="BorderedBox">
+                    <div class="BorderedBox-img" {.main-image?}style="background-image: linear-gradient(to top, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, .4) 100%), url({assetUrl}?format=500w);"{.end}></div>
+                    <a href="{fullUrl}" class="BorderedBox-content">
+                      <h3 class="BorderedBox-tag">{customContent.customType|apply resource-type.block}</h3>
+                      <h4 class="BorderedBox-title">{title}</h4>
+                    </a>
+                  </div>
+                </div>
+              {.end}
+            </div>
+            {.or}
+              No resources currently available.
+            {.end}
+              <a href="{collection.fullUrl}#browse-all">< Browse all resources</a>
+          </div>
+        </squarespace:query>
+      </div>
+    </div>
+  </section>
+  {.or}
+
+  <section class="p-intro Grid">
+    {.section collection}
+    <div class="Grid-cell u-md-size6 u-md-offset2 t-lead">
+      <div class="Pattern Pattern–-vertical p-introPattern"></div>
+      <squarespace:block-field id="intro-{id}" columns="1" />
+    </div>
+    <div class="Grid-cell u-md-size6 u-md-offset2 p-faq" data-accordion="h1">
+      <squarespace:block-field id="faqs-{id}" columns="1" />
+    </div>
+    {.end}
+  </section>
+
+  {.section collection}
+    <squarespace:query collection="{urlId}" featured="true" limit="7">
+      {.var @hasItems items|count}
+      {.if @hasItems}
+        <section class="Grid u-offsetParent" id="featured-resources">
+          <div class="p-Vertical VerticalBar VerticalBar--left">
+            <div class="VerticalBar-intro">Featured <span class="VerticalBar-color">Resources</span></div>
+            <div class="VerticalBar-separator"></div>
+          </div>
+          <div class="Grid-cell u-md-offset1">
+            <h1 class="p-featuredHeading t-mainHeading u-themeColor">Featured<br />Resources</h1>
+          </div>
+          <div class="Grid-cell u-size16 u-md-size14 u-md-offset1">
+            <div class="LinkCardSlider " data-link-card-slider>
+              <div class="LinkCardSlider-wrap">
+                <ul class="LinkCardSlider-tray" data-link-cards>
+                    {.repeated section items}
+                    <li class="LinkCard">
+                      <div class="LinkCard-wrap">
+                        <div class="LinkCard-image" {.main-image?}style="background-image: linear-gradient(to top, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, .4) 100%), url({assetUrl}?format=500w);"{.end}></div>
+                        <div class="LinkCard-content">
+                          <div class="LinkCard-tag t-tag u-themeColor">Tool</div>
+                          <h2 class="LinkCard-title">{title}</h2>
+                          <div class="LinkCard-excerpt">{excerpt|truncate 110}</div>
+                          <a href="{fullUrl}" class="LinkCard-link u-link">Learn More <i class="DirectionalArrow DirectionalArrow--right u-linkArrow"></i></a>
+                        </div>
+                      </div>
+                    </li>
+                    {.end}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      {.end}
+    </squarespace:query>
+  {.end}
+
+  {.section collection}
+  <squarespace:query collection="{urlId}" tag="featured-resource-collection">
+    {.repeated section items}
+    <section class="p-Collection" data-parallax>
+      <div class="Grid">
+        <div class="Grid-cell u-sm-offset1 u-size10">
+          <h1 class="p-CollectionTitle t-mainHeading u-themeColor">
+            <a href={fullUrl}>{title}</a>
+          </h1>
+        </div>
+        <div class="Grid-cell u-size16 u-sm-offset4 u-sm-size12">
+          <div
+            class="p-CollectionImage FrameContainer u-largeShadow"
+            {.main-image?}style="background-image: url({assetUrl});"{.end}
+          >
+            <div class="Frame Frame--l">
+              <div class="Frame-side Frame-side--top"></div>
+              <div class="Frame-side Frame-side--right"></div>
+              <div class="Frame-side Frame-side--bottom"></div>
+              <div class="Frame-side Frame-side--left Frame-side--break">
+                <dic class="Frame-sidePart Frame-sidePart-first"></dic>
+                <dic class="Frame-sidePart Frame-sidePart-last"></dic>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="Grid-cell u-size16 u-sm-offset1 u-sm-size8">
+          <div class="p-CollectionDescription HeyHowdy">
+            <div class="t-tag u-themeColor">What's this about?</div>
+            {excerpt}
+            <a href="{fullUrl}" class="p-CollectionDiscover u-link">Discover <i class="DirectionalArrow DirectionalArrow--right u-linkArrow"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    {.end}
+  </squarespace:query>
+  {.end}
+  {.end}
+
+  {.if tagFilter}
+  {.or}
+  <section class="p-Browse" id="all-resources">
+    {.section collection}
+    <squarespace:query collection="{urlId}" tag="browse-all">
+      {.repeated section items}
+      <div class="Grid p-BrowseHeader">
+        <div class="p-Vertical p-Vertical--all VerticalBar VerticalBar--left">
+          <div class="VerticalBar-intro">All <span class="VerticalBar-color">Resources</span></div>
+          <div class="VerticalBar-separator"></div>
+        </div>
+        <div class="Grid-cell u-sm-offset1 u-size16 u-sm-size8">
+          <h1 class="p-BrowseTitle t-mainHeading u-themeColor">
+            {title}
+          </h1>
+          <div class="p-BrowseDescription HeyHowdy">
+            <div class="t-tag u-themeColor">What's this about?</div>
+            {excerpt}
+          </div>
+        </div>
+        <div class="Grid-cell u-size16 u-sm-size7">
+          <div
+            class="p-BrowseImage u-largeShadow"
+            {.main-image?}style="background-image: url({assetUrl});"{.end}
+          >
+          </div>
+        </div>
+      </div>
+      {.end}
+    </squarespace:query>
+    {.end}
+
+    <div id="filter" class="p-AllResources u-expanded u-bg u-bgGreen" data-resource-filter data-tag-filter="{tagFilter}" data-resource-filter-source={collection.urlId}>
+      <div class="Container">
+        <div class="Grid">
+          <div class="p-AllResourcesFilterable Grid-cell u-sm-offset1 u-sm-size15">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {.end}
+</div>

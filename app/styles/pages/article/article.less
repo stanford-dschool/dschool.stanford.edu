@@ -1,0 +1,36 @@
+.PageArticle {
+  .p-Copy {
+    padding-bottom: 5rem;
+  }
+
+  .p-Sidebar {
+    margin-bottom: 5.5rem;
+  }
+
+  .p-Map {
+    margin-bottom: 2.5rem;
+
+    .sqs-block-map {
+      height: 250px;
+      overflow: hidden;
+    }
+  }
+
+  .p-Calendar {
+    display: none;
+
+    @media @Media-large {
+      display: block;
+    }
+  }
+
+  .CopySocialCard.has-parallax {
+    .parallaxY(30%);
+  }
+}
+
+.Theme--articles {
+  .CtaButton--gorse {
+    .CtaButtonColors_(@Color-gorse, @Color-gorse, @Color-black);
+  }
+}

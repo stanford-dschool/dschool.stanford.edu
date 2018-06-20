@@ -1,0 +1,238 @@
+.PageAbout {
+  .p-Collection {
+    margin-top: 2em;
+    min-height: 500px;
+  }
+
+  .p-Collection:last-of-type {
+    margin-bottom: 10em;
+  }
+
+  .p-CollectionDescriptionFrame,
+  .p-CollectionDetails {
+    display: block;
+  }
+
+  .p-introPattern {
+    left: -50px;
+  }
+
+  .p-Quote {
+    margin-top: 2em;
+  }
+
+  .p-Resources {
+    margin-top: -3em;
+  }
+
+  .p-Resources .p-HeyHowdy {
+    left: 50px;
+    position: relative;
+    top: 50px;
+
+    @media @Media-small {
+      padding-left: 45px;
+    }
+  }
+
+  .CtaButton {
+    margin: .6em 0 4em;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .p-introBlock {
+    min-height: 0;
+
+    .p-Vertical {
+      width: 570px;
+    }
+  }
+
+  .p-Overlay {
+    margin-left: 25px;
+    max-width: 430px;
+
+    .sqs-block-content {
+      font-size: 1.75em;
+      line-height: 1.5em;
+    }
+
+    .t-tag {
+      line-height: 1.64em;
+      margin-bottom: 1.6em;
+    }
+
+    @media @Media-small {
+      padding: 65px;
+    }
+  }
+
+  .p-Team .p-Vertical {
+    position: relative;
+    top: 350px;
+  }
+
+  .p-Footer .p-CollectionDescription {
+    font-size: 1.75em;
+
+    @media @Media-small {
+      padding: 85px 85px 85px 85px;
+    }
+
+    @media @Media-medium {
+      padding: 85px 225px 85px 85px;
+    }
+  }
+
+  .p-Quote {
+    flex-wrap: nowrap;
+    @media @Media-small {
+      flex-wrap: wrap;
+    }
+    > .Grid-cell {
+      flex: 0 1 auto;
+      @media @Media-small {
+        flex: 1 1 100%;
+      }
+    }
+
+    .Quote-arrow {
+      @media @Media-small {
+        padding-left: 220px;
+        position: relative;
+      }
+      background: transparent url(/assets/arrow_large_bottom.svg) no-repeat 0% 0%;
+      display: block;
+      height: 270px;
+      top: 70px;
+      width: 70px;
+    }
+
+    .Quote {
+      font-size: 30px;
+      font-style: italic;
+      line-height: 1.4;
+      margin-top: 0;
+      @media @Media-small {
+        font-size: 50px;
+        line-height: 70px;
+      }
+    }
+  }
+
+  .Blockquote {
+    border-width: 1px;
+    &::before {
+      left: -50%;
+      top: -50%;
+      @media @Media-small {
+        left: initial;
+        top: 100%;
+      }
+    }
+    @media @Media-small {
+      border-width: 4px;
+    }
+  }
+
+  .p-Skills {
+    margin-left: 2em;
+    margin-top: 2em;
+    @media @Media-small {
+      margin-left: 0;
+      margin-top: 4em;
+    }
+    .p-Pattern {
+      height: 200px;
+      left: -40px;
+      position: absolute;
+      top: 130px;
+      z-index: -1;
+    }
+    .p-Vertical {
+      margin-top: 300px;
+    }
+  }
+
+  .p-Footer .p-Vertical {
+    right: 30px;
+    transform: rotate(-90deg);
+  }
+  .p-CollectionTitle {
+    position: absolute;
+    transform: translateY(e('calc(~"var(--parallax, 0) * 50px")'));
+    z-index: 1;
+  }
+
+  @media @Media-small {
+    .p-CollectionDetails {
+      display: block;
+      left: -2em;
+      position: absolute;
+      top: 2em;
+      transform: translateY(e('calc(~"var(--parallax, 0) * 50px")'));
+      z-index: 2;
+    }
+
+    .p-CollectionDescription {
+      margin-top: 2em;
+      transform: translateY(e('calc(~"var(--parallax, 0) * -50px")'));
+    }
+
+    .p-CollectionDescriptionFrame {
+      display: block;
+    }
+
+    .p-Footer .p-CollectionDetails {
+      left: -3em;
+    }
+
+    .p-Collection {
+      margin-top: 8em;
+    }
+
+    .p-What {
+      margin-top: 0;
+    }
+
+    .p-TeamMembers {
+      margin-top: 2em;
+    }
+  }
+
+  @media @Media-medium {
+    .p-CollectionDescription {
+      margin-top: 6em;
+      padding: 5em 5em 5em 7em;
+    }
+
+    .p-Starting .p-CollectionDescription,
+    .p-Impact .p-CollectionDescription {
+      margin-top: 2em;
+    }
+
+    .p-Footer .p-CollectionDetails {
+      left: -2em;
+      margin-left: -150px;
+      margin-top: 8em;
+    }
+
+    .p-Resources {
+      margin-top: -5em;
+    }
+
+    .p-Quote {
+      margin-top: 8em;
+    }
+  }
+
+  @media @Media-large {
+    .p-TeamMembers {
+      margin-top: 4em;
+    }
+  }
+}

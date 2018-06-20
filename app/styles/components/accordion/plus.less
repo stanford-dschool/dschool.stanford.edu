@@ -1,0 +1,35 @@
+.AccordionPlus {
+  position: absolute;
+  right: 8px;
+  top: 18px;
+  width: 16px;
+}
+
+.AccordionPlus::after,
+.AccordionPlus::before {
+  background: @Color-redOrange;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  transition: transform 300ms, background 300ms, opacity 300ms;
+  width: 100%;
+}
+
+.AccordionPlus::after {
+  transform: rotate(90deg);
+}
+
+.AccordionPlus::before {
+  transform: rotate(0);
+}
+
+.AccordionPlus.is-active::before,
+.AccordionPlus.is-active::after {
+  background: #aaa;
+  transform: rotateZ(180deg);
+}
+
+.AccordionPlus.is-active::before {
+  opacity: 0;
+}

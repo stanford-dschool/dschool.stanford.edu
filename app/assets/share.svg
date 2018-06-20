@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="28px" viewBox="0 0 30 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / Share 30px black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="RESOURCES-v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Resources-resource-Phase2-v01" transform="translate(-642.000000, -2311.000000)">
+            <g id="Feedback-bar-v2" transform="translate(96.000000, 2283.000000)">
+                <g id="txt" transform="translate(414.000000, 27.000000)">
+                    <g id="Icons-/-Share-30px-black" transform="translate(132.000000, 0.000000)">
+                        <g id="Icons-/-Share-30px-white">
+                            <rect id="Rectangle-path" x="0" y="0" width="30" height="30"></rect>
+                            <circle id="Oval" stroke="#323232" fill-rule="nonzero" cx="24.375" cy="24.3125" r="4.1875"></circle>
+                            <circle id="Oval" stroke="#323232" fill-rule="nonzero" cx="24.375" cy="5.6875" r="4.1875"></circle>
+                            <circle id="Oval" stroke="#323232" fill-rule="nonzero" cx="5.625" cy="15" r="4.1875"></circle>
+                            <path d="M20.5,7.5 L9.5,13" id="Shape" stroke="#323232"></path>
+                            <path d="M20.5,22.5 L9.5,17" id="Shape" stroke="#323232"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,129 @@
+<div class="PageStudents">
+  <nav class="QuickNav">
+    <ul class="QuickNav-list">
+      <li class="QuickNav-item"><a class="QuickNav-link" href="#overview">Overview</a></li>
+      <li class="QuickNav-item"><a class="QuickNav-link" href="#core-classes">Core Classes</a></li>
+      <li class="QuickNav-item"><a class="QuickNav-link" href="#boost-classes">Boost Classes</a></li>
+      <li class="QuickNav-item"><a class="QuickNav-link" href="#pop-up-experiences">Popup Experiences</a></li>
+    </ul>
+  </nav>
+
+  <div class="Grid">
+    <section class="Grid-cell u-sm-size6 u-sm-offset2 t-lead" id="overview">
+      <squarespace:block-field id="intro-{collection.id}" columns="1" />
+    </section>
+
+    <section class="Grid-cell u-sm-size7 u-sm-offset1 p-Accordion" data-accordion="h1">
+      <squarespace:block-field id="{collection.urlId}-faqs" columns="1" />
+    </section>
+  </div>
+
+  <div class="p-Vertical VerticalBar VerticalBar--left">
+    <div class="VerticalBar-intro">Types of <span class="VerticalBar-color">Classes</span></div>
+    <div class="VerticalBar-separator"></div>
+  </div>
+
+  <div class="Grid p-TypesOfClasses">
+    <header class="p-ClassesHeader" id="core-classes">
+      <div class="p-Classes-groupIntro">
+        <img class="p-ClassGroup-img p-ClassGroup-img--circle" src="/assets/circle-large.svg" />
+        <squarespace:block-field id="coreClassIntro" columns="1" />
+      </div>
+    </header>
+
+    <header class="p-ClassesHeader" id="boost-classes">
+      <div class="p-Classes-groupIntro">
+        <img class="p-ClassGroup-img" src="/assets/square-large.svg" />
+        <squarespace:block-field id="boostClassIntro" columns="1" />
+      </div>
+    </header>
+
+    <header class="p-ClassesHeader" id="pop-up-experiences">
+      <div class="p-Classes-groupIntro">
+        <img class="p-ClassGroup-img" src="/assets/triangle-large.svg" />
+        <squarespace:block-field id="popUpClassIntro" columns="1" />
+      </div>
+    </header>
+  </div>
+
+  <section class="p-Semester Grid" data-background-text-src="h2" data-classes-filter>
+    <div class="Grid-cell u-offset4 u-size10 u-sm-offset5 u-sm-size6">
+      <squarespace:block-field id="semester" columns="1"/>
+    </div>
+
+    <div class="Grid-cell u-size10 u-sm-offset5 u-sm-size6 p-FiltersList">
+      <div class="p-Filters p-Filters--quarter"></div>
+      <div class="p-Filters p-Filters--classType"></div>
+      <div class="p-Filters p-Filters--day"></div>
+      <div class="p-Filters p-Filters--requirements"></div>
+    </div>
+
+    <div class="p-Classes Grid-cell u-sm-size10 u-sm-offset4">
+      <ul class="p-ClassOverview HeyHowdyGrid" data-classes>
+        <squarespace:query collection="classes" template="class-howdy-card" limit="100" />
+      </ul>
+    </div>
+  </section>
+
+  <section class="Theme--news p-News" data-background-text-src="h2">
+    <div class="Grid">
+      <div class="Grid-cell u-md-size6 u-md-offset2">
+        <h2 class="p-Title">Events and Announcements</h2>
+      </div>
+      <div class="Grid-cell u-size16 u-md-size14 u-md-offset1">
+        <div class="LinkCardDragger " data-link-card-dragger>
+          <div class="LinkCardDragger-wrap">
+            <ul class="LinkCardDragger-tray" data-link-cards>
+              <squarespace:query tag="Audience: Students" collection="events" limit="50" template="event-card" />
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="Grid p-Collection p-Footer" id="dschool">
+    <div class="Grid-cell u-sm-size7 u-sm-offset1 u-md-offset2">
+      <div class="Grid">
+        <div class="Grid-cell u-size15 u-md-size12">
+          <div class="p-CollectionDescription FrameContainer FrameContainer--border" data-parallax>
+            <squarespace:block-field id="outro1" columns="1" />
+            <div class="p-CollectionDescriptionFrame Frame Frame--r1">
+              <div class="Frame-side Frame-side--top"></div>
+              <div class="Frame-side Frame-side--right"></div>
+              <div class="Frame-side Frame-side--bottom"></div>
+              <div class="Frame-side Frame-side--left"></div>
+            </div>
+          </div>
+        </div>
+        <div class="Grid-cell u-sm-size4">
+          <div class="p-CollectionDetails HeyHowdy p-Overlay" data-parallax>
+            <div class="t-tag">Get Involved</div>
+            <a href="/resources/design-on-campus" class="CtaButton">Learn More <span class="CtaButton-arrow DirectionalArrow DirectionalArrow--right"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Grid-cell u-sm-size7">
+      <div class="Grid">
+        <div class="Grid-cell u-size15 u-md-size12">
+          <div class="p-CollectionDescription FrameContainer FrameContainer--border" data-parallax>
+            <squarespace:block-field id="outro2" columns="1" />
+            <div class="p-CollectionDescriptionFrame Frame Frame--r1">
+              <div class="Frame-side Frame-side--top"></div>
+              <div class="Frame-side Frame-side--right"></div>
+              <div class="Frame-side Frame-side--bottom"></div>
+              <div class="Frame-side Frame-side--left"></div>
+            </div>
+          </div>
+        </div>
+        <div class="Grid-cell u-sm-size4">
+          <div class="p-CollectionDetails HeyHowdy p-Overlay" data-parallax>
+            <div class="t-tag">Archived Classes</div>
+            <a href="/class-archive" class="CtaButton">See All <span class="CtaButton-arrow DirectionalArrow DirectionalArrow--right"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

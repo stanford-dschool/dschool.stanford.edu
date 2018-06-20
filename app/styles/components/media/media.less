@@ -1,0 +1,21 @@
+.Media {
+  align-items: flex-start;
+  display: flex;
+  width: 100%;
+}
+
+.Media-image {
+  margin-right: 14px;
+
+  span:not(:first-child) {
+    transform: translateY(-20%);
+  }
+
+  span:first-child {
+    z-index: 1;
+  }
+}
+
+.Media-content {
+  flex: 1;
+}

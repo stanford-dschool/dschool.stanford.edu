@@ -1,0 +1,29 @@
+.PageFaqs {
+  position: relative;
+
+  .p-Vertical {
+    left: -20px;
+    top: 1300px;
+  }
+
+  .p-Pattern {
+    left: -92px;
+    position: absolute;
+    top: -8rem;
+    z-index: -1;
+  }
+
+  .p-Title:extend(.t-largeHeading) {
+    color: #f24034;
+    margin: 0;
+
+    @media @Media-small {
+      font-size: 8rem;
+      margin-bottom: 5rem;
+      margin-top: -5rem;
+    }
+
+    .t-hyphen_();
+  }
+}
+

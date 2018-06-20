@@ -1,0 +1,216 @@
+<div class="PageProgramDetails">
+  {.section item}
+  {.var @shortName customContent.shortName}
+
+  {.if customContent.applyCopy.source}{.var @hasApply fullUrl}{.end}
+  {.if customContent.applyCards.source}{.var @hasApply fullUrl}{.end}
+  <div class="Grid p-Overview">
+    {.var @headingTag customContent.contentHeadingTag}
+    {.var @heading customContent.contentHeading}
+    <div class="p-Info Grid-cell {.if @hasApply}u-md-offset1 u-md-size8{.or}u-md-offset2 u-md-size12{.end}">
+      <section class="p-Overview p-Section" id="overview">
+        <span class="t-tag">{.if @headingTag}{@headingTag}{.or}What is this?{.end}</span>
+        <h1 class="t-heading">{.if @heading}{@heading}{.or}Overview{.end}</h1>
+        {body}
+        {.if customContent.contentFaqs.source}
+        <div class="p-Faqs">
+          <div class="p-Accordion" data-accordion="strong">
+            {customContent.contentFaqs.source}
+          </div>
+        </div>
+        {.end}
+      </section>
+    </div>
+    {.if @hasApply}
+    {.var @heading customContent.applyHeading}
+    <div class="p-Apply Grid-cell u-md-offset1 u-md-size6">
+      <section class="p-Apply p-Section">
+        <div class="p-FakeTag"></div>
+        <h1 class="t-heading">{.if @heading}{@heading}{.or}Apply{.end}</h1>
+        {.if customContent.applyCopy.source}
+        <div class="sqs-block-content p-Apply-copy">
+          {customContent.applyCopy.source}
+        </div>
+        {.end}
+        <div class="p-Cards" data-cta-cards>
+          {customContent.applyCards.source}
+        </div>
+      </section>
+    </div>
+    {.end}
+  </div>
+
+  <div class="Grid p-Extra">
+    <div class="Grid-cell u-md-offset2 u-md-size6">
+      {.if customContent.teamtags}
+      {.var @headingTag customContent.teamHeadingTag}
+      {.var @heading customContent.teamHeading}
+      <section class="p-Section p-TeamMembers" id="teachers">
+        <span class="t-tag">{.if @headingTag}{@headingTag}{.or}{@shortName} Team{.end}</span>
+        <h1 class="t-heading">{.if @heading}{@heading}{.or}Team Members{.end}</h1>
+        <squarespace:query collection="team-members" tag="{customContent.teamtags}" template="team-with-picture" />
+      </section>
+      {.end}
+
+      {.if customContent.articlesTag}
+      {.var @headingTag customContent.articlesHeadingTag}
+      {.var @heading customContent.articlesHeading}
+      <section class="p-Section p-Articles">
+        <span class="t-tag">{.if @headingTag}{@headingTag}{.or}{@shortName} News{.end}</span>
+        <h1 class="t-heading">{.if @heading}{@heading}{.or}Latest Updates{.end}</h1>
+        <squarespace:query collection="news-events" limit="2" tag="{customContent.articlesTag}">
+          {.repeated section items}
+          <article class="HeyHowdy p-Article">
+            <div class="p-Article-meta">{author.displayName}</div>
+            <h3 class="p-Article-title">{title}</h3>
+            <a class="p-Article-link" href="{fullUrl}">Read more</a>
+          </article>
+          {.end}
+        </squarespace:query>
+        <a class="p-MoreLink" href="/news-events/?tag={customContent.resourcesTag}&category={title}">View All</a>
+      </section>
+      {.end}
+
+      {.if customContent.faqs.source}
+      {.var @headingTag customContent.faqsHeadingTag}
+      {.var @heading customContent.faqsHeading}
+      <section class="p-Section p-Faqs" id="faqs">
+        <span class="t-tag">{.if @headingTag}{@headingTag}{.or}Got Questions?{.end}</span>
+        <h1 class="t-heading">{.if @heading}{@heading}{.or}Get Answers{.end}</h1>
+        <div class="p-Accordion" data-accordion="strong">
+          {customContent.faqs.source}
+        </div>
+      </section>
+      {.end}
+    </div>
+
+    <div class="Grid-cell u-md-offset2 u-md-size6">
+      {.if customContent.team2Tag}
+      {.var @headingTag customContent.team2HeadingTag}
+      {.var @heading customContent.team2Heading}
+      <section class="p-Section p-TeamMembers">
+        <span class="t-tag">{@headingTag}</span>
+        <h1 class="t-heading">{@heading}</h1>
+        <squarespace:query collection="team-members" tag="{customContent.team2Tag}" template="team-with-picture" />
+      </section>
+      {.end}
+
+      {.if customContent.mentors.source}
+      {.var @headingTag customContent.mentorsHeadingTag}
+      {.var @heading customContent.mentorsHeading}
+      <section class="p-Section p-Mentors">
+        <span class="t-tag">{.if @headingTag}{@headingTag}{.or}Learn with {@shortName}{.end}</span>
+        <h1 class="t-heading">{.if @heading}{@heading}{.or}Coaches/Mentors{.end}</h1>
+        <div class="PeopleNames">
+          {customContent.mentors.source}
+        </div>
+      </section>
+      {.end}
+
+      {.if customContent.resourcesTag}
+      {.var @headingTag customContent.resourcesHeadingTag}
+      {.var @heading customContent.resourcesHeading}
+      <section class="p-Section p-Resources">
+        <span class="t-tag">{.if @headingTag}{@headingTag}{.or}Resources{.end}</span>
+        <h1 class="t-heading">{.if @heading}{@heading}{.or}{@shortName} Tools{.end}</h1>
+        <squarespace:query collection="resources" limit="2" tag="{customContent.resourcesTag}">
+          {.var @hasItems items|count}
+          {.if @hasItems}
+            <div class="Columns Columns--two">
+              {.repeated section items}
+              <div class="Columns-item">
+                <div class="BorderedBox">
+                  <div class="BorderedBox-img" {.main-image?}style="background-image: linear-gradient(to top, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, .4) 100%), url({assetUrl}?format=500w);"{.end}></div>
+                  <a href="{fullUrl}" class="BorderedBox-content">
+                    <h3 class="BorderedBox-tag">{@|apply resource-type.block}</h3>
+                    <h4 class="BorderedBox-title">{title}</h4>
+                  </a>
+                </div>
+              </div>
+              {.end}
+            </div>
+          {.end}
+        </squarespace:query>
+        <a class="p-MoreLink" href="/resources?tag={customContent.resourcesTag}&category={title}">View All</a>
+      </section>
+      {.end}
+
+      {.if customContent.fieldNotesTag}
+      {.var @headingTag customContent.fieldNotesHeadingTag}
+      {.var @heading customContent.fieldNotesHeading}
+      <section class="p-Section p-FieldNotes">
+        <span class="t-tag">{.if @headingTag}{@headingTag}{.or}Field Notes{.end}</span>
+        <h1 class="t-heading">{.if @heading}{@heading}{.or}Real-World Projects{.end}</h1>
+        <div class="Columns Columns--two">
+          <squarespace:query collection="field-notes" limit="2" tag="{customContent.fieldNotesTag}">
+            {.repeated section items}
+            <div class="Columns-item">
+              <div class="BorderedBox">
+                <div class="BorderedBox-img" {.main-image?}style="background-image: linear-gradient(to top, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, .4) 100%), url({assetUrl}?format=500w);"{.end}></div>
+                <a href="{fullUrl}" class="BorderedBox-content">
+                  <h4 class="BorderedBox-title">{title}</h4>
+                </a>
+              </div>
+            </div>
+            {.end}
+          </squarespace:query>
+        </div>
+        <a class="p-MoreLink" href="/field-notes/">View All</a>
+      </section>
+      {.end}
+
+      {.if customContent.facebook}{.var @hasSocial fullUrl}{.end}
+      {.if customContent.twitter}{.var @hasSocial fullUrl}{.end}
+      {.if customContent.medium}{.var @hasSocial fullUrl}{.end}
+      {.if customContent.instagram}{.var @hasSocial fullUrl}{.end}
+      {.if @hasSocial}
+      {.var @headingTag customContent.socialHeadingTag}
+      {.var @heading customContent.socialHeading}
+        <section class="p-Section p-Resources">
+          <span class="t-tag">{.if @headingTag}{@headingTag}{.or}Social Platforms{.end}</span>
+          <h1 class="t-heading">{.if @heading}{@heading}{.or}Program Channels{.end}</h1>
+
+          <div class="SocialIcons">
+            {.if customContent.twitter}
+            <a href="{customContent.twitter}" class="SocialIcons-link" title="Twitter" target="_blank">
+              <i class="Icon Icon--twitter"></i>
+            </a>
+            {.end}
+            {.if customContent.medium}
+            <a href="{customContent.medium}" class="SocialIcons-link" title="Medium" target="_blank">
+              <i class="Icon Icon--medium"></i>
+            </a>
+            {.end}
+            {.if customContent.instagram}
+            <a href="{customContent.instagram}" class="SocialIcons-link" title="Instagram" target="_blank">
+              <i class="Icon Icon--instagram"></i>
+            </a>
+            {.end}
+            {.if customContent.facebook}
+            <a href="{customContent.facebook}" class="SocialIcons-link" title="Facebook" target="_blank">
+              <i class="Icon Icon--facebook"></i>
+            </a>
+            {.end}
+            {.if customContent.email}
+            <a href="mailto:{customContent.email}" class="SocialIcons-link" title="Email" target="_blank">
+              <i class="Icon Icon--email"></i>
+            </a>
+            {.end}
+          </div>
+        </section>
+      {.end}
+    </div>
+  </div>
+
+  {.if customContent.relatedArticle}
+  <section id="up-next" class="p-UpNext u-expanded" data-copy-up-next>
+    {customContent.relatedArticle}
+  </section>
+  {.end}
+
+  <div data-breadcrumbs-source class="Breadcrumbs--source">
+    {customContent.customBreadcrumbs.html}
+  </div>
+
+  {.end}
+</div>

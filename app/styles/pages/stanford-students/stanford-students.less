@@ -1,0 +1,286 @@
+.PageStudents {
+  .p-Vertical {
+    left: 20px;
+    top: 1200px;
+  }
+
+  .p-Accordion {
+    margin-top: 4.6rem;
+  }
+
+  .p-TypesOfClasses {
+    margin-top: 150px;
+  }
+
+  .p-Semester {
+    margin: 4.6rem 0;
+    position: relative;
+
+    h2 {
+      font-size: 2.3rem;
+      margin: 0 0 0.9rem;
+    }
+
+    p {
+      line-height: 1.77;
+    }
+
+    @media @Media-small {
+      margin: 6rem 0 14rem;
+    }
+  }
+
+  .p-Classes {
+    position: relative;
+  }
+
+  .p-ClassTypes {
+    display: none;
+    height: 100%;
+    left: -20px;
+    position: absolute;
+    top: 90px;
+    white-space: nowrap;
+
+    @media @Media-small {
+      display: block;
+    }
+  }
+
+  .p-ClassGroup {
+    padding-bottom: 60px;
+    padding-top: 30px;
+  }
+
+  .p-FiltersList {
+    @media only screen and (max-width: 390px) {
+      left: -55px;
+      position: relative;
+    }
+  }
+
+  .p-Filters {
+    margin: 0;
+
+    @media @Media-small {
+      margin: 30px 0;
+    }
+  }
+
+  .p-ClassTypes-links {
+    margin-left: -65px;
+  }
+
+  .p-ClassType {
+    align-items: center;
+    display: flex;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 2;
+    opacity: .33;
+    text-decoration: none;
+    transition: opacity 250ms;
+  }
+
+  .is-active > .p-ClassType {
+    opacity: 1;
+  }
+
+  .p-ClassType-img {
+    margin-right: 30px;
+  }
+
+  .p-Classes-filterCourses,
+  .p-Classes-filterWeekdays {
+    display: none;
+  }
+
+  .p-Classes-filterWeekdays {
+    margin-bottom: 60px;
+    margin-top: 32px;
+
+    button:last-child {
+      display: none;
+    }
+  }
+
+  .p-ClassesHeader {
+    margin: 8%;
+
+    @media @Media-small {
+      margin: 50px 20% 50px 20%;
+    }
+  }
+
+  .p-Classes-groupIntro {
+    position: relative;
+
+    h1 {
+      &:extend(.t-heading);
+    }
+
+    p {
+      line-height: 1.77;
+    }
+  }
+
+  .p-ClassGroup-img {
+    display: block;
+    left: -21px;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    position: absolute;
+    top: -10px;
+    width: 52px;
+    z-index: -1;
+
+    @media @Media-small {
+      left: -70px;
+      top: -40px;
+      width: auto;
+    }
+  }
+
+  .p-Class {
+    margin-top: 2em;
+    opacity: .3;
+    transition: opacity 300ms;
+    width: 100%;
+
+    @media @Media-small {
+      width: 45%;
+    }
+  }
+
+  .p-Class-title {
+    font-family: @Font-mono;
+    text-transform: uppercase;
+  }
+
+  .p-pop-out {
+    color: @Color-grayMed;
+
+    ~ .HeyHowdy-meta .TextIcon {
+      border-color: @Color-grayMed;
+      color: @Color-grayMed;
+    }
+  }
+
+  .p-Class.is-active-type.is-active-requirements.is-active-days.is-active-quarter {
+    opacity: 1;
+  }
+
+  .p-ClassOverview {
+    position: relative;
+
+    @media @Media-small {
+      right: -28px;
+      transform: translateY(e('calc(~"-80px * (2 * var(--parallax, 0) - 1)")'));
+    }
+  }
+
+  .p-ClassOverview.has-parallax {
+    transition: transform 800ms ease-out;
+  }
+
+  .p-ClassTime,
+  .p-ClassUnits {
+    line-height: 2.1;
+  }
+
+  .p-Teach {
+    /*margin: 250px 0 50px;*/
+    margin: 0 0 100px;
+
+    @media @Media-small {
+      margin: 100px 0 250px;
+    }
+
+    .Grid-cell {
+      margin-top: 0;
+    }
+  }
+
+  .p-TeachInfo {
+    @media @Media-medium {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  .p-Collection {
+    margin-bottom: 10em;
+    min-height: 500px;
+  }
+
+  .p-CollectionDescriptionFrame,
+  .p-CollectionDetails {
+    display: block;
+  }
+
+  .CtaButton {
+    margin: .6em 0 4em;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .p-Overlay {
+    margin-left: 25px;
+    max-width: 430px;
+    padding: 45px 75px 45px 45px;
+
+    .sqs-block-content {
+      font-size: 1.75em;
+    }
+
+    .t-tag {
+      line-height: 1.64em;
+    }
+  }
+
+  .p-Footer .p-CollectionDescription {
+    font-size: 1.25em;
+    padding: 85px 55px 105px;
+  }
+
+  @media @Media-small {
+    .p-CollectionDetails {
+      display: block;
+      left: 5em;
+      position: absolute;
+      top: -9em;
+      transform: translateY(e('calc(~"var(--parallax, 0) * 50px")'));
+      z-index: 2;
+    }
+
+    .p-CollectionDescription {
+      margin-top: 2em;
+      transform: translateY(e('calc(~"var(--parallax, 0) * -50px")'));
+      @media @Media-medium {
+        margin-top: 7em;
+        padding: 5em 5em 5em 7em;
+      }
+    }
+
+    .p-CollectionDescriptionFrame {
+      display: block;
+    }
+
+  }
+
+  @media @Media-medium {
+    .p-Footer .p-CollectionDetails {
+      left: -13em;
+      top: 20em;
+    }
+  }
+
+  @media @Media-large {
+    .p-Footer .p-CollectionDetails {
+      top: 17em;
+    }
+  }
+}

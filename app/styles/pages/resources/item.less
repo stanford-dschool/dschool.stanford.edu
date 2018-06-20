@@ -1,0 +1,124 @@
+.PageResourceItem {
+  padding-bottom: 4rem;
+
+  > section {
+    margin: 8rem 0;
+  }
+
+  .p-Info .sqs-block:not(.image-block) {
+    padding-top: 3rem;
+  }
+
+  .p-Blurb {
+    font-size: .7rem;
+    font-weight: 700;
+    line-height: 2;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+  }
+
+  .p-Blurb-value {
+    color: @Color-redOrange;
+  }
+
+  .p-Requirement {
+    border-bottom: 1px solid @Color-black;
+    font-size: .7rem;
+    font-weight: 700;
+    padding: 1.5em 0;
+    text-transform: uppercase;
+  }
+
+  .p-Accordion {
+    padding: 6rem 0 2rem;
+
+    + .sqs-layout.empty {
+      margin-top: -2rem;
+    }
+  }
+
+  .List-item {
+    align-items: center;
+    display: flex;
+  }
+
+  .List-itemIcon {
+    height: 30px;
+    margin-right: 20px;
+    width: 30px;
+  }
+
+  .p-RelatedTitle {
+    border-bottom: 1px solid @Color-black;
+    font-size: 1.2222rem;
+    font-weight: 500;
+    line-height: 1.27;
+    margin-bottom: 1em;
+    margin-top: 2em;
+  }
+
+  .p-RelatedContent {
+    p {
+      margin-top: .6em;
+    }
+
+    a {
+      &:extend(.t-hoverLine all);
+      font-size: 13px;
+      margin-left: -4px;
+      text-transform: uppercase;
+    }
+  }
+
+  .p-Steps {
+    margin: 0 e('calc(~"-50vw + 50%")');
+    visibility: hidden;
+
+    .js-enhanced & {
+      visibility: visible;
+    }
+
+    .p-Steps-item {
+      background: #fff;
+      border-bottom: 1px solid #b2b2b2;
+      counter-increment: Steps;
+      padding: 5em 0;
+    }
+
+    .p-Steps-item:first-child {
+      border-top: 1px solid #b2b2b2;
+    }
+
+    .p-Steps-title:extend(.t-title) {
+      margin-top: -0.15em;
+    }
+
+    .p-Steps-tag:extend(.t-tag) {
+      position: absolute;
+      top: -1.5rem;
+    }
+
+    .p-Steps-cta {
+      border: 1px solid @Color-redOrange;
+      color: @Color-redOrange;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 40px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      transition: background 250ms, color 250ms;
+
+      &:hover {
+        background: @Color-redOrange;
+        color: @Color-white;
+      }
+    }
+  }
+
+  .p-TeamMembers {
+    width: 105%;
+  }
+}

@@ -1,0 +1,27 @@
+.Blockquote {
+  border-top: 4px solid #323232;
+  color: #323232;
+  display: block;
+  font-size: 32px;
+  font-style: italic;
+  line-height: 42px;
+  margin-top: 100px;
+  padding-top: 40px;
+  position: relative;
+
+  &::before {
+    color: #323232;
+    content: '“”';
+    display: inline-block;
+    font-family: serif;
+    font-size: 13.65625em;
+    font-style: italic;
+    font-weight: 700;
+    left: 0;
+    opacity: 0.05;
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    width: 100%;
+  }
+}

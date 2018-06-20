@@ -1,0 +1,5 @@
+  <main class="Main" role="main" data-content-field="main-content" data-copy-enhance>
+    <div class="Container" id="post-hero">
+      {squarespace.main-content}
+    </div>
+  </main>

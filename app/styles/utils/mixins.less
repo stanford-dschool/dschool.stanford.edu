@@ -1,0 +1,35 @@
+.delayLoop(@initialDelay, @incrementalDelay, @counter) when(@counter > 0) {
+  &:nth-child(@{counter}) {
+    transition-delay: (@initialDelay + @incrementalDelay*@counter);
+  }
+  .delayLoop(@initialDelay, @incrementalDelay, @counter - 1);
+}
+
+.calculate(@expr: e('')) {
+  @calculated_: calc(e('~"@{expr}"'));
+}
+
+.parallaxY(@amount: 0) {
+  .calculate(~"var(--parallax, 0) * @{amount} * var(--random, 1)");
+  transform: translateY(@calculated_);
+}
+
+// Convert tracking to letter spacing
+.trackingToLetterSpacing(@tracking: 0) {
+  letter-spacing: (1em * @tracking / 1000);
+}
+
+.makeCells(@size, @prefix: e('')) when (@size > 0) {
+  @p: percentage((@size / @Grid-columns));
+
+  .u-@{prefix}size@{size} {
+    flex-basis: @p;
+    max-width: @p;
+  }
+
+  .u-@{prefix}offset@{size} {
+    margin-left: @p;
+  }
+
+  .makeCells((@size - 1), @prefix);
+}

@@ -1,0 +1,228 @@
+.accessibility {
+
+  .Theme({
+    .VerticalBar-color {
+      color: @Theme-main--alt;
+    }
+  });
+
+  .Theme({
+    .CtaButton {
+      .CtaButtonColors_(@Theme-main--alt, @Theme-main--alt, @Color-white);
+    }
+  });
+
+  .Theme({
+    .Header {
+      background: @Theme-main--alt;
+    }
+  });
+
+  .Theme({
+    .Frame {
+      color: @Theme-main--alt;
+    }
+  });
+
+  .Theme({
+    .UpNext {
+      background-color: @Theme-main--alt;
+    }
+  });
+
+  .FilterOption-dropdownItem {
+    color: @Color-gray--alt;
+
+    &::after, &::before {
+      background: @Color-redOrange--alt;
+    }
+  }
+
+  .HeyHowdy-title {
+    color: @Color-redOrange--alt;
+  }
+
+  .HeyHowdy-status {
+    a:not(.username) {
+      color: @Color-redOrange--alt;
+    }
+  }
+
+  .PageFieldNoteDetail {
+
+    &.html-block.sqs-block-content > h1, > h2, > h3 {
+      color: @Color-aquamarineBlue--alt;
+    }
+
+    .t-tag {
+      color: @Color-aquamarineBlue--alt;
+    }
+
+    .html-block .sqs-block-content {
+      > h1, > h2, > h3 {
+        color: @Color-aquamarineBlue--alt;
+      }
+    }
+  }
+
+  .PageDirectory {
+    .p-Title {
+      color: @Color-pomegranate--alt;
+    }
+  }
+
+    .PageHome {
+    .Theme({
+      .p-Title {
+        color: @Theme-main--alt;
+      }
+    });
+
+    .p-ProgramBlock {
+      .p-title {
+        border-color: @Color-yellowOrange--alt;
+      }
+    }
+  }
+
+  .HeyHowdy-meta {
+    color: @Color-gray--alt;
+  }
+
+  .t-tag, .sqs-block-content h1, .sqs-block-image .image-caption-wrapper strong {
+    color: @Color-redOrange--alt;
+  }
+
+  .Theme({
+    .u-themeColor {
+      color: @Theme-main--alt;
+    }
+  });
+
+  .u-link {
+    color: @Color-redOrange--alt;
+  }
+
+  .PageAbout, .PageResourceCollection, .PagePrograms, .PageResourceOverview, .PageStudents {
+    .p-CollectionTitle {
+      margin: 0;
+      position: relative;
+
+      &:nth-child(1) {
+        transform: translateY(0);
+      }
+    }
+
+    .p-CollectionDetails {
+      transform: translateY(0);
+    }
+  }
+
+  .PageStudents .p-Footer .p-CollectionDetails {
+    display: inline-block;
+    position: static;
+    top: 26em;
+  }
+
+  .CtaButton--borderless {
+    color: @Color-pomegranate--alt;
+  }
+
+  .BackgroundText {
+    opacity: 0;
+    visibility: none;
+  }
+
+  .Header-carouselImage, .Header-carouselBreadcrumbs {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .PageArchivedClasses {
+    .p-Class-title {
+      color: @Color-pomegranate--alt;
+    }
+
+    .p-Box-content {
+      color: @Color-gray--alt;
+    }
+  }
+
+  .UpNext {
+    background-size: 0;
+
+    .CtaButton--gorse {
+      .CtaButtonColors_(@Color-gorse, @Color-gorse, @Color-black);
+    }
+  }
+
+  .Navigation {
+
+    .Navigation-sun::before {
+      background-image: url('/assets/sun-solid-white.svg');
+    }
+
+    &.color-reversed, .Navigation-list[aria-hidden="false"] {
+      .Navigation-sun::before {
+        background-image: url('/assets/sun-solid-black.svg');
+      }
+    }
+  }
+
+  .Accordion--large {
+    .Accordion-panel[aria-expanded='true'] {
+      &::before, .Accordion-tab{
+        color: @Color-pomegranate--alt;
+      }
+    }
+  }
+
+  .AccordionPlus::after,
+  .AccordionPlus::before {
+    background: @Color-redOrange--alt;
+  }
+
+  .PageContactUs .p-Directions .sqs-block-content a {
+    color: @Color-redOrange--alt;
+  }
+
+  .Photo:not(.Photo--static) .Photo-img {
+    transform: translateY(0);
+  }
+
+  .PageProgramDetails,
+  .PageProgramCollection {
+    .p-MoreLink {
+      color: @Color-redOrange--alt;
+    }
+  }
+
+  .HeyHowdy-frame {
+    .p-Class-type {
+      color: @Color-gray--alt;
+    }
+
+    &.is-reversed {
+      .p-Class-type {
+        color: @Color-redOrange--alt;
+      }
+
+      .Frame {
+        color: @Color-gray--alt;
+      }
+    }
+  }
+
+  .TextIcon {
+    border-color: @Color-redOrange--alt;
+    color: @Color-redOrange--alt;
+  }
+}
+
+@media @Media-medium {
+  .accessibility {
+    .PageStudents .p-Footer .p-CollectionDetails {
+      position: absolute;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.TeamMembers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 -1rem;
+  width: 100%;
+}
+
+.TeamMember {
+  flex-basis: 50%;
+  flex-shrink: 0;
+  line-height: 24px;
+  padding: 1rem;
+
+  @media @Media-small {
+    flex-basis: 33.3333%;
+  }
+
+  @media @Media-large {
+    flex-basis: 25%;
+  }
+
+  [aria-hidden="true"] {
+    display: none;
+  }
+}
+
+.TeamMember-picture:extend(.u-shadowDark) {
+  display: block;
+  height: 120px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  width: 120px;
+}
+
+.TeamMember-name {
+  line-height: 16px;
+  max-width: 120px;
+  position: relative;
+  z-index: 1;
+
+  @media @Media-small {
+    line-height: 24px;
+  }
+}
+
+.TeamMember-title {
+  color: #8c8c8c;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+  margin-top: 10px;
+  max-width: 120px;
+  text-transform: uppercase;
+}
+
+.TeamMember-details {
+  color: @Color-black;
+  font-size: 80%;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 25px;
+  opacity: .6;
+  text-transform: uppercase;
+}
+
+.PageTeamMember {
+  padding-top: 40px;
+}
+
+.PageTeamMember [data-latest-work] {
+  .Grid-cell {
+    padding: 0;
+  }
+}
+
+.PageTeamMember [data-member-about] .Copy {
+  line-height: 1.87;
+  white-space: pre-wrap;
+}
+
+.PageTeamMember .List-item {
+  padding: 0 0 .8em 0;
+}

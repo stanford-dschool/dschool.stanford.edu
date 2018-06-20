@@ -1,0 +1,76 @@
+<!doctype html>
+<html data-accessibility xmlns:squarespace="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="st:robots" content="nofollow">
+  {squarespace-headers}
+
+  <script type="text/javascript">!function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))c(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(c(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var a=document.createElement("link");a.href=o,a.rel="stylesheet",a.type="text/css",document.getElementsByTagName("head")[0].appendChild(a),document.cookie="font_css_cache"}}function c(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="/assets/fonts.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();</script>
+  <noscript><link rel="stylesheet" href="/assets/enhance.css"></noscript>
+  <noscript><link rel="stylesheet" href="/assets/fonts.css"></noscript>
+
+  <meta class="swiftype" name="content_type" data-type="string" {.if collection.typeName}content="{collection.typeName}"{.or}content=""{.end}>
+
+  {.repeated section collection.tags}
+    {.var @tag @|truncate 15}
+    {.equal? @tag "search-audience..."}
+      <meta class="swiftype" name="audience" data-type="string" content="{@}">
+    {.end}
+    {.equal? @tag "search-program-..."}
+      <meta class="swiftype" name="program_type" data-type="string" content="{@}">
+    {.end}
+  {.end}
+
+</head>
+
+{.if collection}
+  {.equal? collection.typeName "resource-collections"}
+    {.var @inheritResourceTheme collection.typeName}
+  {.end}
+  {.equal? collection.typeName "resources"}
+    {.var @inheritResourceTheme collection.typeName}
+  {.end}
+  {.equal? collection.typeName "classarchive"}
+    {.var @inheritClassesTheme collection.typeName}
+  {.end}
+  {.equal? collection.typeName "faqs"}
+    {.var @inheritAboutTheme collection.typeName}
+  {.end}
+  {.equal? collection.typeName "team-member"}
+    {.var @inheritAboutTheme collection.typeName}
+  {.end}
+{.end}
+
+<body
+  id="{squarespace.page-id}"
+  {.if @inheritAboutTheme}
+    class="Theme--about"
+  {.or}
+    {.if @inheritResourceTheme}
+      class="Theme--resources"
+    {.or}
+      {.if @inheritClassesTheme}
+        class="Theme--classes"
+      {.or}
+        class="{@|apply page-theme.block}"
+      {.end}
+    {.end}
+  {.end}
+>
+<script>
+  (function() {
+    var skipJs = (function() {
+      try {return window.self !== window.top}
+      catch (e) {return true}
+    })();
+    // Needs to return a value or else SquareSpace removes the brackets... :(
+    if (skipJs) { return 0; }
+    document.documentElement.className += ' js-enhanced'
+    var script = document.createElement('script');
+    script.defer = true;
+    script.async = true;
+    script.src = '/scripts/index.js?cache=';
+    document.body.appendChild(script);
+  })()
+</script>

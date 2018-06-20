@@ -1,0 +1,182 @@
+.PageProgramDetails,
+.PageProgramCollection {
+  .t-heading::after {
+    display: none;
+  }
+
+  .p-Intro {
+    padding-bottom: 10em;
+  }
+
+  .p-Section {
+    padding-bottom: 6em;
+  }
+
+  .p-Overview {
+    .p-Faqs {
+      margin-top: 2em;
+    }
+  }
+
+  .p-Program {
+    .HeyHowdy {
+      max-width: 450px;
+    }
+
+    .p-Apply-copy {
+      padding-bottom: 0;
+      padding-top: 2em;
+    }
+  }
+
+  .p-Program-border {
+    background: @Color-yellowOrange;
+    background-clip: content-box;
+    height: 1.5px;
+    margin-bottom: 2em;
+  }
+
+  .p-Program-copy {
+    margin-bottom: 2em;
+  }
+
+  .p-Program-basics {
+    margin-top: 2em;
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .sqs-block-content {
+      word-wrap: break-word;
+
+      p {
+        margin-left: 1.5em;
+        margin-top: 0 !important;
+
+        &::before {
+          color: @Color-pomegranate;
+          content: '\25A0 ';
+          display: inline-block;
+          float: left;
+          font-size: 1.3em;
+          line-height: 1;
+          margin: 0 0 0 -1.2em;
+          width: 1.2em;
+        }
+      }
+    }
+  }
+
+  .p-Faqs {
+    clear: both;
+  }
+
+  .p-FakeTag {
+    font-size: .72rem;
+    height: 1.4em;
+  }
+
+  .p-TeamMembers .TeamMember {
+    flex-basis: 50% !important;
+  }
+
+  .p-Team {
+    margin-top: 150px;
+    p {
+      float: left;
+      line-height: 35px;
+      min-width: 220px;
+    }
+
+    p + p {
+      margin-top: 0;
+      padding-left: 20px;
+    }
+  }
+
+  .p-Apply {}
+
+  .p-Apply-copy {
+    padding-bottom: 2em;
+  }
+
+  .p-ApplyCard:extend(.u-largeShadow):extend(.t-monospaced) {
+    background: @Color-white center no-repeat;
+    background-origin: content-box;
+    background-size: contain;
+    margin-bottom: 2em;
+    max-width: 400px;
+    padding: 25px;
+    position: relative;
+    z-index: 1;
+
+    @media @Media-small {
+      padding: 36px;
+    }
+
+    .p-ApplyCard-title {
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+  }
+
+  .p-Article {
+    &-meta {
+      border-bottom: 1px solid #e1e1e1;
+      font-size: 11px;
+      font-style: italic;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+      text-transform: uppercase;
+    }
+
+    &-title:extend(.t-monospaced) {
+      font-size: 0.888rem;
+      font-weight: 400;
+      line-height: 1.75;
+      padding-bottom: 1.5em;
+    }
+
+    &-link:extend(.t-tag) {
+    }
+  }
+
+  .p-Resources {
+    .BorderedBox_(@outlines: @Color-emerald);
+  }
+
+  .p-FieldNotes {
+    .BorderedBox_(@outlines: @Color-aquamarineBlue);
+  }
+
+  .p-Events {
+    .p-Events-item {
+      margin-bottom: 1.5em;
+    }
+
+    .p-Events-date {
+      display: block;
+    }
+
+    .p-Events-title {
+      margin-right: .3em;
+    }
+
+    .p-MoreLink {
+      vertical-align: middle;
+    }
+  }
+
+  .p-MoreLink {
+    color: @Color-redOrange;
+    font-size: .72rem;
+    font-weight: 700;
+  }
+
+  .p-UpNext {
+    .CtaButton {
+      .CtaButtonColors_(@Color-gorse, @Color-gorse, @Color-black);
+    }
+  }
+}

@@ -1,0 +1,153 @@
+.PagePrograms {
+  .p-Intro {
+    padding: 0 10px;
+  }
+
+  .p-BlockquoteWrapper {
+    margin-bottom: 250px;
+  }
+
+  .VerticalBar--left {
+    left: 20px;
+    top: 500px;
+  }
+
+  .Pattern--horizontal {
+    left: 5vw;
+    position: absolute;
+    top: -170px;
+    z-index: -1;
+    @media @Media-medium {
+      top: -250px;
+      z-index: 2;
+    }
+  }
+
+  .Pattern--vertical {
+    position: absolute;
+    right: 10vw;
+    top: 200px;
+  }
+
+  .Photo {
+    height: 514px;
+  }
+
+  .p-Program {
+    margin: 0 0 50px 0;
+    min-height: 600px;
+
+    &:last-child {
+      margin-bottom: 250px;
+    }
+
+    @media @Media-medium {
+      margin: 250px 0 0;
+    }
+  }
+
+  .p-CollectionTitle {
+    margin: 0 0 -50px;
+    position: relative;
+    transform: translateY(e('calc(~"var(--parallax, 0) * 60px")'));
+    z-index: 1;
+
+    @media @Media-small {
+      .p-CollectionTitle {
+        margin: -100px 0 0;
+      }
+    }
+  }
+
+  .p-CollectionTitle.has-parallax {
+    transition: transform 800ms ease-out;
+  }
+
+  .p-CollectionTitle a {
+    text-decoration: none;
+  }
+
+  .FloatingImage {
+    box-sizing: content-box;
+    height: 514px;
+    width: 300px;
+
+    @media @Media-small {
+      width: 382px;
+    }
+
+    .FloatingImage-wrap {
+      max-width: none;
+      @media @Media-medium {
+        left: 0;
+        max-width: 380px;
+        min-height: 530px;
+        overflow: hidden;
+        position: absolute;
+      }
+    }
+
+    .FloatingImage-img {
+      z-index: 0;
+      @media @Media-medium {
+        left: -50%;
+        max-width: 760px;
+        min-height: 540px;
+        position: relative;
+      }
+    }
+
+    .Frame {
+      overflow: hidden;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  .p-Program .p-CollectionDescription {
+    font-weight: 400;
+    line-height: 28px;
+    @media @Media-small {
+      padding-top: 100px;
+    }
+    &::before {
+      border-bottom: 1px solid @Color-redOrange;
+      color: @Color-redOrange;
+      content: "Overview";
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      position: relative;
+      text-transform: uppercase;
+      top: -20px;
+      width: 75%;
+    }
+  }
+
+  .p-CollectionDescription-addon {
+    margin-top: 25px;
+  }
+
+  .p-CollectionButton {
+    margin-top: 45px;
+  }
+
+  .p-Quote {
+    margin-bottom: -800px;
+    min-height: 800px;
+    position: relative;
+    @media @Media-medium {
+      background: transparent url(/assets/arrow_large_left.svg) no-repeat 60% 100%;
+      top: -200px;
+    }
+    blockquote {
+      font-size: 50px;
+      line-height: 70px;
+      margin-top: 40px;
+      @media @Media-small {
+        margin-top: 100px;
+      }
+    }
+  }
+}

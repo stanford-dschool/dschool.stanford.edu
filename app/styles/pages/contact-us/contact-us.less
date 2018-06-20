@@ -1,0 +1,260 @@
+.PageContactUs {
+  .p-Collection {
+    margin-top: 2em;
+    position: relative;
+  }
+
+  .p-Collection:last-of-type {
+    margin-bottom: 10em;
+  }
+
+  .p-CollectionTitle {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .CtaButton {
+    margin: 2em 0;
+    white-space: nowrap;
+  }
+
+  .p-Collapse {
+    font-size: 0;
+  }
+
+  .sqs-block-content em {
+    font-size: .72rem;
+    font-style: italic;
+    opacity: .33;
+  }
+
+  .Pattern {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .p-Tours .p-Vertical {
+    bottom: 100px;
+    left: 20px;
+  }
+
+  .p-Directions {
+    .p-Quote {
+      display: none;
+    }
+
+    .Pattern {
+      margin-left: -4em;
+    }
+
+    .p-Vertical {
+      right: 20px;
+      top: 250px;
+    }
+
+    .p-DirectionsMapAddress {
+      display: none;
+    }
+
+    .p-DirectionsMap {
+      background: #fff url(/assets/map.svg) no-repeat center;
+      background-size: 150%;
+      height: 400px; //was 450px
+    }
+
+    .sqs-block-content a {
+      color: @Color-redOrange;
+    }
+  }
+
+  .p-Contact {
+    .p-Vertical {
+      left: 20px;
+    }
+
+    .HeyHowdy {
+      font-size: 1rem;
+    }
+  }
+
+  .p-Contact,
+  .p-Footer {
+    .Pattern {
+      bottom: 150px;
+    }
+  }
+
+  .p-Footer {
+    .p-CollectionDetails {
+      padding: 35px;
+    }
+
+    .p-CollectionDescription {
+      font-size: 1.75em;
+      padding: 85px;
+    }
+
+    .p-Overlay {
+      margin-left: 25px;
+    }
+  }
+
+  @media @Media-small {
+    .p-Collection {
+      margin-top: 8em;
+    }
+
+    .p-CollectionDetails,
+    .p-CollectionDescription {
+      margin-top: 2em;
+    }
+
+    .p-Contact .p-CollectionDescription {
+      margin-top: 0;
+    }
+
+    .p-CollectionTitle,
+    .p-CollectionDetails {
+      transform: translateY(e('calc(~"var(--parallax, 0) * 50px")'));
+    }
+
+    .p-ToursCalendar {
+      margin-top: 5em;
+    }
+
+    .p-Directions .p-DirectionsMap {
+      background-size: 125%;
+      height: 550px;
+    }
+
+    .p-Contact .HeyHowdy {
+      display: inline-block;
+      vertical-align: top;
+      width: 47.5%;
+
+      &:nth-child(2) {
+        margin-left: 5%;
+      }
+    }
+
+    .p-Footer {
+      margin-top: 2em;
+
+      .p-CollectionDetails {
+        left: -3em;
+        position: absolute;
+        top: 2em;
+      }
+
+      .HeyHowdy {
+        display: block;
+      }
+    }
+  }
+
+  @media @Media-medium {
+    .p-CollectionDescription,
+    .p-Contact .p-CollectionDescription,
+    .p-CollectionDetails,
+    .p-ToursCalendar {
+      margin-top: 6rem;
+    }
+
+    .p-Directions .p-DirectionsMap {
+      background-size: 100%;
+      height: 550px;
+    }
+
+    .p-Contact .Grid-cell:last-of-type {
+      margin-top: 6rem;
+    }
+
+    .p-Footer {
+      .p-CollectionDescription {
+        padding-right: 225px;
+      }
+
+      .p-CollectionDetails {
+        left: -150px;
+        padding: 65px;
+      }
+    }
+  }
+
+  @media @Media-large {
+    .p-Contact .p-CollectionDescription{
+      font-size: 1.75em;
+      padding-right: 225px;
+    }
+
+    .HeyHowdy {
+      margin-left: 25px;
+      padding: 36px;
+      top: 2em;
+    }
+
+    .p-Tours .p-Quote::after {
+      background: transparent url(/assets/arrow_large_left.svg) no-repeat bottom;
+      bottom: -50px;
+      content: '';
+      display: block;
+      height: 180px;
+      position: absolute;
+      right: 0;
+      transform: rotate(270deg);
+      width: 200px;
+    }
+
+    .p-Directions .p-Quote::after {
+      background: transparent url(/assets/arrow_large_left.svg) no-repeat 0 100%;
+      bottom: -200px;
+      content: '';
+      display: block;
+      height: 200px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(-1);
+      width: 80px;
+    }
+
+    .p-Directions .p-Quote {
+      display: block;
+
+      .Blockquote {
+        display: block;
+        font-size: 1.5em;
+        line-height: 1.3;
+        margin-top: 8em;
+        padding-top: .5em;
+      }
+
+      .Blockquote::before {
+        content: none;
+      }
+    }
+
+    .p-Directions .p-DirectionsMapAddress {
+      display: block;
+      margin-bottom: 200px;
+      margin-top: 280px;
+    }
+
+    .p-Directions .p-DirectionsMap {
+      background: #fff url(/assets/map.svg) no-repeat 100% center;
+      bottom: 0;
+      height: 750px;
+      position: relative;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .p-Contact .HeyHowdy:first-child {
+      margin-left: -9em;
+      margin-top: 7em;
+    }
+
+    .p-Contact .HeyHowdy:nth-child(2) {
+      margin-top: -8em;
+    }
+  }
+}

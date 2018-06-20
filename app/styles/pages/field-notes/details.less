@@ -1,0 +1,107 @@
+.PageFieldNoteDetail {
+  .p-Vertical {
+    left: -1rem;
+    top: 800px;
+  }
+
+  .p-Column {
+    margin-bottom: 3rem;
+
+    @media @Media-small {
+      @gap: @Column-gap * 2;
+      .calculate("50% - @{gap}");
+      display: inline-block;
+      float: left;
+      width: @calculated_;
+    }
+  }
+
+  .p-Column--single {
+    @media @Media-small {
+      clear: both;
+      display: block;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      width: 66%;
+    }
+  }
+
+  .p-Column--expanded {
+    @media @Media-small {
+      clear: both;
+      display: block;
+      float: none;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      width: auto;
+    }
+  }
+
+  .CopySocialCard {
+    margin-top: 120px;
+    .parallaxY(-40%);
+    will-change: transform;
+  }
+
+  .HeyHowdy {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .p-teamMembers-title:extend(.t-title) {
+    font-size: 3.4em;
+    margin-bottom: .2em;
+  }
+
+  .p-Accordion {
+    margin-top: 6rem;
+    padding-left: 1.5rem;
+  }
+
+  .sqs-edit-mode & .p-UpNext .sqs-layout.empty::after {
+    content: 'Add a link to the next Field Note';
+  }
+
+  .t-tag {
+    color: @Color-aquamarineBlue;
+  }
+
+  .html-block .sqs-block-content {
+    > h1 + h2:extend(.t-borderedHeading) {
+      font-size: 3.4em;
+      margin-bottom: 2rem;
+      margin-top: 0 !important;
+    }
+
+    > h1, > h2, > h3 {
+      color: @Color-aquamarineBlue;
+
+      &:not(:first-child) {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  .quote-block {
+    &:extend(.Blockquote);
+
+    &::before {
+      &:extend(.Blockquote::before);
+    }
+
+    blockquote {
+      line-height: 42px;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .Accordion-content {
+    @media @Media-small {
+      padding: initial;
+    }
+  }
+}

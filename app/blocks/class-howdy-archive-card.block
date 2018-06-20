@@ -1,0 +1,11 @@
+{.repeated section items}
+  {.if customContent.inactive}
+  <div class="p-Box p-Class p-ClassArchived" data-course="{.if customContent.postgrad}pg{.or}{.if customContent.undergrad}ug{.end}{.end}" data-custom="{customContent.custom}" data-monday="{customContent.monday}" data-tuesday="{customContent.tuesday}" data-wednesday="{customContent.wednesday}" data-thursday="{customContent.thursday}" data-friday="{customContent.friday}" data-units="{customContent.units}" data-categories="{categories}">
+    <div class="p-Box-content HeyHowdy">
+      <span class="p-Class-type t-tag">Archived</span>
+      <a href="{fullUrl}" class="p-Class-title">{title}</a>
+      <div class="HeyHowdy-meta">Last Offered {publishOn|date %Y}</div>
+    </div>
+  </div>
+  {.end}
+{.end}

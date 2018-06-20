@@ -1,0 +1,184 @@
+// disable silly like animation
+.Theme--resources {
+  .sqs-simple-like.float {
+    display: none;
+  }
+}
+
+.FeedbackBar {
+  background: white;
+  border-bottom: 1px solid @Color-grayLight;
+  border-top: 1px solid @Color-black;
+  padding: 15px 0;
+  text-align: center;
+
+  // override squarespace simple like icon
+  .sqs-simple-like {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    margin: 0 20px;
+
+    .like-icon {
+      background: url(/assets/heart.svg);
+      background-color: transparent !important;
+      height: 100%;
+      width: 30px;
+    }
+
+    &.clicked {
+      .like-icon {
+        background: url(/assets/heart-solid.svg);
+      }
+    }
+
+    &:hover .like-icon {
+      animation: none;
+    }
+  }
+
+  // override squarespace share button
+  .squarespace-social-buttons.button-style {
+    margin: 0 20px;
+
+    .ss-social-button-wrapper {
+      background-color: transparent !important;
+      background-image: url(/assets/share.svg) !important;
+      background-repeat: no-repeat;
+      background-size: contain;
+      box-shadow: none;
+      height: 30px;
+      padding: 0;
+      width: auto;
+
+      .ss-social-button {
+        align-items: center;
+        background: none;
+        color: @Color-black;
+        display: flex;
+        font: inherit;
+        height: 100%;
+        padding: 0 0 0 37px;
+      }
+    }
+
+    .ss-social-list-wrapper {
+      top: 40px !important;
+    }
+
+    .ss-social-button-list {
+      min-width: 0;
+      padding: 20px 24px;
+    }
+
+    .ss-social-button-container {
+      height: 20px;
+      margin-bottom: 20px;
+      min-height: 0;
+      width: 61px;
+
+      &.facebook .fb_iframe_widget span {
+        vertical-align: top !important;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.FeedbackBar-item {
+  display: inline-block;
+  margin: 10px 0;
+  vertical-align: middle;
+}
+
+.FeedbackBar-button {
+  align-items: center;
+  background: none;
+  border: none;
+  display: flex;
+  font: inherit;
+  margin: 0 20px;
+
+  &::before {
+    display: block;
+    float: left;
+    height: 30px;
+    margin-right: 7px;
+    position: relative;
+    width: 30px;
+  }
+
+  &.FeedbackBar--feedback::before {
+    content: url(/assets/feedback.svg);
+  }
+}
+
+.FeedbackBar-send {
+  position: relative;
+}
+
+.FeedbackBar-form {
+  background: @Color-white;
+  margin: 0 auto;
+  max-height: 0;
+  max-width: 700px;
+  opacity: 0;
+  position: relative;
+  transition: opacity 0.3s, max-height 0.3s;
+
+  > .sqs-layout {
+    border-top: solid 20px #fff;
+    padding: 20px 20px 12px 20px;
+    transition: opacity 0.3s 0.3s;
+  }
+
+  form {
+    font-size: .66em;
+    padding: 20px;
+  }
+
+  &.is-active,
+  body.sqs-edit-mode & {
+    max-height: 1000px;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &.is-submitted {
+    form {
+      opacity: 0;
+      transition-delay: 0s;
+    }
+
+    .FeedbackBar-formResult {
+      opacity: 1;
+    }
+  }
+}
+
+.FeedbackBar-form-input {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 12px auto;
+  max-width: 400px;
+  width: 90%;
+}
+
+.FeedbackBar-form-input--message {
+  margin: 48px auto 24px;
+}
+
+.FeedbackBar-formResult {
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+  width: 80%;
+}

@@ -1,0 +1,30 @@
+body.search {
+  .Header-figure {
+    display: none;
+  }
+
+  .sqs-search-page {
+    flex-basis: 75%;
+
+    @media @Media-small {
+      margin-left: 12.5%;
+      margin-bottom: 250px;
+      margin-top: -250px;
+      max-width: 75%;
+    }
+
+    .search-result {
+      .sqs-main-image img {
+        height: 100% !important;
+        left: 0 !important;
+        object-fit: cover !important;
+        top: 0 !important;
+        width: 100% !important;
+      }
+
+      .sqs-search-container-item > .sqs-content {
+        margin-left: 142px;
+      }
+    }
+  }
+}

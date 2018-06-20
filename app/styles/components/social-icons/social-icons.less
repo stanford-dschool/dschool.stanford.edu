@@ -1,0 +1,26 @@
+.SocialIcons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.SocialIcons-link {
+  opacity: .5;
+  text-decoration: none;
+  transition: opacity 250ms;
+
+  &:focus,
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@media @Media-small {
+  .SocialIcons {
+    display: block;
+  }
+
+  .SocialIcons-link + .SocialIcons-link {
+    margin-left: 32px;
+  }
+}

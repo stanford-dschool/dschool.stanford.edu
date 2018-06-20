@@ -1,0 +1,32 @@
+.SocialCardGroup {
+  .helper_(@item, @amount) {
+    &:nth-child(@{item}n) {
+      .parallaxY(percentage(@amount));
+    }
+  }
+
+  @media @Media-medium {
+    text-align: center;
+    .parallaxY(10%);
+
+    .HeyHowdy {
+      height: 100%;
+    }
+
+    .CopySocialCard {
+      display: inline-block;
+      margin: 1rem;
+      max-width: 450px;
+      text-align: left;
+
+      .helper_(1, -1);
+      .helper_(2, -0.5);
+      .helper_(3, -0.8);
+      .helper_(4, -0.75);
+    }
+  }
+}
+
+.SocialCardGroup:not(.SocialCardGroup--plain) .CopySocialCard:nth-child(even) {
+  .HeyHowdy:extend(.HeyHowdy--dark all) {}
+}

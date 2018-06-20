@@ -1,0 +1,89 @@
+.TeamMemberModal-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 200px;
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  @media @Media-small {
+    max-width: none;
+    min-width: 200px;
+    width: 100%;
+  }
+
+  @media @Media-medium {
+    min-width: 250px;
+  }
+}
+
+.TeamMemberModal-bioName {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+
+  @media @Media-medium {
+    font-size: 55px;
+  }
+}
+
+.TeamMemberModal-bioTitle {
+  color: #8c8c8c;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.TeamMemberModal-bioText {
+  font-size: 20px;
+  margin-top: 2em;
+
+  @media @Media-medium {
+    font-size: 28px;
+    line-height: 1.333;
+  }
+
+  h2:extend(.t-tag) {}
+
+  p {
+    margin: .3em 0 1.3em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.TeamMemberModal-bioLink {
+  color: @Color-pomegranate;
+  font-size: 14px;
+  z-index: 1;
+
+  @media @Media-small {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: .6em;
+    text-align: right;
+
+    &:first-of-type {
+      margin-top: 2em;
+    }
+  }
+
+  @media @Media-medium {
+    align-self: flex-end;
+  }
+
+  &:first-of-type {
+    margin-top: .6em;
+  }
+
+  &:last-of-type {
+    margin-bottom: 1.2em;
+  }
+}

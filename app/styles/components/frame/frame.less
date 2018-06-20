@@ -1,0 +1,85 @@
+@import "mixins";
+@import "container";
+
+@Frame-thickness: 2px;
+@Frame-offset: 20px;
+
+.Frame {
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.Frame-side {
+  position: absolute;
+}
+
+.Frame-side--top,
+.Frame-side--bottom {
+  height: @Frame-thickness;
+  left: @Frame-offset;
+  right: @Frame-offset;
+  &:not(.Frame-side--break) {
+    background: currentColor;
+  }
+}
+
+.Frame-side--left,
+.Frame-side--right {
+  bottom: @Frame-offset;
+  top: @Frame-offset;
+  width: @Frame-thickness;
+  &:not(.Frame-side--break) {
+    background: currentColor;
+  }
+}
+
+.Frame-side--top {
+  top: @Frame-offset;
+}
+
+.Frame-side--right {
+  right: @Frame-offset;
+}
+
+.Frame-side--bottom {
+  bottom: @Frame-offset;
+}
+
+.Frame-side--left {
+  left: @Frame-offset;
+}
+
+.Frame--t {
+  .has-frame-break {
+    .Frame-break(top);
+  }
+}
+
+.Frame--r {
+  .has-frame-break {
+    .Frame-break(right);
+  }
+}
+
+.Frame--b {
+  .has-frame-break {
+    .Frame-break(bottom);
+  }
+}
+
+.Frame--l {
+  .has-frame-break {
+    .Frame-break(left);
+  }
+}
+
+.Theme({
+  .Frame {
+    color: @Theme-main;
+  }
+});

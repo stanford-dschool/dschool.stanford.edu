@@ -1,0 +1,37 @@
+.Columns {
+  display: block;
+  font-size: 0;
+  margin: -@Column-gap;
+  margin-bottom: 1rem;
+}
+
+.Columns--two {
+  .Columns-item {
+    display: inline-block;
+    width: e('calc(~"50% - (@{Column-gap} * 2)")');
+  }
+}
+
+.Columns-item {
+  display: block;
+  font-size: 1rem;
+  margin: @Column-gap;
+  vertical-align: top;
+  width: auto;
+}
+
+@media @Media-small {
+  .Columns-item {
+    display: inline-block;
+    width: 45%;
+    width: e('calc(~"50% - (@{Column-gap} * 2)")');
+  }
+}
+
+@media @Media-medium {
+  .Columns-item {
+    display: inline-block;
+    width: 28%;
+    width: e('calc(~"33.3333% - ((@{Column-gap} + .1rem) * 2)")');
+  }
+}

@@ -1,0 +1,138 @@
+.LinkCard {
+  display: inline-block;
+  list-style-type: none;
+
+  @media @Media-medium {
+    transition: opacity 300ms;
+
+    &.is-transparent {
+      opacity: .4;
+    }
+  }
+}
+
+.LinkCard-wrap {
+  background: @Color-white;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+
+  @media @Media-small {
+    width: 600px;
+  }
+}
+
+.LinkCard-image {
+  background: #666 no-repeat center;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @media @Media-small {
+    right: 65%;
+  }
+}
+
+.LinkCard-content {
+  background: @Color-white;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 1.8em 2em;
+  position: relative;
+  white-space: normal;
+
+  @media @Media-small {
+    margin: 20px 20px 20px 28%;
+    min-height: 260px;
+  }
+}
+
+.LinkCard-tag {
+  margin-top: 0;
+}
+
+.LinkCard-excerpt {
+  margin: .6em 0 auto;
+}
+
+.LinkCard-link {
+  margin-top: .8em;
+}
+
+.LinkCard-category {
+  align-items: center;
+  border-top: 1px solid #3d6682;
+  display: flex;
+  margin: 40px -30px 0 -30px;
+  padding-top: 20px;
+
+  &-img {
+    margin-right: 0.8em;
+    opacity: 0.2;
+    width: 31px;
+  }
+}
+
+.LinkCard-anchor:extend(.u-hideText) {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.LinkCard--vertical {
+  padding: 0 1em 2em;
+
+  &:first-child {
+    margin-left: 2em;
+  }
+
+  &:last-child {
+    margin-right: 2em;
+  }
+
+  @media @Media-medium {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .LinkCard-wrap {
+    padding: 1.5rem;
+    width: 300px;
+
+    @media @Media-medium {
+      box-shadow: 0 10px 35px rgba(0, 0, 0, .06);
+      padding: 10.5rem 1rem 1rem;
+      width: 390px;
+    }
+  }
+
+  .LinkCard-image {
+    bottom: auto;
+    padding-top: 250px;
+    right: 0;
+    top: 0;
+  }
+
+  .LinkCard-content {
+    margin: 0;
+    min-height: 100%;
+    padding: 1.8em 2em 0 2em;
+
+    @media @Media-small {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+@import "slider";
+@import "dragger";

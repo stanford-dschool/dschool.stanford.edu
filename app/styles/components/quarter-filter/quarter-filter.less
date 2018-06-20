@@ -1,0 +1,50 @@
+.QuarterFilter {
+  margin-top: 2.5em;
+
+  &-selector--prev,
+  &-selector--next {
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    outline: none;
+    position: relative;
+    width: 25px;
+
+    &::after,
+    &::before {
+      background: @Color-redOrange;
+      content: '';
+      height: 2px;
+      left: 4px;
+      position: absolute;
+      width: 15px;
+    }
+
+    &::after {
+      top: 15px;
+    }
+
+    &::before {
+      top: 5px;
+    }
+  }
+
+  &-selector--prev::after,
+  &-selector--next::before {
+    transform: rotate(45deg);
+  }
+
+  &-selector--prev::before,
+  &-selector--next::after {
+    transform: rotate(-45deg);
+  }
+
+  &-selector--prev {
+    margin-right: 20px;
+  }
+
+  .disabled {
+    cursor: default;
+    opacity: .3;
+  }
+}

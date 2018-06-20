@@ -1,0 +1,39 @@
+.UpNext {
+  background: #aaa no-repeat center;
+  background-size: cover;
+  color: #fff;
+  font-size: 13px;
+  position: relative;
+}
+
+.UpNext::before {
+  background: fade(black, 40%);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.UpNext-content {
+  padding: 6em 0;
+}
+
+.UpNext-tag {
+  border-bottom: 1px solid fade(@Color-gorse, 50%);
+  color: @Color-gorse !important;
+  display: inline-block;
+  line-height: 1;
+}
+
+.UpNext-title:extend(.t-mainHeading) {
+  margin-bottom: 0;
+}
+
+.UpNext-author {
+  font-size: 1.23em;
+  line-height: 1.63;
+  margin: 1.5em 0 4em;
+}

@@ -1,0 +1,103 @@
+.LinkCardDragger {
+  width: 100%;
+}
+
+.LinkCardDragger-tray {
+  display: flex;
+  margin: 20px -20px;
+  overflow-x: auto;
+  padding: 0;
+  white-space: nowrap;
+
+  @media @Media-medium {
+    padding: 0 20px;
+  }
+}
+
+.LinkCardDragger-tray > .LinkCard {
+  flex: 0 0 auto;
+  transition: transform 250ms, opacity 250ms;
+}
+
+@media @Media-medium {
+  .LinkCardDragger.is-enhanced {
+    .LinkCardDragger-tray {
+      overflow-x: visible;
+    }
+  }
+}
+
+.LinkCardDragger-area {
+  align-items: center;
+  display: none;
+  height: 50px;
+  margin: 0 20px;
+  padding: 20px 0;
+  position: relative;
+  @media @Media-medium {
+    display: flex;
+  }
+}
+
+.LinkCardDragger-caption {
+  font-size: 0.66em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.LinkCardDragger-controlWrap {
+  flex: 1 1 auto;
+}
+
+.LinkCardDragger-control {
+  -webkit-appearance: none;
+  background: none;
+  margin: 10px 0;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.LinkCardDragger-control:focus {
+  outline: none;
+}
+
+.track() {
+  background: #e4e4e4;
+  background: transparent linear-gradient(0deg, @Color-black 0, @Color-black 100%) no-repeat center;
+  background-size: 100% 2px;
+  cursor: pointer;
+  height: 20px;
+  width: 100%;
+}
+
+.thumb() {
+  @size: 20px;
+  appearance: none;
+  background: #3d6682;
+  border: 0 solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  height: @size;
+  width: @size;
+}
+
+.LinkCardDragger-control::-webkit-slider-runnable-track {
+  .track;
+}
+.LinkCardDragger-control::-ms-track {
+  .track;
+}
+.LinkCardDragger-control::-moz-range-track {
+  .track;
+}
+.LinkCardDragger-control::-webkit-slider-thumb {
+  .thumb;
+}
+.LinkCardDragger-control::-moz-range-thumb {
+  .thumb;
+}
+.LinkCardDragger-control::-ms-thumb {
+  .thumb;
+}

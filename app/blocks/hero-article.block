@@ -1,0 +1,25 @@
+  <header data-header class="Header Header--article">
+    <div class="Header-bg" style="background-image: url({item.assetUrl}); background-position: calc({item.mediaFocalPoint.x} * 100%) calc({item.mediaFocalPoint.y} * 100%);"></div>
+
+    <div class="Container u-cf">
+      <div data-header-top data-reverse class="Header-top">
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+      </div>
+
+      <p class="Header-meta">
+        <span class="Header-metaPart">
+          {.equal? collection.typeName "events"}
+            {item.startDate|date %B %e %Y}
+          {.or}
+            {item.publishOn|date %B %e %Y}
+          {.end}
+        </span>
+        <span class="Header-metaPart">{item.author.displayName}</span>
+      </p>
+      <h2 class="Header-description" id="header-description">{item.title}</h2>
+
+      <div class="Header-scrollIndicator">
+        <a href="#post-hero" class="DirectionalArrow"></a>
+      </div>
+    </div>
+  </header>

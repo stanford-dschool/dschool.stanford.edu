@@ -1,0 +1,30 @@
+/**
+ * An abbreviation in a red circle (see classes filter)
+ */
+.TextIcon {
+  background: @Color-white;
+  border: 1px solid @Color-pomegranate;
+  border-radius: 50%;
+  display: block;
+  height: 30px;
+  line-height: 28px;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  text-indent: 1px;
+  text-transform: uppercase;
+  width: 30px;
+
+  &::before {
+    background: none;
+    border: 2px solid @Color-white;
+    border-radius: 50%;
+    bottom: -3px;
+    content: "";
+    display: block;
+    left: -3px;
+    position: absolute;
+    right: -3px;
+    top: -3px;
+  }
+}

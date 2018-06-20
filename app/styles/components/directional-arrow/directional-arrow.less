@@ -1,0 +1,70 @@
+.DirectionalArrow {
+  color: inherit;
+  display: block;
+  height: 60px;
+  left: -20px;
+  outline: none;
+  position: relative;
+  width: 40px;
+
+  &::before {
+    background: currentColor;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 19px;
+    position: absolute;
+    transform-origin: 50% 100%;
+    width: 2px;
+  }
+
+  &::after {
+    border-bottom: solid 2px currentColor;
+    border-right: solid 2px currentColor;
+    bottom: 3px;
+    content: '';
+    display: block;
+    height: 14px;
+    left: 8px;
+    position: absolute;
+    transform: rotate(45deg) translateZ(0);
+    transform-origin: 50% 100%;
+    width: 14px;
+  }
+}
+
+.DirectionalArrow--right,
+.DirectionalArrow--left,
+.DirectionalArrow--down,
+.DirectionalArrow--up {
+  &:extend(.DirectionalArrow);
+  display: inline-block;
+  height: 18px;
+  left: auto;
+  vertical-align: middle;
+
+  &::after {
+    bottom: 2px;
+    height: 8px;
+    left: 13px;
+    width: 8px;
+  }
+}
+
+.DirectionalArrow--right {
+  transform: rotate(-90deg) translateZ(0);
+}
+
+.DirectionalArrow--left {
+  transform: rotate(90deg) translateZ(0);
+}
+
+.DirectionalArrow--down,
+.DirectionalArrow--up {
+  height: 15px;
+}
+
+.DirectionalArrow--up {
+  transform: rotate(180deg) translateZ(0);
+}

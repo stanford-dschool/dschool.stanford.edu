@@ -1,0 +1,107 @@
+    <div class="Modal" data-modal></div>
+
+    <div class="Stripes">
+      <div class="Container">
+        <div class="Grid">
+          <div class="Grid-cell u-size12 u-offset2 u-noMarginTop">
+            <div class="Stripes-container">
+              <div class="Stripes-item"></div>
+              <div class="Stripes-item"></div>
+              <div class="Stripes-item"></div>
+              <div class="Stripes-item"></div>
+              <div class="Stripes-item"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="Footer">
+      <div class="Container">
+        <div class="Footer-columns">
+          <div class="Footer-column">
+            <a href="/"><img class="Footer-logo" src="/assets/logo.png" /></a>
+            <squarespace:block-field id="footerBase" columns="1" />
+          </div>
+
+          <div class="Footer-column">
+            <div class="Footer-columnTitle">
+              <a href="/about">About</a>
+            </div>
+            <squarespace:block-field id="footerAbout" columns="1" />
+          </div>
+
+          <div class="Footer-column">
+            <div class="Footer-columnTitle">
+              <a href="/classes">Stanford Students</a>
+            </div>
+            <squarespace:block-field id="footerStanfordStudents" columns="1" />
+          </div>
+
+          <div class="Footer-column">
+            <div class="Footer-columnTitle">
+              <a href="/programs">Programs</a>
+            </div>
+            <squarespace:block-field id="footerPrograms" columns="1" />
+          </div>
+
+          <div class="Footer-column">
+            <strong class="Footer-columnTitle">
+              <a href="/resources">Resources</a>
+            </strong>
+            <squarespace:block-field id="footerResources" columns="1" />
+          </div>
+
+          <div class="Footer-column">
+            <strong class="Footer-columnTitle">
+              <a href="/field-notes">Field Notes</a>
+            </strong>
+            <squarespace:block-field id="footerFieldNotes" columns="1" />
+          </div>
+        </div>
+        <div class="Footer-meta">
+          <p class="Footer-copyright">
+            © 2017 Hasso Plattner Institute of Design at Stanford University<span class="no-mobile">. All Rights Reserved.</span>
+          </p>
+          <div class="Footer-social">
+            <div class="SocialIcons">
+              <a href="https://twitter.com/stanforddschool" class="SocialIcons-link" title="Twitter">
+                <i class="Icon Icon--twitter"></i>
+              </a>
+              <a href="https://medium.com/stanford-d-school" class="SocialIcons-link" title="Medium">
+                <i class="Icon Icon--medium"></i>
+              </a>
+              <a href="https://www.instagram.com/explore/locations/502318704/dschool/" class="SocialIcons-link" title="Instagram">
+                <i class="Icon Icon--instagram"></i>
+              </a>
+              <a href="https://facebook.com/stanforddschool/" class="SocialIcons-link" title="Facebook">
+                <i class="Icon Icon--facebook"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+    <script>
+      (function() {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/assets/enhance.css?cache=';
+        document.head.appendChild(link);
+
+        function loadAllImages() {
+          var im = document.querySelectorAll('img[data-src]' );
+          for (var i = 0; i < im.length; i++){
+            window.ImageLoader.load(im[i], {load:true});
+          }
+        }
+
+        loadAllImages();
+
+        window.addEventListener('resize', loadAllImages);
+      })()
+    </script>
+
+  </body>
+</html>

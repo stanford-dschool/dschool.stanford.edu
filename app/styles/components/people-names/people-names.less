@@ -1,0 +1,22 @@
+.PeopleNames {
+  columns: 2;
+  
+  .c-wide & {
+    @media @Media-medium {
+      columns: 4;
+    }
+  }
+  
+  
+  em:extend(.t-tag) {
+    color: #8c8c8c;
+    font-style: normal;
+  }
+
+  p {
+    // margins work strangely with columns.
+    break-inside: avoid;
+    margin-top: 0;
+    padding-bottom: 1.3em;
+  }
+}

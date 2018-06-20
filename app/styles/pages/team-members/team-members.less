@@ -1,0 +1,35 @@
+body.Theme--teammembers {
+  .TeamMember {
+    flex-basis: 75%;
+    max-width: 75%;
+    padding: 0;
+
+    @media @Media-small {
+      margin-left: 12.5%;
+    }
+  }
+
+  .TeamMember-image {
+    display: none;
+  }
+
+  .TeamMember-name {
+    &:extend(.t-heading);
+    line-height: auto;
+    max-width: 100%;
+  }
+}
+
+.PageTeamMember {
+  .t-heading {
+    margin-bottom: 0.3em;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .p-Section {
+    margin-bottom: 100px;
+  }
+}

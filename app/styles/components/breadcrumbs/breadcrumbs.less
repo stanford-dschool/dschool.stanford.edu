@@ -1,0 +1,18 @@
+.Breadcrumbs--source {
+  display: none;
+
+  body.sqs-edit-mode & {
+    display: block;
+  }
+}
+
+.Breadcrumbs {
+  a {
+    display: inline-block;
+
+    &::after {
+      content: '/';
+      margin: 0 .4em;
+    }
+  }
+}

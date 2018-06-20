@@ -1,0 +1,45 @@
+.Theme(
+  @component: {};
+  @selector: base;
+  @Theme-main: @Color-emerald;
+  @Theme-main--alt: @Color-emerald--alt;
+  @Theme-accent: @Color-black
+) {
+  .Theme--@{selector} {
+    @component();
+  }
+
+  & when (@selector = base) {
+    .Theme(@component, home, @Color-flamingo, @Color-white, @Color-black);
+    .Theme(@component, directory, @Color-pomegranate, @Color-white, @Color-black);
+    .Theme(@component, 404, @Color-pomegranate, @Color-pomegranate--alt, @Color-black);
+    .Theme(@component, about, @Color-pomegranate, @Color-pomegranate--alt, @Color-white);
+    .Theme(@component, articles, @Color-ming, @Color-ming, @Color-white);
+    .Theme(@component, contact-us, @Color-pomegranate, @Color-pomegranate--alt, @Color-white);
+    .Theme(@component, events, @Color-ming, @Color-ming, @Color-white);
+    .Theme(@component, programs, @Color-yellowOrange, @Color-yellowOrange--alt, @Color-white);
+    .Theme(@component, program-collections, @Color-yellowOrange, @Color-yellowOrange--alt, @Color-white);
+    .Theme(@component, resources, @Color-emerald,@Color-emerald--alt,  @Color-white);
+    .Theme(@component, news, @Color-ming, @Color-ming, @Color-white);
+    .Theme(@component, field-notes, @Color-aquamarineBlue, @Color-aquamarineBlue--alt, @Color-white);
+    .Theme(@component, classes, @Color-flamingo, @Color-flamingo--alt, @Color-white);
+    .Theme(@component, class-application, @Color-flamingo, @Color-flamingo--alt, @Color-white);
+    .Theme(@component, apply, @Color-flamingo, @Color-flamingo--alt, @Color-white);
+    .Theme(@component, teammembers, @Color-flamingo, @Color-flamingo--alt, @Color-white);
+  }
+}
+
+.CtaButtonColors_(@main, @hover, @hoverText) {
+  border-color: @main;
+  color: @main;
+
+  &::before,
+  &::after {
+    background: @main;
+  }
+
+  &:hover {
+    background: @hover;
+    color: @hoverText;
+  }
+}

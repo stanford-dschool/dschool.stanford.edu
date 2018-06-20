@@ -1,0 +1,285 @@
+.sqs-block-content {
+  line-height: 1.87;
+
+  h1:extend(.t-tag) {
+    &:not(:first-child) {
+      margin-top: 3em;
+    }
+  }
+
+  h2:extend(.t-title) {}
+
+  & > * + * {
+    margin-top: 1.3em;
+  }
+
+  & > h1 + h2 {
+    margin-top: 0;
+  }
+
+  li {
+    list-style-type: none;
+    margin-left: 1.5em;
+
+    &::before {
+      color: @Color-pomegranate;
+      content: '\25A0 ';
+      display: inline-block;
+      float: left;
+      font-size: 1.3em;
+      line-height: 1;
+      margin: 0 0 0 -1.2em;
+      width: 1.2em;
+    }
+  }
+}
+
+.image-block-wrapper {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .10);
+}
+
+.sqs-block-image {
+  .layout-caption-below {
+    position: relative;
+  }
+
+  .image-caption-wrapper {
+    &:extend(.t-monospaced);
+    background: none;
+    bottom: 0;
+    font-size: 0.77em;
+    left: 100%;
+    overflow: visible;
+    padding: 0 0 0 20px !important;
+    position: absolute;
+    width: 160px;
+
+    strong:extend(.t-tag) {
+      font-family: @Font-sans;
+    }
+  }
+}
+
+.sqs-layout > .sqs-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.columns-1 [class*=sqs-col-] {
+  float: none !important;
+  width: auto !important;
+}
+
+[class*=sqs-col] .sqs-block {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sqs-block {
+  position: static;
+}
+
+.sqs-layout:not(.sqs-editing) > .sqs-row:first-child > [class*=sqs-col]:first-child > .sqs-block:last-child, .sqs-layout:not(.sqs-editing) .sqs-block + .sqs-row .sqs-block:not(.float):last-child {
+  padding-bottom: 0;
+}
+
+.markdown-block {
+  display: table;
+  font-size: 1rem;
+  margin: auto;
+  min-width: 330px;
+  padding: 3rem !important;
+
+  // Number style
+  h2:extend(.t-monospaced) {
+    color: @Color-pomegranate;
+    font-size: 5rem;
+    font-weight: 500;
+    margin: 0 !important;
+    text-align: center;
+  }
+
+  h2 ~ * {
+    color: @Color-black;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media only screen and (max-width: 350px) {
+    min-width: 290px;
+  }
+}
+
+.code-block pre {
+  overflow: visible;
+  white-space: normal;
+}
+
+.js-enhanced .code-block {
+  max-width: 300px;
+  padding: 3em !important;
+
+  pre {
+    opacity: 0;
+  }
+}
+
+// Empty blocks should be visible in the admin.
+.sqs-edit-mode .sqs-layout.empty {
+  outline: 2px dotted #999;
+  padding: 1em;
+
+  &::after {
+    color: #999;
+    content: 'Add Content';
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+  }
+}
+
+.sqs-block-form {
+  .title {
+    font-size: 1.5em;
+  }
+
+  span.required {
+    color: @Color-pomegranate;
+  }
+
+  .field-list .field {
+    margin-bottom: 3em;
+
+    .field-element {
+      background-color: #fff;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0;
+      font-family: "Apercu Pro Mono", monospace;
+      font-size: 1em;
+      padding: .5em;
+    }
+
+    .field-element:focus {
+      border-color: @Color-pomegranate;
+    }
+
+    .caption,
+    .description {
+      font-size: .8em;
+    }
+
+    .caption .field-element,
+    .option {
+      font-size: 1rem;
+    }
+  }
+
+  .field-error {
+    background-color: #fff;
+    border-radius: 0;
+    color: @Color-pomegranate;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .field-list .form-item.error {
+    .title {
+      color: @Color-black;
+    }
+
+    &,
+    .caption,
+    .description,
+    .field-element.text {
+      color: @Color-pomegranate;
+    }
+
+    input {
+      background: #fef0ef;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  .checkbox,
+  .radio {
+    input,
+    label {
+      cursor: pointer;
+      display: inline-block;
+      font-family: "Apercu Pro Mono", monospace;
+      margin: 5px 0;
+    }
+
+    input {
+      opacity: 0;
+      position: absolute;
+    }
+
+    label::before {
+      background: #fff;
+      border: 1px solid @Color-pomegranate;
+      border-radius: 2px;
+      content: '';
+      display: inline-block;
+      height: 1em;
+      padding: 2px;
+      vertical-align: middle;
+      width: 1em;
+    }
+  }
+
+  .checkbox .is-selected::before {
+    background: transparent url(/assets/checkmark.svg) center no-repeat;
+    background-size: cover;
+  }
+
+  .radio {
+    label::before {
+      border-radius: 50%;
+    }
+
+    .is-selected::before {
+      background: @Color-pomegranate;
+      box-shadow: inset 0 0 0 4px #fff;
+    }
+  }
+
+  .form-button-wrapper {
+    line-height: 1.4;
+  }
+
+  .form-button-wrapper .button {
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding: 0;
+    text-transform: none;
+  }
+}
+
+.sqs-block-calendar {
+  h1 {
+    text-transform: none;
+
+    &:hover a,
+    &:hover span {
+      color: @Color-pomegranate !important;
+    }
+  }
+
+  li::before {
+    content: none;
+  }
+}
+
+html .sqs-block.sqs-block-editable:not(.sqs-block-editing),
+.sqs-layout.sqs-editing .sqs-block.sqs-block-focused {
+  position: relative;
+}

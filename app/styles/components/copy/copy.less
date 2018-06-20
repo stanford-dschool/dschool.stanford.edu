@@ -1,0 +1,82 @@
+.Copy {
+  line-height: 2.2;
+
+  blockquote {
+    margin: 2em 0 2em 3em;
+    padding-left: 2em;
+    position: relative;
+  }
+
+  blockquote::after {
+    background: @Color-black;
+    bottom: .6em;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: .6em;
+    width: 4px;
+  }
+
+  blockquote::before {
+    color: fade(@Color-black, 5%);
+    content: '“”';
+    display: inline-block;
+    font-family: serif;
+    font-size: 437px;
+    font-style: italic;
+    font-weight: 900;
+    left: 0;
+    line-height: 100%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+  }
+
+  ul {
+    clear: left;
+    list-style-type: none;
+    padding-bottom: 1em;
+  }
+
+  ol {
+    clear: left;
+  }
+
+  li {
+    line-height: 1.6;
+    margin-bottom: .8em;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  li::before {
+    background: @Color-pomegranate;
+    content: '';
+    display: inline-block;
+    height: 8px;
+    left: 0;
+    position: absolute;
+    top: 6px;
+    width: 8px;
+
+    @media @Media-small {
+      top: 10px;
+    }
+  }
+}
+
+.Copy--dropCapped {
+  .row:first-child .col:first-child {
+    .html-block:first-child,
+    .image-block:first-child + .html-block {
+      .sqs-block-content > p:nth-of-type(1):first-letter {
+        float: left;
+        font-size: 6.5em;
+        font-weight: 700;
+        line-height: 1;
+        padding-right: .16em;
+      }
+    }
+  }
+}

@@ -1,0 +1,483 @@
+.Header {
+  color: @Color-white;
+  font-size: 1rem;
+  padding-top: 101px;
+  position: relative;
+
+  @media @Media-medium  {
+    padding-top: 130px;
+  }
+}
+
+.Header-bg {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.Header-top {
+  align-items: center;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0);
+  display: flex;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: .5s background, .5s box-shadow;
+  width: 100%;
+  z-index: 10;
+
+  &.locked {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, .1);
+    height: 100px;
+  }
+
+  &.color-reversed {
+    a {
+      color: @Color-black !important;
+    }
+  }
+}
+
+.Header-scrollIndicator {
+  bottom: -33px;
+  color: @Color-gorse;
+  display: block;
+  height: 60px;
+  left: 40px;
+  position: absolute;
+}
+
+.Header-meta {
+  &:extend(.t-monospaced);
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0 7px 15px;
+  text-transform: uppercase;
+
+  @media @Media-medium {
+    margin-left: percentage(2 / 16);
+    margin-top: 50px;
+  }
+}
+
+.Header-metaPart:not(:first-child) {
+  border-left: 1px solid currentColor;
+  margin-left: 16px;
+  padding-left: 17px;
+}
+
+.Header-description {
+  &:extend(.t-mainHeading);
+
+  margin: 0 0 1em;
+
+  @media @Media-medium  {
+    max-width: 75%;
+  }
+}
+
+.Header-figure {
+  background: transparent no-repeat left bottom;
+  background-size: cover;
+  box-shadow:  0 15px 35px rgba(0, 0, 0, .16);
+  height: 234px;
+  left: 50%;
+  margin-bottom: -50px;
+  position: relative;
+
+  @media @Media-medium {
+    padding-left: 312.5%;
+  }
+}
+.Header--team-member {
+  .Header-carouselImage {
+    height: 100%;
+    max-height: 30vw;
+    max-width: 30vw;
+    width: 100%;
+
+    &::after {
+      background: none;
+    }
+  }
+}
+
+.Header-photo {
+  margin: 0 (-@Grid-gutter) -80px;
+  padding-bottom: 448px;
+  position: relative;
+}
+
+// header-plain.block content
+.Header-block {
+  background: @Color-white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .18);
+  margin: 0 -1rem;
+  padding: 4rem 1rem;
+}
+
+.Header-blockTag {
+  color: @Color-pomegranate !important;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.Header-blockTitle {
+  color: @Color-black !important;
+  margin: 0;
+}
+
+.Header-carousel {
+  margin: 0 (-@Grid-gutter) -80px;
+  padding-bottom: percentage(562 / 978);
+  position: relative;
+}
+
+.Header-carouselImage {
+  background: #333 no-repeat center;
+  background-size: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .18);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.Header-carouselImage::after {
+  background: @Color-black;
+  content: '';
+  height: 100%;
+  left: 0;
+  opacity: .3;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.Header-carouselImages {
+  background: #333 no-repeat center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .18);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .Header-carouselImage {
+    bottom: 0;
+    box-shadow: none;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.5s;
+  }
+
+  .Header-carouselImage.is-active {
+    opacity: 1;
+  }
+}
+
+.Header-carouselBreadcrumbs {
+  bottom: 30px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.Header-carouselBreadcrumb {
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  height: 10px;
+  margin: 0 5px;
+  width: 10px;
+
+  &.is-active {
+    background: white;
+  }
+}
+
+.Header-carouselTag {
+  color: @Color-white !important;
+  margin: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.Header-carouselTitle {
+  color: @Color-gorse;
+  margin: 0;
+}
+
+.Header-photoInfo {
+  margin-top: 25%;
+}
+
+.Header-photoTitle {
+  margin: 0;
+}
+
+.Header-carouselDescription {
+  padding-top: 10px;
+}
+
+.Header-carouselInfo {
+  left: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Header-photoInfo {
+  position: absolute;
+}
+
+@media @Media-small {
+  .Header-figure {
+    box-shadow: none;
+    float: right;
+    margin-bottom: -220px;
+    // Pull the image from the right side of the container,
+    // to the right side of the viewport.
+    margin-right: e('calc(~"50% - 50vw")');
+    min-height: 460px;
+    padding: 0 0 32%;
+    position: static;
+    width: e('calc(~"20% + 50vw")');
+  }
+
+  .Header-scrollIndicator {
+    display: block;
+  }
+
+  .Header-block {
+    margin: 40px 0 -50px;
+    padding: 4.15% 8.3%;
+  }
+
+  .Header-carousel, .Header-photo {
+    margin: 40px (-@Grid-gutter / 2) -90px;
+  }
+
+  .Header-carouselInfo {
+    left: 8.3%;
+    right: 8.3%;
+  }
+
+  .Header-carouselBreadcrumb {
+    display: inline-block;
+  }
+}
+
+@media @Media-medium {
+  .Header-figure {
+    width: e('calc(~"30% + 50vw")');
+  }
+
+  .Header-carouselDescription {
+    max-width: 350px;
+  }
+
+  .Header-block {
+    margin-bottom: -8.3%;
+  }
+}
+
+.Theme({
+  .Header-bg {
+    background-color: @Theme-main;
+  }
+});
+
+.Theme--resources, .Theme--articles {
+  .Header-scrollIndicator {
+    color: @Color-black;
+  }
+}
+
+.Theme--directory {
+  .Header-bg {
+    background: transparent;
+    height: 1000px;
+  }
+
+  .Header-description {
+    color: @Color-pomegranate;
+  }
+}
+
+.Header--home, .Header--404 {
+  .Header-figure {
+    display: none;
+  }
+
+  .Header-bg {
+    background: transparent;
+    height: 1000px;
+  }
+
+  .Header-description {
+    &:extend(.t-largeHeading);
+
+    color: @Color-pomegranate;
+    margin: 30vh 0;
+    max-width: none;
+    text-align: center;
+
+    @media @Media-small {
+      margin: 25vh 0;
+    }
+
+    @media @Media-large {
+      margin: 20vh 0;
+    }
+  }
+}
+
+.Header--home {
+  .Header-scrollIndicator {
+    color: @Color-pomegranate;
+    left: auto;
+    margin: 0 auto;
+    position: relative;
+    width: 1px;
+
+    span {
+      color: @Color-black;
+      font-size: 12px;
+      font-weight: 700;
+      left: -150px;
+      position: absolute;
+      right: -150px;
+      text-align: center;
+      text-transform: uppercase;
+      top: -30px;
+    }
+  }
+
+  .DirectionalArrow {
+    height: 40px;
+  }
+}
+
+.Header--404 {
+  .Header-scrollIndicator {
+    display: none;
+  }
+}
+
+.Header--article {
+  margin-bottom: 2em;
+
+  .Header-bg::after {
+    background: fade(@Color-black, 40%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .Header-description {
+    color: @Color-gorse;
+  }
+
+  @media @Media-medium {
+    margin-bottom: 6em;
+
+    .Header-description {
+      //font-size: 5.1rem;
+      margin-left: percentage(2 / 16);
+    }
+  }
+
+  .Header-description p::after {
+    content: '\00a0—';
+  }
+
+  .Header-scrollIndicator {
+    color: @Color-redOrange;
+  }
+}
+
+.Header--abbreviated {
+  @media @Media-small {
+    &.Header {
+      margin-bottom: 0;
+    }
+  }
+
+  .Header-figure {
+    display: none;
+  }
+}
+
+// After spacing + QuickNav
+.Header {
+  margin-bottom: 5.5rem;
+}
+
+.Header + .Main .QuickNav {
+  margin-bottom: 8rem;
+}
+
+.Header--page + .Main .QuickNav {
+  display: none;
+}
+
+.Header--plain {
+  margin-bottom: 0;
+
+  .Header-scrollIndicator {
+    color: @Color-black;
+  }
+}
+
+@media @Media-small {
+  .Header {
+    margin-bottom: 20rem;
+  }
+
+  .Header-top {
+    padding: 40px 20px 0;
+  }
+
+  .Header + .Main .QuickNav {
+    margin-bottom: 23rem;
+  }
+
+  .Header--team-member {
+    margin-bottom: 6rem;
+  }
+
+  .Header--article {
+    margin-bottom: 5.5rem;
+  }
+
+  .Header--page {
+    margin-bottom: 10rem;
+  }
+
+  .Header--plain {
+    margin-bottom: 8rem;
+  }
+
+  .Header--page + .Main .QuickNav {
+    display: block;
+    margin-bottom: 13rem;
+  }
+}

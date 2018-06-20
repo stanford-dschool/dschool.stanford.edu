@@ -1,0 +1,70 @@
+@frame-break-offset: 30%;
+@frame-break-size: 10%;
+@frame-break-speed: 30%;
+
+.Frame-break(@side: top) {
+  .Frame-sidePart {
+    background: currentColor;
+    position: absolute;
+    // transition-delay: 200ms;
+  }
+  & when (@side = top), (@side = bottom) {
+    .Frame-sidePart {
+      bottom: 0;
+      top: 0;
+      transition: left 800ms ease-out, right 800ms ease-out;
+    }
+  }
+
+  & when (@side = left), (@side = right) {
+    .Frame-sidePart {
+      left: 0;
+      right: 0;
+      transition: top 800ms ease-out, bottom 800ms ease-out;
+    }
+  }
+
+  & when (@side = top) {
+    .Frame-sidePart-first {
+      left: 0;
+      right: e('calc(~"100% - @{frame-break-offset} - var(--frame-break, 0) * @{frame-break-speed}")');
+    }
+    .Frame-sidePart-last {
+      left: e('calc(~"var(--frame-break, 0) * @{frame-break-speed} + @{frame-break-offset} + @{frame-break-size}")');
+      right: 0;
+    }
+  }
+
+  & when (@side = right) {
+    .Frame-sidePart-first {
+      bottom: e('calc(~"100% - @{frame-break-offset} - var(--frame-break, 0) * @{frame-break-speed}")');
+      top: 0;
+    }
+    .Frame-sidePart-last {
+      bottom: 0;
+      top: e('calc(~"var(--frame-break, 0) * @{frame-break-speed} + @{frame-break-offset} + @{frame-break-size}")');
+    }
+  }
+
+  & when (@side = bottom) {
+    .Frame-sidePart-first {
+      left: 0;
+      right: e('calc(~"var(--frame-break, 0) * @{frame-break-speed} + @{frame-break-offset} + @{frame-break-size}")');
+    }
+    .Frame-sidePart-last {
+      left: e('calc(~"100% - @{frame-break-offset} - var(--frame-break, 0) * @{frame-break-speed}")');
+      right: 0;
+    }
+  }
+
+  & when (@side = left) {
+    .Frame-sidePart-first {
+      bottom: e('calc(~"var(--frame-break, 0) * @{frame-break-speed} + @{frame-break-offset} + @{frame-break-size}")');
+      top: 0;
+    }
+    .Frame-sidePart-last {
+      bottom: 0;
+      top: e('calc(~"100% - @{frame-break-offset} - var(--frame-break, 0) * @{frame-break-speed}")');
+    }
+  }
+}

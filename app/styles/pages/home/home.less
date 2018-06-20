@@ -1,0 +1,270 @@
+.PageHome {
+  > section {
+    padding-bottom: 4rem;
+    position: relative;
+
+    @media @Media-medium {
+      margin-bottom: 12rem;
+    }
+  }
+
+  .p-Title:extend(.t-borderedHeading) {
+    margin-bottom: 2.1rem;
+  }
+
+  .Theme({
+    .p-Title {
+      color: @Theme-main;
+    }
+  });
+
+  .t-tag {
+    color: inherit;
+  }
+
+  .CtaButton {
+    margin: 3rem 0;
+  }
+
+  .BackgroundText {
+    font-size: 20rem;
+    top: 5rem;
+  }
+
+  .Pattern {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .p-Lead {
+    margin-top: 0;
+    .parallaxY(40px);
+  }
+
+  .p-IntroSocial {
+    margin-top: 4rem;
+    .parallaxY(-50px);
+  }
+
+  .p-IntroBlock {
+    @media @Media-small {
+      padding-bottom: 0;
+    }
+
+    .p-Vertical {
+      bottom: -240%;
+      left: 6rem;
+    }
+
+    .markdown-block {
+      margin-top: 3rem;
+      padding: 4rem !important;
+    }
+  }
+
+  .p-ClassesBlock {
+    .BackgroundText {
+      top: -5rem;
+    }
+
+    .p-Image {
+      margin-bottom: 2rem;
+      order: -1;
+
+      @media @Media-small {
+        order: 0;
+      }
+    }
+
+    .p-Pattern {
+      bottom: -50px;
+      left: -50px;
+    }
+
+    .p-Title {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .CopySocialCard {
+    max-width: 450px;
+  }
+
+  .p-ClassesInfo {
+    width: 80%;
+  }
+
+  .p-ProgramBlock {
+    position: relative;
+
+    @media @Media-large {
+      .BackgroundText {
+        top: -8rem;
+      }
+    }
+
+    .p-title {
+      border-color: @Color-yellowOrange;
+    }
+
+    .t-title {
+      color: @Color-yellowOrange;
+    }
+
+    .p-Quote blockquote:extend(.Blockquote) {
+      font-size: 2.7rem;
+      line-height: 1.4;
+    }
+
+    @media @Media-large {
+      .p-Quote {
+        bottom: 115%;
+        max-width: 40%;
+        position: absolute;
+        right: 0;
+      }
+
+      .p-Quote::after {
+        background: transparent url(/assets/arrow_large_left.svg) no-repeat center bottom;
+        content: '';
+        display: block;
+        height: 370px;
+        position: absolute;
+        right: 20%;
+        top: 110%;
+        width: 100px;
+      }
+    }
+
+    .Pattern {
+      bottom: 7rem;
+      left: -45px;
+      margin-bottom: -200px;
+    }
+
+    .p-Vertical {
+      left: -40px;
+      top: 330px;
+    }
+  }
+
+  .p-StoryBlock {
+    min-height: 650px;
+
+    .Grid:nth-child(2) {
+      padding-top: 200px;
+    }
+
+    .p-title {
+      border-color: @Color-aquamarineBlue;
+    }
+
+    .t-title {
+      color: @Color-aquamarineBlue;
+    }
+
+    .p-Vertical {
+      left: 6rem;
+      top: 25rem;
+    }
+
+    .Story-slider {
+      display: none;
+
+      @media @Media-small {
+        display: block;
+      }
+    }
+
+    .p-Social.empty ~ * {
+      display: none;
+    }
+
+    .CopySocialCard.has-parallax {
+      .parallaxY(25%);
+    }
+  }
+
+  .p-MethodBlock {
+    color: @Color-white;
+
+    @media @Media-large {
+      padding-bottom: 10rem;
+    }
+  }
+
+  .p-Collapse {
+    font-size: 0;
+  }
+
+  .p-News .p-Title {
+    margin-bottom: 0;
+  }
+
+  .p-MethodImage {
+    margin-bottom: -56.88888931274414% / 4;
+    margin-top: 56.88888931274414% / 2;
+    position: relative;
+    transform: translateY(-50%);
+  }
+
+  .p-ResourceColumns {
+    padding-right: 1rem;
+
+    .Columns-item:last-child {
+      text-align: center;
+    }
+
+    .CtaButton {
+      white-space: nowrap;
+    }
+
+    .BorderedBox {
+      @media @Media-small {
+        min-height: 164px;
+      }
+
+      &::after {
+        background: @Color-black;
+      }
+
+      &-title {
+        border-top: none;
+        color: @Color-white;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .p-ContactHeyHowdy {
+    font-size: 1rem;
+
+    @media @Media-small {
+      display: inline-block;
+      width: 47.5%;
+
+      &:nth-child(2) { margin-left: 5%; }
+    }
+
+    @media @Media-large {
+      margin-left: 3rem;
+      max-width: 300px;
+      min-width: 200px;
+
+      &:nth-child(1) { .parallaxY(-20%); }
+      &:nth-child(2) { .parallaxY(-60%); }
+    }
+  }
+
+  .p-ContactBlock {
+    align-items: flex-end;
+    padding: 6rem 0;
+    position: relative;
+
+    .p-Pattern {
+      bottom: -2rem;
+      left: 2rem;
+    }
+  }
+}

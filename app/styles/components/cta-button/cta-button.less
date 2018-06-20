@@ -1,0 +1,97 @@
+.CtaButton {
+  @t: 250ms;
+  @thickness: 2px;
+
+  appearance: none;
+  background: none;
+  border: @thickness solid transparent;
+  border-bottom: none;
+  border-right: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 16px 68px 16px 32px;
+  position: relative;
+  text-decoration: none;
+  transition: background @t, color @t;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    transition: transform @t @t;
+  }
+
+  &::before {
+    bottom: 0;
+    height: @thickness;
+    left: 0;
+    transform: scaleX(.77);
+    transform-origin: 0 (@thickness / 2);
+    width: 100%;
+  }
+
+  &::after {
+    height: 100%;
+    right: 0;
+    top: 0;
+    transform: scaleY(.6);
+    transform-origin: (@thickness / 2) 0;
+    width: @thickness;
+  }
+
+  &:hover {
+    transition-delay: @t;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    transform: none;
+    transition-delay: 0s;
+  }
+}
+
+.CtaButton--gorse {
+  .CtaButtonColors_(@Color-gorse, @Color-gorse, @Color-black);
+}
+
+.CtaButton--borderless {
+  appearance: none;
+  background: none;
+  border: 0;
+  color: @Color-pomegranate;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 32px 18px 0;
+  position: relative;
+  text-decoration: underline;
+}
+
+.CtaButton--borderless .CtaButton-arrow,
+.CtaButton .CtaButton-arrow {
+  position: absolute;
+  right: 10px;
+  top: 16px;
+}
+
+.CtaButton .CtaButton-arrow {
+  right: 18px;
+}
+
+.Theme({
+  .CtaButton {
+    .CtaButtonColors_(@Theme-main, @Theme-main, @Color-white);
+  }
+});
+
+.CtaButton.CtaButton--white {
+  .CtaButtonColors_(@Color-white, @Color-white, @Color-emerald);
+}
+
+.CtaButton.is-disabled {
+  opacity: .3;
+  pointer-events: none;
+}

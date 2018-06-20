@@ -1,0 +1,254 @@
+body:not(.sqs-edit-mode) .code-block {
+  opacity: 0;
+}
+
+.HeyHowdy {
+  .CtaButton--borderless {
+    display: none;
+  }
+}
+
+.HeyHowdy:extend(.u-largeShadow) {
+  background: @Color-white center no-repeat;
+  background-origin: content-box;
+  background-size: contain;
+  margin-bottom: 2em;
+  max-width: 400px;
+  padding: 25px;
+  position: relative;
+
+  @media @Media-small {
+    padding: 36px;
+  }
+}
+
+.CopySocialCard.has-parallax {
+  .parallaxY(25%);
+
+  @media @Media-small {
+    .parallaxY(75%);
+  }
+}
+
+.HeyHowdy-link {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.HeyHowdy-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  a {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.HeyHowdy-title {
+  color: @Color-redOrange;
+  font-size: 13px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.HeyHowdy-info {
+  background-color: @Color-gray--alt;
+  bottom: 100%;
+  color: @Color-white;
+  max-width: 400px;
+  opacity: 0;
+  padding: 32px;
+  position: absolute;
+  transform: translate(-77%, -20px);
+  transition: all 0.5s 0.3s;
+  visibility: hidden;
+  width: 30vw;
+  z-index: 1;
+
+  &::after {
+    border: 5px solid;
+    border-color: @Color-gray--alt transparent transparent transparent;
+    content: "";
+    left: 82%;
+    margin-left: -5px;
+    position: absolute;
+    top: 100%;
+  }
+}
+
+.HeyHowdy-infoIcon {
+  background-color: @Color-white;
+  background-image: url(/assets/info-gray.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 29px;
+  margin: 13px 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: background 0.3s;
+  width: 32px;
+
+  &:hover {
+    background-image: url(/assets/info-black.svg);
+
+    .HeyHowdy-info {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.HeyHowdy-article {
+  font-size: 1.58rem;
+  line-height: 1.4;
+}
+
+.HeyHowdy-article,
+.HeyHowdy-status {
+  margin: auto 0;
+  padding: .4em 0;
+}
+
+.HeyHowdy-status:extend(.t-monospaced) {
+  font-size: .8em;
+  line-height: 1.77;
+  min-height: 150px;
+  padding-top: 1rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:not(.username) {
+    color: @Color-redOrange;
+  }
+}
+
+.HeyHowdy-date,
+.HeyHowdy-author {
+  font-size: 13px;
+}
+
+.HeyHowdy-authorLink {
+  text-decoration: none;
+}
+
+.HeyHowdy-meta {
+  color: @Color-grayMed;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+.HeyHowdy-favicon {
+  display: none;
+}
+
+.HeyHowdyGrid {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+.HeyHowdy--cta:extend(.t-monospaced) {
+  .HeyHowdy-title {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+
+  .HeyHowdy-content {
+    padding: 1em 0 2em;
+  }
+}
+
+.HeyHowdy--website,
+.HeyHowdy--instagram,
+.HeyHowdy--facebook,
+.HeyHowdy--twitter,
+.HeyHowdy--medium {
+  display: flex;
+
+  @media @Media-large {
+    padding: 2.5em 6em;
+    width: 460px;
+
+    .HeyHowdy-content {
+      margin: 0 -2em;
+    }
+  }
+}
+
+.HeyHowdy--facebook {
+  background-image: url('/assets/social-facebook.png');
+}
+
+.HeyHowdy--medium {
+  background-image: url('/assets/social-medium.png');
+}
+
+.HeyHowdy--twitter {
+  background-image: url('/assets/social-twitter.png');
+}
+
+.HeyHowdy--instagram {
+  padding: 0;
+
+  .HeyHowdy-image {
+    background: linear-gradient(to top, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, .4) 100%);
+    background-size: cover;
+    bottom: auto;
+    left: 0;
+    padding-top: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .HeyHowdy-content {
+    margin: 0;
+    min-height: 100%;
+    padding: 80% 1.2em 0;
+    position: relative;
+    white-space: normal;
+    width: 100%;
+
+    .HeyHowdy-text {
+      background: #fff;
+      padding: 36px;
+
+      .HeyHowdy-status {
+        background: #fff url('/assets/social-instagram.png') no-repeat 50%;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.HeyHowdy--website .HeyHowdy-article:extend(.t-monospaced) {
+  font-size: .8em;
+  font-weight: 300;
+  line-height: 1.77;
+}
+
+.HeyHowdy--dark {
+  background-color: @Color-black;
+  color: @Color-white;
+
+  .HeyHowdy-title {
+    color: @Color-white;
+  }
+}

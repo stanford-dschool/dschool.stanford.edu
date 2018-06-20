@@ -1,0 +1,80 @@
+{##BEGIN}
+    This "programs list" view should be redirected to the
+    relevant page in the "/programs" collection. In case
+    the redirect fails, the basic content is shown here.
+{END##}
+
+<script>
+  var path = location.pathname.replace(/^\/|\/$/g, '');
+  if (path !== 'programs') {
+    var newurl = '/programs/' + path;
+    Y.io(newurl, {
+      on: {
+        success: function(x, o) {
+          window.location = newurl
+        }
+      }
+    })
+  }
+</script>
+
+<div class="PageProgramCollection">
+  <div class="p-Programs">
+  {.repeated section items}
+    {.if customContent.excerptShow}
+    <section class="p-Program p-Section Grid">
+      <div class="p-Program-border Grid-cell u-md-offset1 u-md-size15"></div>
+
+      <div class="p-Program-info Grid-cell u-md-offset1 u-md-size8">
+        <h2 class="t-title">{title}</h2>
+
+        {# Overview}
+        {.if customContent.excerptCopy.source}
+        <div class="sqs-block-content p-Program-copy">
+          {customContent.excerptCopy.source}
+        </div>
+        {.end}
+
+        {# You should apply if}
+        {.if customContent.excerptFaqs.source}
+        <div class="p-Faqs">
+          <div class="p-Accordion" data-accordion="strong">
+            {customContent.excerptFaqs.source}
+          </div>
+        </div>
+        {.end}
+
+        {# Basics list}
+        {.if customContent.excerptBasics.source}
+        {.var @heading customContent.excerptBasicsHeading}
+        <div class="p-Program-basics">
+          {.if @heading}<p><strong>{@heading}</strong></p>{.end}
+          <div class="sqs-block-content p-Program-list">
+            {customContent.excerptBasics.source}
+          </div>
+        </div>
+        {.end}
+      </div>
+
+      {.if customContent.excerptApplyCopy.source}{.var @hasApply fullUrl}{.end}
+      {.if customContent.excerptApplyCards.source}{.var @hasApply fullUrl}{.end}
+      {.if @hasApply}
+      <div class="p-Apply Grid-cell u-md-offset1 u-md-size6">
+        <section class="p-Apply">
+          <div class="p-FakeTag"></div>
+          <div class="p-Cards" data-cta-cards>
+            {customContent.excerptApplyCards.source}
+          </div>
+          {.if customContent.excerptApplyCopy.source}
+          <div class="sqs-block-content p-Apply-copy">
+            {customContent.excerptApplyCopy.source}
+          </div>
+          {.end}
+        </section>
+      </div>
+      {.end}
+    </section>
+    {.end}
+  {.end}
+  </div>
+</div>

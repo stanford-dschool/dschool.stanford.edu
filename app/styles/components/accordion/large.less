@@ -1,0 +1,99 @@
+.Accordion--large {
+  @padding-top: 2rem;
+
+  margin-top: -@padding-top;
+  padding-bottom: 3rem;
+
+  .AccordionPlus {
+    top: 3.5em;
+
+    @media @Media-small {
+      top: 6em;
+      width: 24px;
+
+      &::before, &::after {
+        height: 4px;
+      }
+    }
+  }
+
+  .Accordion-panel {
+    counter-increment: counter;
+    margin-bottom: 0;
+    position: relative;
+
+    @media @Media-small {
+      &::before {
+        color: #aaa;
+        content: counter(counter, decimal-leading-zero);
+        display: inline;
+        font-size: 28px;
+        font-weight: 700;
+        left: 0;
+        min-width: 100px;
+        position: absolute;
+        top: 3.8rem;
+        transition: color 200ms;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .Accordion-tab {
+    border-bottom: none;
+    border-top: 1px solid #eee;
+    line-height: 1.2;
+    padding: @padding-top 6rem @padding-top 0;
+    text-transform: initial;
+    transition: color 200ms;
+  }
+
+  .Accordion-panel[aria-expanded='true'] {
+    &::before {
+      background: none;
+      color: @Color-pomegranate;
+      opacity: 1;
+    }
+
+    .Accordion-tab {
+      color: @Color-pomegranate;
+    }
+
+    .Accordion-title {
+      background-size: 2px 200%;
+    }
+  }
+
+  .Accordion-panel:first-child .Accordion-tab {
+    border-top: none;
+  }
+
+  .Accordion-wrapper {
+    @media @Media-small {
+      margin-left: 100px;
+    }
+  }
+
+  .Accordion-title:extend(.t-hoverLine all) {
+    background-color: transparent;
+    display: inline;
+    font-size: 2.3rem;
+    font-weight: 700;
+    padding: 0;
+    transform: translateZ(0);
+
+    @media @Media-medium {
+      font-size: 3.33rem;
+    }
+  }
+
+  .Accordion-content {
+    font-size: 1rem;
+    padding-bottom: 3rem;
+    padding-top: 0;
+
+    @media @Media-small {
+      padding: 0 6em 3em;
+    }
+  }
+}

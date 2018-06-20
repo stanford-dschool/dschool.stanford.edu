@@ -1,0 +1,159 @@
+.PageFieldNotes {
+  .VerticalBar--left {
+    left: 20px;
+    top: 500px;
+  }
+
+  .Pattern--horizontal {
+    left: 5vw;
+    position: absolute;
+    top: -170px;
+    z-index: -1;
+    @media @Media-medium {
+      top: -250px;
+      z-index: 2;
+    }
+  }
+
+  .p-Pattern.Pattern--horizontal {
+    left: auto;
+    right: 50px;
+    top: 550px;
+    z-index: -1;
+  }
+
+  .VerticalBar--right {
+    margin-top: 0;
+    right: 20px;
+    @media @Media-medium {
+      margin-top: 50px;
+      right: 230px;
+    }
+  }
+
+  .p-CollectionTitle {
+    font-size: 4rem;
+    line-height: 1;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: translateY(e('calc(~"var(--parallax, 0) * 60px")'));
+    z-index: 1;
+
+    @media @Media-large {
+      font-size: 6rem;
+    }
+
+    @media @Media-small {
+      margin: -130px 0 0;
+    }
+  }
+
+  @media @Media-large {
+    .p-FieldNote:nth-of-type(even) {
+      .p-PhotoCell {
+        margin-left: percentage(5 / 16);
+      }
+
+      .p-DescCell {
+        margin-left: percentage(1 / 16);
+      }
+    }
+  }
+
+  .p-FieldNote {
+    margin: 2em 0;
+    min-height: 600px;
+
+    @media @Media-medium {
+      margin: 200px 0;
+    }
+
+    .p-CollectionTitle a {
+      text-decoration: none;
+    }
+
+    .p-CollectionDescription {
+      font-weight: 400;
+      line-height: 28px;
+    }
+
+    .p-CollectionButton {
+      margin-top: 3rem;
+    }
+  }
+
+  .p-FooterLinks {
+    margin: 180px 0;
+  }
+}
+
+.p-More {
+  margin-top: 120px;
+  min-height: 1300px;
+}
+
+.p-InvertTheme.t-title {
+  color: @Color-gorse;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 90px;
+  @media @Media-small {
+    font-size: 140px;
+    line-height: 123px;
+  }
+}
+
+.p-InvertTheme .Container {
+  padding-top: 130px;
+  position: relative;
+
+  .Pattern--horizontal {
+    left: 50vw;
+    position: absolute;
+    top: 100px;
+  }
+
+  .Pattern--vertical {
+    left: -75px;
+    position: absolute;
+    top: 200px;
+  }
+
+  .VerticalBar--left {
+    color: #FFF;
+    left: 0;
+    position: absolute;
+    top: 650px;
+    width: 600px;
+
+    .VerticalBar-separator {
+      border-color: #FFF;
+    }
+
+    .VerticalBar-color {
+      color: @Color-gorse;
+    }
+  }
+}
+
+.Theme({
+  .p-FieldNotes .t-title {
+    color: @Theme-main;
+  }
+
+  .p-InvertTheme .CtaButton {
+    border-color: @Color-gorse;
+    color: @Color-gorse;
+
+    &::before,
+    &::after {
+      background: @Color-gorse;
+    }
+
+    &:hover {
+      background: @Color-gorse;
+      color: @Color-aquamarineBlue;
+    }
+  }
+});

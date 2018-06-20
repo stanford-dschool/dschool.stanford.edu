@@ -1,0 +1,52 @@
+.VerticalBar {
+  align-items: center;
+  color: #363636;
+  display: none;
+  font-size: 14px;
+  font-weight: 900;
+  position: absolute;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 450px;
+
+  &-separator {
+    background: currentColor;
+    height: 1px;
+    margin: 0 20px;
+    width: 100%;
+  }
+
+  &--left {
+    left: 0;
+    transform: rotate(-90deg);
+    transform-origin: 0 50%;
+  }
+
+  &--right {
+    right: 0;
+    transform: rotate(90deg);
+    transform-origin: 100% 50%;
+  }
+}
+
+@media @Media-medium {
+  .VerticalBar {
+    display: flex;
+  }
+
+  .VerticalBar.VerticalBar--left {
+    display: none;
+  }
+}
+
+@media @Media-large {
+  .VerticalBar.VerticalBar--left {
+    display: flex;
+  }
+}
+
+.Theme({
+  .VerticalBar-color {
+    color: @Theme-main;
+  }
+});

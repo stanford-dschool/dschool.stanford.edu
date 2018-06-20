@@ -1,0 +1,147 @@
+.BorderedBox {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+
+.BorderedBox-content {
+  display: block;
+  height: 100%;
+  padding: 2em;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  z-index: 3;
+}
+
+.BorderedBox::after,
+.BorderedBox::before {
+  border: 1px solid @Color-black;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.BorderedBox::after {
+  content: " ";
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background 600ms;
+  z-index: 1;
+}
+
+.BorderedBox::before {
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0 0;
+  content: " ";
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  transition: background-size 500ms -200ms;
+
+  @media @Media-small {
+    left: 10px;
+    top: 10px;
+  }
+}
+
+.BorderedBox-img {
+  background: transparent center no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  mix-blend-mode: hard-light;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 600ms, visibility 0s 600ms;
+  visibility: hidden;
+  width: 100%;
+  z-index: 2;
+}
+
+.BorderedBox:focus .BorderedBox-img,
+.BorderedBox:hover .BorderedBox-img {
+  opacity: .15;
+  transition-delay: 0ms;
+  visibility: visible;
+}
+
+.BorderedBox:active .BorderedBox-img {
+  opacity: .3;
+}
+
+.BorderedBox:focus::before,
+.BorderedBox:hover::before {
+  background-size: 100% 100%;
+}
+
+.BorderedBox-tag {
+  &:extend(.t-tag);
+}
+
+.BorderedBox-title {
+  border-top: 1px solid currentColor;
+  margin-bottom: 1.6em;
+  padding-top: .6em;
+  transition: color 500ms;
+}
+
+.BorderedBox-link {
+  display: block;
+  font-size: 13px;
+  margin-bottom: -.4em;
+  text-decoration: underline;
+}
+
+.BorderedBox_(@bg: @Color-white, @text: @Color-black, @outlines: @Color-black) {
+  .BorderedBox-content {
+    color: @text;
+  }
+
+  .BorderedBox-tag,
+  .BorderedBox-link {
+    color: @outlines;
+  }
+
+  .BorderedBox::after {
+    background: @bg;
+  }
+
+  .BorderedBox::after,
+  .BorderedBox::before {
+    border-color: @outlines;
+  }
+
+  .BorderedBox::before {
+    background-image: linear-gradient(0deg, @outlines 0%, @outlines 100%);
+  }
+}
+
+.Theme--field-notes {
+  .BorderedBox_(@Color-aquamarineBlue, @Color-white, @Color-gorse);
+}
+
+.Theme--about {
+  .BorderedBox_(@Color-white, @Color-black, @Color-redOrange);
+}
+
+.Theme--resources {
+  .BorderedBox_(#f6f6f6, @Color-black, @Color-emerald);
+
+  .PageResourceOverview {
+    .BorderedBox_(@Color-emerald, @Color-white, @Color-white);
+  }
+
+  .BorderedBox-title:extend(.t-monospaced) {}
+
+  .BorderedBox:hover .BorderedBox-title {
+    color: @Color-white;
+  }
+
+  .BorderedBox:hover::after {
+    background: darken(@Color-emerald, 30%);
+  }
+}

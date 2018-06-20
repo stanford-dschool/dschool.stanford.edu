@@ -1,0 +1,75 @@
+.PageClassDetails {
+  .p-Info {
+    padding-right: 30px;
+  }
+
+  .p-Aside {
+    margin-top: 0;
+
+    @media @Media-small {
+      margin-top: 3rem;
+      padding-left: 30px;
+      padding-top: 40px;
+    }
+  }
+
+  .p-Section {
+    margin-bottom: 80px;
+
+    @media @Media-small {
+      margin-bottom: 140px;
+    }
+  }
+
+  .p-Overview,
+  .p-Details {
+    line-height: 35px;
+  }
+
+  .p-Teammember {
+    padding-bottom: 20px;
+  }
+
+  .p-Teammember-title {
+    font-weight: 700;
+  }
+
+  .p-Howdy {
+    margin-top: 1em;
+
+    @media @Media-small {
+      margin-top: 50px;
+    }
+
+    p:first-child {
+      font-weight: 100;
+      padding-bottom: 20px;
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+
+    p:not(:first-child)::before {
+      color: #f24034;
+      content: '+';
+      font-size: 30px;
+      left: -10px;
+      padding-left: 10px;
+      position: relative;
+      top: 3px;
+    }
+
+    p {
+      margin: 0 0 0 2em;
+      text-indent: -2em;
+
+      @media @Media-small {
+        margin: 0 0 0 1.5em;
+        text-indent: -1.5em;
+      }
+    }
+
+    .CtaButton {
+      margin-top: 2.8em;
+    }
+  }
+}

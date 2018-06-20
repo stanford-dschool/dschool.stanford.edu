@@ -1,0 +1,21 @@
+<div class="PageFaqs Theme--about">
+  <section class="Grid">
+    <div class="Grid-cell u-md-size10 u-md-offset2">
+      <div class="p-Pattern Pattern Pattern--vertical"></div>
+      <div class="p-Title">FAQs</div>
+    </div>
+  </section>
+
+  <div class="p-Vertical VerticalBar VerticalBar--left">
+    <div class="VerticalBar-intro">Frequently asked <span class="VerticalBar-color">questions</span></div>
+    <div class="VerticalBar-separator"></div>
+  </div>
+
+  <div class="Grid">
+    <div class="Grid-cell u-md-size12 u-md-offset2">
+      <div class="p-Questions" data-accordion="h1" data-large>
+        <squarespace:block-field id="faqs" columns="12" />
+      </div>
+    </div>
+  </div>
+</div>

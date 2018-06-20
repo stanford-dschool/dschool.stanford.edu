@@ -1,0 +1,29 @@
+/**
+ * Grid component
+ * Uses a flexbox based system for fully customizable responsive grid structure.
+ */
+.Grid {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -@Grid-gutter;
+  margin-right: -@Grid-gutter;
+}
+
+/**
+ * Cells are full width by default and use modifier classes to
+ * set the column count.
+ */
+.Grid-cell {
+  box-sizing: border-box;
+  display: inline-block;
+  flex: 0 0 100%;
+  margin-top: 3rem;
+  padding-left: @Grid-gutter;
+  padding-right: @Grid-gutter;
+  position: relative;
+
+  @media @Media-medium {
+    margin-top: 0;
+  }
+}
