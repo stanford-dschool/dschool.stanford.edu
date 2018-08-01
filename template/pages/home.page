@@ -1,0 +1,168 @@
+<div class="PageHome">
+  <section class="p-IntroBlock">
+    <div class="Grid">
+      <div class="Grid-cell u-md-size2 u-md-offset2">
+        <div class="Pattern Pattern--vertical"></div>
+
+        <div class="p-Vertical VerticalBar VerticalBar--left">
+          <div class="VerticalBar-intro">Explore <span class="VerticalBar-color">Classes</span></div>
+          <div class="VerticalBar-separator"></div>
+        </div>
+      </div>
+
+      <div class="p-Lead Grid-cell u-md-size7 u-md-offset1 t-lead" data-parallax>
+        <squarespace:block-field id="intro-{collection.id}" columns="1" />
+      </div>
+    </div>
+
+    <div class="Grid" data-parallax>
+      <squarespace:block-field
+        class="p-IntroSocial Grid-cell u-md-size6 u-md-offset10"
+        id="social-intro-{collection.id}"
+        columns="1"
+      />
+    </div>
+  </section>
+
+  <section class="p-ClassesBlock Theme--classes" data-background-text-src="h1">
+    <div class="Grid">
+      <div class="Grid-cell u-md-size6 u-md-offset1">
+        <span class="t-tag">01 Stanford Students</span>
+        <h1 class="p-Title">Classes&nbsp;for Stanford students</h1>
+        <squarespace:block-field class="p-ClassesInfo" id="class-intro-{collection.id}" columns="1" />
+        <a href="/classes" class="CtaButton">View classes <span class="CtaButton-arrow DirectionalArrow DirectionalArrow--right"></span></a>
+      </div>
+      <div class="p-Image Grid-cell u-md-size7 u-md-offset1" data-copy-image="tall">
+        <squarespace:block-field id="class-image-{collection.id}" columns="1" />
+        <div class="p-Pattern Pattern Pattern--horizontal"></div>
+      </div>
+      <squarespace:block-field class="Grid-cell u-md-size16 p-Social" id="class-social-{collection.id}" columns="1" />
+    </div>
+  </section>
+
+  <section class="p-ProgramBlock Theme--programs" data-background-text-src="h1">
+    <div class="Grid">
+      <squarespace:block-field class="Grid-cell u-md-size16 p-Quote" id="program-quote-{collection.id}" columns="1" />
+      <div class="Grid-cell u-size16 u-md-size6 u-md-offset1" data-copy-image="tall">
+        <div class="p-Vertical VerticalBar VerticalBar--left">
+          <div class="VerticalBar-intro">
+            <span>Experience the</span>
+            <span class="VerticalBar-color">d.school</span>
+          </div>
+          <div class="VerticalBar-separator"></div>
+        </div>
+        <squarespace:block-field id="programs-image-{collection.id}" columns="1" />
+        <div class="Pattern Pattern--horizontal"></div>
+      </div>
+      <div class="Grid-cell u-size16 u-md-size6 u-md-offset1">
+        <span class="t-tag">02 Programs</span>
+        <h1 class="p-Title">Make impact with design</h1>
+        <squarespace:block-field id="programs-primary-{collection.id}" columns="1" />
+        <a href="/programs" class="CtaButton">See programs <span class="CtaButton-arrow DirectionalArrow DirectionalArrow--right"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-StoryBlock Theme--field-notes">
+    <div class="Grid">
+      <squarespace:block-field class="p-Social Grid-cell u-md-size5 u-md-offset10 u-back" id="story-social-{collection.id}" columns="1" />
+      <div class="Grid-cell u-md-size3 u-md-offset3">
+        <div class="Pattern Pattern--vertical"></div>
+        <div class="p-Vertical VerticalBar VerticalBar--left">
+          <div class="VerticalBar-intro">What <span class="VerticalBar-color">We Do</span></div>
+          <div class="VerticalBar-separator"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Grid">
+      <div class="Grid-cell u-md-size6 u-md-offset1">
+        <span class="t-tag">03 Field Notes</span>
+        <h1 class="p-Title">Real-world projects</h1>
+        <squarespace:block-field id="story-intro-{collection.id}" columns="1" />
+        <a href="/field-notes" class="CtaButton">See more <span class="CtaButton-arrow DirectionalArrow DirectionalArrow--right"></span></a>
+      </div>
+      <div class="Grid-cell u-size8 u-offset4 u-md-size6 u-md-offset2">
+        <div class="Story-slider">
+          <button class="Story-sliderPrev"><i class="DirectionalArrow DirectionalArrow--left p-DirectionalArrow"></i></button>
+          <button class="Story-sliderNext"><i class="DirectionalArrow DirectionalArrow--right p-DirectionalArrow"></i></button>
+          <div class="Story-sliderBlock">
+
+          </div>
+        </div>
+        <squarespace:block-field class="Grid-cell u-md-size12" id="story-outro-{collection.id}" columns="1" />
+      </div>
+    </div>
+  </section>
+
+  <section class="Theme--news p-News" data-background-text-src="h2">
+    <div class="Grid">
+      <div class="Grid-cell u-md-size6 u-md-offset1">
+        <h1 class="t-tag">04 Happening Now</h1>
+        <h2 class="p-Title">Upcoming Events</h2>
+      </div>
+      <div class="Grid-cell u-size16">
+        <div class="LinkCardDragger " data-link-card-dragger>
+          <div class="LinkCardDragger-wrap">
+            <ul class="LinkCardDragger-tray" data-link-cards>
+              <squarespace:query tag="Audience: Public" collection="events" limit="50" template="event-card" />
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-MethodBlock u-expanded u-bg u-bgBlack Theme--resources">
+    <div class="Container">
+      <div class="p-MethodImage" data-copy-image="wide">
+        <squarespace:block-field id="method-image-{collection.id}" columns="12" />
+      </div>
+
+      <div class="Grid">
+        <div class="Grid-cell u-md-size7 u-md-offset1" data-background-text-src=".B">
+          <h1 class="t-tag">05
+            <span class="B">Resources</span>
+          </h1>
+          <h2 class="p-Title" >Tools for Creative Action</h2>
+          <squarespace:block-field id="method-text-{collection.id}" columns="1" />
+        </div>
+        <div class="Grid-cell u-md-size7 u-md-offset1 u-lg-size7">
+          <div class="p-ResourceColumns Columns Columns--two">
+            <squarespace:query collection="resources" limit="3" featured="true">
+              {.repeated section items}
+              <div class="Columns-item">
+                <div class="BorderedBox">
+                  <div class="BorderedBox-img" {.main-image?}style="background-image: linear-gradient(to top, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, .4) 100%), url({assetUrl}?format=500w);"{.end}></div>
+                  <a href="{fullUrl}" class="BorderedBox-content">
+                    <h3 class="BorderedBox-tag">{.section tags}{@}{.end}</h3>
+                    <h4 class="BorderedBox-title">{title}</h4>
+                  </a>
+                </div>
+              </div>
+              {.end}
+            </squarespace:query>
+            <div class="Columns-item">
+              <a href="/resources" class="CtaButton">See more <span class="CtaButton-arrow DirectionalArrow DirectionalArrow--right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="Grid Theme--about p-ContactBlock" data-background-text-src="h1">
+    <div class="Grid-cell u-md-size5 u-md-offset1">
+      <span class="t-tag">06 Contact</span>
+      <h1 class="p-Title">Get in Touch</h1>
+      <squarespace:block-field id="contact-intro-{collection.id}" columns="1" />
+      <a href="/contact-us" class="CtaButton">Contact Us <span class="CtaButton-arrow DirectionalArrow DirectionalArrow--right"></span></a>
+    </div>
+
+    <div class="Grid-cell u-size16 u-md-size10 p-Collapse" data-parallax>
+      <squarespace:block-field class="p-ContactHeyHowdy HeyHowdy" id="contact-primary-{collection.id}" columns="1" />
+      <squarespace:block-field class="p-ContactHeyHowdy HeyHowdy" id="contact-secondary-{collection.id}" columns="1" />
+      <div class="Pattern Pattern--horizontal p-Pattern"></div>
+    </div>
+  </section>
+</div>

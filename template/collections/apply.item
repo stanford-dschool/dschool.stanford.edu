@@ -1,0 +1,22 @@
+{.section item}
+
+  <div class="PageClassApplication">
+    <div class="Grid">
+      <section class="p-Application Grid-cell u-sm-size10 u-sm-offset3">
+        <h1 class="t-title u-themeColor">{item.title}</h1>
+        <squarespace:block-field id="class-apply-intro-{item.id}" columns="1" />
+
+        <div class="Grid">
+          <div class="p-Form Grid-cell u-md-size12 u-md-offset2">
+            <div class="p-FormHeader">
+              <squarespace:block-field id="class-apply-image-{item.id}" columns="1" />
+              <span class="t-tag">* Required</span>
+            </div>
+            {body}
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+{.end}

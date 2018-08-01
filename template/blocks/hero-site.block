@@ -1,0 +1,47 @@
+  <header data-header="{collection.typeName}" class='Header Header--{.equal? collection.typeName "home"}home{.or}{.equal? collection.typeName "404"}404{.or}site{.end}{.end} {.if categoryFilter}Header--abbreviated{.end}'>
+
+    <canvas class="Header-bg" data-hero-lines></canvas>
+
+    <div class="Container u-cf">
+      <div data-header-top data-reverse class="Header-top">
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+      </div>
+
+      {.section collection}
+        {.equal? typeName "resources"}
+          <div class="Header-description" id="header-description">{title}</div>
+        {.or}
+          {.equal? typeName "home"}
+            <div class="Header-description" id="header-description">{description}</div>
+            <!--
+            <div data-slideshow>
+              <div data-slide-image="slide-hello.jpg" data-slide-title="Welcome to the d.school." data-slide-description="Sample description here description description"></div>
+              <div data-slide-image="slide-david-kelly.jpg" data-slide-title="Welcome to d.school." data-slide-description="Sample description here"></div>
+              <div data-slide-image="slide-whiteboard.jpg" data-slide-title="Slide title 1" data-slide-description="Sample description here"></div>
+              <div data-slide-image="slide-book.jpg" data-slide-title="Slide title 2" data-slide-description="Sample description here description description"></div>
+            </div>
+            -->
+          {.or}
+            {.equal? typeName "directory"}
+              <div class="Header-description" id="header-description">{title}</div>
+            {.or}
+              <div class="Header-description" id="header-description">{description}</div>
+            {.end}
+          {.end}
+        {.end}
+      {.end}
+
+      <div data-search-enhance></div>
+
+      <div class="Header-figure"
+           style="background-image: url({collection.mainImage.assetUrl}); background-position: calc({collection.mainImage.mediaFocalPoint.x} * 100%) calc({collection.mainImage.mediaFocalPoint.y} * 100%);">
+      </div>
+
+      <div class="Header-scrollIndicator">
+        {.equal? collection.typeName "home"}
+        <span>Explore the Stanford d.school</span>
+        {.end}
+        <a href="#post-hero" class="DirectionalArrow"></a>
+      </div>
+    </div>
+  </header>

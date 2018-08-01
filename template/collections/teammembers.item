@@ -1,0 +1,11 @@
+<div class="TeamMember">
+  <div class="TeamMember-image">
+    {item.assetUrl}
+  </div>
+  <div class="TeamMember-name">
+    {item.title}
+  </div>
+  <div class="TeamMember-description">
+    {item.body}
+  </div>
+</div>

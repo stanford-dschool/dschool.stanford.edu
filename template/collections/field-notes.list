@@ -1,0 +1,59 @@
+<div class="PageFieldNoteDetail">
+  <nav class="QuickNav u-sm-size2">
+    <ul class="QuickNav-list">
+      {.repeated section items}
+        {.if title}
+          <li class="QuickNav-item"><a class="QuickNav-link" href="#section-{title|slugify}">{title}</a></li>
+        {.end}
+      {.end}
+        <squarespace:query collection="team-members" tag="{collection.urlId}">
+        {.var @myTitle items|count}
+        {.if @myTitle}
+          <li class="QuickNav-item"><a class="QuickNav-link" href="#section-team">Team</a></li>
+        {.end}
+        </squarespace:query>
+    </ul>
+  </nav>
+
+  <div class="p-Vertical VerticalBar VerticalBar--left">
+    <div class="VerticalBar-intro">Field Notes</div>
+    <div class="VerticalBar-separator"></div>
+    <div class="VerticalBar-intro"><span class="VerticalBar-color">{collection.title}</span></div>
+  </div>
+
+  <section class="Grid">
+    <div class="Grid-cell u-lg-offset2 u-lg-size12 u-md-size-16">
+      <div class="Columns p-Columns">
+        {.repeated section items}
+          {.equal? customContent.customType "singleColumn"}
+            {.var @isSingleColumn customContent.customType}
+          {.end}
+          {.var @isExpanded customContent.expanded}
+          <div class="Columns-item p-Column{.if @isSingleColumn} p-Column--single{.end}{.if @isExpanded} p-Column--expanded{.end}" id="{.if title}section-{title|slugify}{.end}" data-parallax>
+            {body}
+          </div>
+        {.end}
+
+        <squarespace:query collection="team-members" tag="{collection.urlId}">
+          {.var @hasItems items|count}
+          {.if @hasItems}
+            <div class="Columns-item p-Column p-Column--single">
+              <div class="p-teamMembers-title u-themeColor">Team Members</div>
+              <div class="p-teamMembers-content">
+                {@|apply team-with-picture.block}
+              </div>
+            </div>
+          {.end}
+        </squarespace:query>
+
+        <div class="Columns-item p-Column p-Column--single" data-accordion="h1" data-large>
+          <squarespace:block-field id="accordion-{collection.id}" columns="12" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="up-next" class="p-UpNext u-expanded" data-copy-up-next>
+    <squarespace:block-field id="up-next-{collection.id}" columns="1" />
+  </section>
+</div>

@@ -1,0 +1,101 @@
+<nav class="Navigation" data-navigation data-reverse>
+  <a class="Navigation-title u-hideText" href="/">
+    <h1 data-content-field="site-title">{website.siteTitle}</h1>
+  </a>
+  <a class="Navigation-skip" href="#header-description">Skip navigation</a>
+  <button aria-controls="main-navigation" class="Navigation-toggle" data-navigation-toggle>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+         width="23.5" height="15.5" viewBox="0 -2.5 47 31"
+         aria-labelledby="hamburger-title">
+      <title id="hamburger-title">Toggle Navigation</title>
+      <g class="Navigation-burger" stroke-width="5px">
+        <line x1="0" y1="0" x2="47" y2="0"></line>
+        <line x1="0" y1="13" x2="47" y2="13"></line>
+        <line x1="0" y1="26" x2="47" y2="26"></line>
+      </g>
+    </svg>
+  </button>
+  <ul id="main-navigation" class="Navigation-list" data-navigation-list>
+    {.repeated section items}
+      <li {.folder?}data-dropdown-toggle{.end} class="Navigation-item {.folder?}Navigation-dropdown{.end} {.section active}is-active{.end}">
+        <!-- dropdown folder -->
+        {.folder?}
+          <a
+          data-navigation-link
+          data-dropdown-link
+          aria-expanded="false"
+          class="Navigation-link"
+          href="{collection.fullUrl}"
+          >
+            {collection.navigationTitle}<div class="Navigation-dropdownIcon"></div>
+          </a>
+          <ul aria-hidden="true" data-navigation-dropdown class="Navigation-dropdownList">
+            {.repeated section items}
+              {.collection?}
+                <li data-navigaion-dropdown-item class="Navigation-dropdownItem t-navDropdown {.section active} active-link{.end}">
+                  <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+                </li>
+              {.end}
+              {.section externalLink}
+                <li data-navigaion-dropdown-item class="Navigation-dropdownItem t-navDropdown {.section active} active-link{.end}">
+                  <a href="{url}"{.section newWindow} target="_blank"{.end}>
+                    {title}
+                  </a>
+                </li>
+              {.end}
+            {.end}
+          </ul>
+        {.or}
+          <!-- collection link -->
+          {.section collection}
+            <a
+            data-navigation-link
+            class="Navigation-link"
+            href="{fullUrl}"
+            >
+              {navigationTitle}
+            </a>
+          {.end}
+
+          <!-- external link -->
+          {.section externalLink}
+            <a
+              data-navigation-link
+              class="Navigation-link"
+              href="{url}"{.section newWindow}
+              target="_blank"{.end}
+              >
+                {title}
+            </a>
+          {.end}
+        {.end}
+      </li>
+    {.end}
+
+    <!-- accessibility button -->
+    <li data-dropdown-toggle class="Navigation-item Navigation-dropdown Navigation-dropdown--last">
+      <a
+        data-navigation-link
+        data-dropdown-link
+        aria-expanded="false"
+        class="Navigation-link Navigation-icon Navigation-sun"
+        href="javascript:;"
+      >
+        <span class="Navigation-icon-title">Accessibility</span>
+        <div class="Navigation-dropdownIcon"></div>
+      </a>
+      <ul data-accessibility-button aria-hidden="true" data-navigation-dropdown class="Navigation-dropdownList">
+        <li data-accessibility-toggle="false" data-navigaion-dropdown-item class="Navigation-dropdownItem t-navDropdown {.section active} active-link{.end}">Standard Visuals</li>
+        <li data-accessibility-toggle="true" data-navigaion-dropdown-item class="Navigation-dropdownItem t-navDropdown {.section active} active-link{.end}">Simplified Visuals</li>
+      </ul>
+    </li>
+
+    <!-- Search -->
+    <li class="Navigation-item">
+      <a class="Navigation-link Navigation-icon Navigation-search" href="/search">
+        <span class="Navigation-icon-title">Search</span>
+      </a>
+    </li>
+
+  </ul>
+</nav>

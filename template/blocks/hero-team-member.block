@@ -1,0 +1,31 @@
+<header data-header data-member class="Header Header--team-member">
+  <canvas class="Header-bg" data-hero-lines></canvas>
+
+  <div class="Container u-cf">
+    <div data-header-top data-reverse class="Header-top">
+      <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+    </div>
+
+    <div class="Grid">
+      <div class="Grid-cell u-size8 u-offset1">
+        <div class="Header-photoInfo">
+          <p class="t-tag Header-carouselTag">{collection.title}</p>
+          <h2 class="t-mainHeading t-capitalize Header-photoTitle" data-member-name></h2>
+          <div class="Header-carouselDescription" data-member-title></div>
+          {.end}
+        </div>
+      </div>
+      <div class="Grid-cell u-size6 u-offset10 u-md-offset10">
+        <div class="Header-photo {.if collection.typeName}Header-{collection.typeName}{.end}">
+          <div data-member-photo
+            class="Header-carouselImage u-hide"
+            style="background-position: calc({collection.mainImage.mediaFocalPoint.x} * 100%) calc({collection.mainImage.mediaFocalPoint.y} * 100%); background-repeat: no-repeat;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Header-scrollIndicator">
+      <a href="#post-hero" class="DirectionalArrow"></a>
+    </div>
+  </div>
+</header>

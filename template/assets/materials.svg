@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / ic-materials</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Resources-resource-Phase2-v01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1057.000000, -858.000000)">
+        <g id="Sidebar" transform="translate(1056.000000, 848.000000)">
+            <g id="Icons-/-ic-materials" transform="translate(0.000000, 9.000000)">
+                <g transform="translate(2.000000, 2.000000)">
+                    <g id="Layer_4">
+                        <rect id="Rectangle-path" x="0" y="0" width="26" height="26"></rect>
+                    </g>
+                    <g id="Layer_2">
+                        <rect id="Rectangle-path" stroke="#FF4337" fill="#FFFFFF" fill-rule="nonzero" stroke-linejoin="round" transform="translate(13.005840, 13.003064) rotate(-45.000000) translate(-13.005840, -13.003064) " x="-1.26815956" y="9.50606413" width="28.548" height="6.994"></rect>
+                        <circle id="Oval" fill="#FF4337" fill-rule="nonzero" transform="translate(21.196366, 4.827181) rotate(-45.000000) translate(-21.196366, -4.827181) " cx="21.1963662" cy="4.82718078" r="1"></circle>
+                        <path d="M21.9526667,8.98733333 L20.6613333,7.68733333" id="Shape" stroke="#FF4337" stroke-linejoin="round"></path>
+                        <path d="M20.6613333,10.2873333 L19.3613333,8.98733333" id="Shape" stroke="#FF4337" stroke-linejoin="round"></path>
+                        <path d="M19.3613333,11.5873333 L16.8826667,9.11733333" id="Shape" stroke="#FF4337" stroke-linejoin="round"></path>
+                        <path d="M10.27,20.6786667 L8.97,19.3786667" id="Shape" stroke="#FF4337" stroke-linejoin="round"></path>
+                        <path d="M8.97,21.97 L7.67,20.6786667" id="Shape" stroke="#FF4337" stroke-linejoin="round"></path>
+                        <path d="M11.57,19.3786667 L9.1,16.9086667" id="Shape" stroke="#FF4337" stroke-linejoin="round"></path>
+                        <path d="M7.67,23.2786667 L5.19133333,20.8" id="Shape" stroke="#FF4337" stroke-linejoin="round"></path>
+                    </g>
+                    <g id="Layer_3">
+                        <polygon id="Shape" stroke="#FF4337" fill="#FFFFFF" fill-rule="nonzero" stroke-linejoin="round" points="23.9546667 18.8586667 25.558 25.5666667 18.8673333 23.946 2.132 7.21933333 7.228 2.14066667"></polygon>
+                        <polygon id="Shape" fill="#FF4337" fill-rule="nonzero" points="24.856 23.0186667 25.558 25.5666667 23.01 24.856"></polygon>
+                        <path d="M2.14066667,7.21933333 L0.979333333,6.06666667 C0.265488865,5.34699248 0.265488865,4.18634085 0.979333333,3.46666667 L3.46666667,0.970666667 C4.18634085,0.256822198 5.34699248,0.256822198 6.06666667,0.970666667 L7.228,2.132" id="Shape" stroke="#FF4337" fill="#FFFFFF" fill-rule="nonzero" stroke-linejoin="round"></path>
+                        <rect id="Rectangle-path" stroke="#FF4337" fill="#FFFFFF" fill-rule="nonzero" stroke-linejoin="round" transform="translate(5.242924, 5.246397) rotate(-45.000000) translate(-5.242924, -5.246397) " x="1.64625724" y="4.4447308" width="7.19333333" height="1.60333333"></rect>
+                        <path d="M5.824,5.81533333 L21.6666667,21.6666667" id="Shape" stroke="#FF4337" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M23.5993333,18.5206667 C22.3105021,19.1511838 21.6330008,20.5926759 21.97,21.9873333 C20.5753426,21.6503341 19.1338504,22.3278354 18.5033333,23.6166667" id="Shape" stroke="#FF4337" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

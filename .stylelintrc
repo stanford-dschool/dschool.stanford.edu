@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "color-no-invalid-hex": true,
+    "declaration-block-properties-order": "alphabetical",
+    "font-weight-notation": "numeric",
+    "indentation": [2, {
+      "ignore": "inside-parens"
+    }],
+    "length-zero-no-unit": true,
+    "max-empty-lines": 1,
+    "max-nesting-depth": 3,
+    "no-extra-semicolons": true,
+    "no-missing-end-of-source-newline": true,
+    "selector-pseudo-element-colon-notation": "double"
+  }
+}
