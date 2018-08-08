@@ -1,4 +1,4 @@
-  <header data-header="{collection.typeName}" class='Header Header--{.equal? collection.typeName "home"}home{.or}{.equal? collection.typeName "404"}404{.or}site{.end}{.end} {.if categoryFilter}Header--abbreviated{.end}'>
+  <header {.notEqual? collection.typeName "home"}data-swiftype-index=false{.end} data-header="{collection.typeName}" class='Header Header--{.equal? collection.typeName "home"}home{.or}{.equal? collection.typeName "404"}404{.or}site{.end}{.end} {.if categoryFilter}Header--abbreviated{.end}'>
 
     <canvas class="Header-bg" data-hero-lines></canvas>
 
@@ -13,6 +13,14 @@
         {.or}
           {.equal? typeName "home"}
             <div class="Header-description" id="header-description">{description}</div>
+            <div data-header-filter class="Header-filter is-hidden">
+              <squarespace:block-field
+                class="Header-description--filter"
+                id="search-audience-{collection.id}"
+                columns="1"
+              />
+              <div class="Header-filter-dropdown" data-header-filter-dropdown></div>
+            </div>
             <!--
             <div data-slideshow>
               <div data-slide-image="slide-hello.jpg" data-slide-title="Welcome to the d.school." data-slide-description="Sample description here description description"></div>

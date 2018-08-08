@@ -14,13 +14,17 @@ class Navigation extends DOMComponent {
       list: this.root.querySelector('[data-navigation-list]'),
       links: this.root.querySelectorAll('[data-navigation-link]'),
       dropdownToggle: this.root.querySelectorAll('[data-dropdown-toggle]'),
+      searchToggle: this.root.querySelector('[data-navigation-search]'),
+      searchOverlay: document.querySelector('[data-search]'),
     }
 
     this.onResize = this.onResize.bind(this)
     this.onToggle = this.onToggle.bind(this)
+    this.expandSearch = this.expandSearch.bind(this)
     this.onTransitionEnd = this.onTransitionEnd.bind(this)
 
     this.elements.toggle.addEventListener('click', this.onToggle)
+    this.elements.searchToggle.addEventListener('click', this.expandSearch)
     this.elements.list.addEventListener('transitionend', this.onTransitionEnd)
 
     this.elements.links.forEach(link => {
@@ -138,6 +142,17 @@ class Navigation extends DOMComponent {
     } else {
       listItem.style.height = null
     }
+  }
+
+  /**
+  * expand search overlay
+  */
+  expandSearch(event) {
+    event.preventDefault()
+    setTimeout(() => {
+      this.elements.searchOverlay.classList.add(Navigation.isExpanded)
+      document.documentElement.classList.add('u-noScroll', 'modal-is-open')
+    }, 0)
   }
 
   /**

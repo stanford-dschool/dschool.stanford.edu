@@ -92,7 +92,7 @@ class Dropdown extends React.Component {
       weight *= 10
     }
 
-    weight += ((100 - element.dataset.index) / 100);
+    weight += ((100 - element.dataset.index) / 100)
 
     return weight
   }

@@ -1,5 +1,5 @@
 <div class="PageStudents">
-  <nav class="QuickNav">
+  <nav class="QuickNav" data-swiftype-index="false">
     <ul class="QuickNav-list">
       <li class="QuickNav-item"><a class="QuickNav-link" href="#overview">Overview</a></li>
       <li class="QuickNav-item"><a class="QuickNav-link" href="#core-classes">Core Classes</a></li>

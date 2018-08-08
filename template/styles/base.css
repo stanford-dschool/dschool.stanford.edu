@@ -16,6 +16,10 @@
   transition-duration: 250ms;
   transition-timing-function: ease;
 }
+.t-searchInput {
+  font-size: 1rem;
+  font-weight: 500;
+}
 .t-largeHeading,
 .Header--home .Header-description,
 .Header--404 .Header-description {
@@ -42,6 +46,10 @@
     margin-bottom: 1em;
     margin-top: .75em;
   }
+}
+.t-filterName {
+  font-family: "Apercu Pro";
+  font-size: 1em;
 }
 .t-mainHeading,
 .Header-description {
@@ -145,6 +153,9 @@
   font-size: 0.77em;
   opacity: 0.33;
 }
+.t-filter {
+  font-size: 0.77em;
+}
 .t-monospaced,
 .sqs-block-image .image-caption-wrapper,
 .markdown-block h2,
@@ -174,6 +185,15 @@
 }
 .t-capitalize {
   text-transform: capitalize;
+}
+.t-searchResultTitle {
+  font-size: 1.3rem;
+  font-weight: 600px;
+}
+.t-searchItemTitle {
+  font-size: 1.5rem;
+  line-height: 1.29;
+  text-decoration: none;
 }
 .sqs-block-content {
   line-height: 1.87;
@@ -1285,6 +1305,78 @@ body {
     margin-bottom: 13rem;
   }
 }
+.Header-filter {
+  -ms-flex-align: center;
+      align-items: center;
+  color: #323232;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin: 0 auto 50px;
+  opacity: 1;
+  position: relative;
+  transition: opacity 300ms linear 100ms, visible 300ms linear 100ms;
+  visibility: visible;
+}
+@media (min-width: 950px) {
+  .Header-filter {
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+}
+body:not(.sqs-edit-mode) .Header-filter.is-hidden,
+body:not(.sqs-edit-mode) .Header-filter .is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+body:not(.sqs-edit-mode) .Header-filter .is-hidden {
+  position: absolute;
+}
+.Header-dropdown {
+  margin-top: 1rem;
+}
+@media (min-width: 950px) {
+  .Header-dropdown {
+    margin-top: 0;
+    padding-left: 3px;
+  }
+}
+.Header-dropdown,
+.Header-description--filter,
+.Header-filter-dropdown {
+  display: inline-block;
+}
+.Header-button--filter {
+  border-color: #f24034 !important;
+  color: #f24034 !important;
+  margin-left: 20px;
+  padding-left: 20px !important;
+}
+.Header-button--filter .CtaButton-arrow {
+  color: #f24034 !important;
+  height: 18px;
+  right: auto;
+  transition: color 250ms linear;
+}
+.Header-button--filter:hover {
+  background-color: #f24034 !important;
+  color: #fff !important;
+}
+.Header-button--filter:hover .CtaButton-arrow {
+  color: #fff !important;
+  transition: color 250ms linear 250ms;
+}
+.Header-filter-dropdown .FilterOption {
+  display: inline;
+  width: auto;
+}
+.Header-filter-dropdown .FilterOption-select {
+  padding-right: 40px;
+  width: auto;
+}
 .Icon {
   background: transparent center no-repeat;
   background-size: contain;
@@ -1747,6 +1839,7 @@ body {
     display: flex;
     -ms-flex-direction: row;
         flex-direction: row;
+    float: right;
     height: 100%;
     -ms-flex-pack: distribute;
         justify-content: space-around;
@@ -2702,6 +2795,57 @@ body {
   .accessibility .PageStudents .p-Footer .p-CollectionDetails {
     position: absolute;
   }
+}
+.Color--base {
+  color: #3ECC77;
+}
+.Color--home {
+  color: #f66533;
+}
+.Color--directory {
+  color: #f24034;
+}
+.Color--404 {
+  color: #f24034;
+}
+.Color--about {
+  color: #f24034;
+}
+.Color--articles {
+  color: #3E6682;
+}
+.Color--contact-us {
+  color: #f24034;
+}
+.Color--events {
+  color: #3E6682;
+}
+.Color--programs {
+  color: #ffab40;
+}
+.Color--program-collections {
+  color: #ffab40;
+}
+.Color--resources {
+  color: #3ECC77;
+}
+.Color--news {
+  color: #3E6682;
+}
+.Color--field-notes {
+  color: #6cbee3;
+}
+.Color--classes {
+  color: #f66533;
+}
+.Color--class-application {
+  color: #f66533;
+}
+.Color--apply {
+  color: #f66533;
+}
+.Color--teammembers {
+  color: #f66533;
 }
 .u-hide {
   display: none;

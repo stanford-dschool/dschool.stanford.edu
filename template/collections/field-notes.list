@@ -1,5 +1,5 @@
 <div class="PageFieldNoteDetail">
-  <nav class="QuickNav u-sm-size2">
+  <nav class="QuickNav u-sm-size2" data-swiftype-index="false">
     <ul class="QuickNav-list">
       {.repeated section items}
         {.if title}

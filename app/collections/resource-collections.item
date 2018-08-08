@@ -1,5 +1,5 @@
 <div class="PageResourceCollection">
-  <nav class="QuickNav">
+  <nav class="QuickNav" data-swiftype-index="false">
     <ul class="QuickNav-list">
       <li class="QuickNav-item"><a class="QuickNav-link" href="#featured">Featured</a></li>
       <li class="QuickNav-item"><a class="QuickNav-link" href="#all-resources">All Resources</a></li>

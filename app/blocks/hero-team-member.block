@@ -1,4 +1,4 @@
-<header data-header data-member class="Header Header--team-member">
+<header data-swiftype-index=false data-header data-member class="Header Header--team-member">
   <canvas class="Header-bg" data-hero-lines></canvas>
 
   <div class="Container u-cf">

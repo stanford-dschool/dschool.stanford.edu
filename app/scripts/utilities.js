@@ -212,3 +212,24 @@ export function getQueryStringValue(key) {
   const params = (new URL(window.location)).searchParams
   return params.get(key)
 }
+
+export function simpleDebounce(func, wait) {
+  let timeout = null
+  return () => {
+    clearTimeout(timeout)
+    timeout = setTimeout(func, wait)
+  }
+}
+
+export function truncateText(string, maxLength) {
+  if (string.length > maxLength) {
+    return `${string.substr(0, maxLength)}...`
+  }
+  return string
+}
+
+export function extractContent(htmlString) {
+  const span = document.createElement('span')
+  span.innerHTML = htmlString
+  return span.textContent || span.innerText
+}

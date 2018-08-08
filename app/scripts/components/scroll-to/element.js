@@ -1,7 +1,6 @@
 import React from 'react'
 import scroll from './index'
 
-
 const ScrollTo = ({ section, children, ...props }) => (
   <a
     {...props}

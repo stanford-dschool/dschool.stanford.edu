@@ -20,7 +20,7 @@
   </div>
 {.or}
 <div class="PageNews">
-  <nav class="QuickNav">
+  <nav class="QuickNav" data-swiftype-index="false">
     <ul class="QuickNav-list">
       <li class="QuickNav-item"><a class="QuickNav-link" href="#upcoming-events">Upcoming Events</a></li>
       <li class="QuickNav-item"><a class="QuickNav-link" href="#general-news">General News</a></li>

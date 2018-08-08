@@ -1,5 +1,5 @@
 <div class="PageContactUs Theme--about">
-  <nav class="QuickNav">
+  <nav class="QuickNav" data-swiftype-index="false">
     <ul class="QuickNav-list">
       <li class="QuickNav-item"><a class="QuickNav-link" href="#tours">Tours</a></li>
       <li class="QuickNav-item"><a class="QuickNav-link" href="#directions">Directions</a></li>

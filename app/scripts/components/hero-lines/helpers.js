@@ -26,14 +26,6 @@ export function interpolate(a, b, strength) {
   return a * (1 - strength) + b * strength
 }
 
-export function simpleDebounce(func, wait) {
-  let timeout = null
-  return () => {
-    clearTimeout(timeout)
-    timeout = setTimeout(func, wait)
-  }
-}
-
 export function set(victor, x, y) {
   victor.x = x || 0
   victor.y = y || 0

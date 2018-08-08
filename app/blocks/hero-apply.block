@@ -1,4 +1,4 @@
-  <header data-header={collection.typeName} class='Header Header--{.equal? collection.typeName "home"}home{.or}{.equal? collection.typeName "404"}404{.or}site{.end}{.end} {.if categoryFilter}Header--abbreviated{.end}'>
+  <header data-swiftype-index=false data-header={collection.typeName} class='Header Header--{.equal? collection.typeName "home"}home{.or}{.equal? collection.typeName "404"}404{.or}site{.end}{.end} {.if categoryFilter}Header--abbreviated{.end}'>
     <div class="Header-bg" style="background-image: url({item.assetUrl}); background-position: calc({item.mediaFocalPoint.x} * 100%) calc({item.mediaFocalPoint.y} * 100%);"></div>
 
     <div class="Container u-cf">

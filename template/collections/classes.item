@@ -1,6 +1,6 @@
 <div class="PageClassDetails">
   <nav class="QuickNav">
-    <ul class="QuickNav-list">
+    <ul class="QuickNav-list" data-swiftype-index="false">
       <li class="QuickNav-item"><a class="QuickNav-link" href="#overview">Overview</a></li>
       {.if item.excerpt}
         <li class="QuickNav-item"><a class="QuickNav-link" href="#details">Details</a></li>

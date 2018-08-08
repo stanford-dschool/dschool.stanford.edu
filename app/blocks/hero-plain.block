@@ -1,4 +1,4 @@
-  <header data-header class="Header Header--page Header--plain">
+  <header data-swiftype-index=false data-header class="Header Header--page Header--plain">
     <canvas class="Header-bg" data-hero-lines></canvas>
 
     <div class="Container u-cf">
