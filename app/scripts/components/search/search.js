@@ -107,13 +107,15 @@ class Search extends React.Component {
         page: {
           title: {
             size: 45,
-            fallback: true,
+            fallback: true
           },
           body: {
-            size: 100,
+            size: 120,
+            fallback: true
           },
           sections: {
             size: 45,
+            fallback: true
           },
         },
       },
