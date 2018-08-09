@@ -1,1 +1,0 @@
-Theme--{.if collection}{.if collection.folder}{collection.urlId}{.or}{.if items}{collection.typeName}{.or}{collection.urlId} Theme--{collection.typeName}{.end}{.end}{.or}{.if collection.homepage}home{.or}classes{.end}{.end}

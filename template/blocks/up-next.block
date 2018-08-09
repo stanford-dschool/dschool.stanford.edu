@@ -1,9 +1,0 @@
-{.section pagination}
-  {.section nextItem}
-    {@|apply up-next-content.block}
-  {.or}
-    {.section prevItem}
-      {@|apply up-next-content.block}
-    {.end}
-  {.end}
-{.end}
