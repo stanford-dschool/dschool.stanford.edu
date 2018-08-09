@@ -17,7 +17,7 @@ class SearchList extends React.Component {
     const title = result.title
     const header = result.content_type ? result.content_type.split('-').join(' ') : result.sections[0]
 
-    if (description.length > 120) {
+    if (description && description.length > 120) {
       description = description.slice(0, 120) + '...'
     }
 
