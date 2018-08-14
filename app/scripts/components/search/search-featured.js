@@ -20,6 +20,7 @@ class SearchFeatured extends React.Component {
       return (
         <div className="Search-result--main u-size10 u-md-size7">
           <div className="Search-result--main-title">
+            <span className={classNames(this.props.query.trim().length < 1 && 'u-hide', 't-tag')}>showing results for: "{this.props.query}"</span>
             {
               titleHTML ?
                 (<a
@@ -89,7 +90,7 @@ class SearchFeatured extends React.Component {
       <div className="Search-featured-grid u-md-offset1 u-md-size8">
         {
           this.props.recordCount > 0 ?
-          (<p className="Search-count p-Class-type t-tag"><span className={classNames(this.props.query.trim().length < 1 && 'u-hide')}>showing results for: "{this.props.query}"</span><span className="Search-count--detail">{this.props.recordCount} results</span></p>)
+          (<p className="Search-count p-Class-type t-tag"><span className="Search-count--detail">{this.props.recordCount} results</span></p>)
           : null
         }
         <ul className="HeyHowdyGrid">
