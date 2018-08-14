@@ -147,8 +147,14 @@
   margin-bottom: 5vw;
 
   .HeyHowdy {
+    max-width: none;
     padding: 0;
     transition: background 300ms, color 300ms;
+
+    @media @Media-small {
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
 
     .t-tag, .u-link {
       transition: color 300ms;
@@ -172,7 +178,11 @@
 }
 
 .Search-featured-card {
-  width: 45%;
+  width: 100%;
+
+  @media @Media-small  {
+    width: e('calc(~"50% - 1rem")');
+  }
 }
 
 .Search-featured-title {
@@ -213,7 +223,6 @@
 }
 
 .Search-result--main-title {
-  height: 112px;
   margin-top: -25px;
   position: relative;
 }
@@ -228,7 +237,7 @@
   -webkit-line-clamp: 2;
   margin-bottom: -20px;
   overflow: hidden;
-  position: absolute;
+  position: relative;
   text-overflow: ellipsis;
   z-index: 3;
 }
@@ -249,7 +258,6 @@
 }
 
 .Search-count {
-  margin-bottom: 26px;
   position: relative;
   text-align: left;
 
@@ -258,7 +266,8 @@
     margin-left: 0;
   }
 
-  @media @Media-medium {
+  @media @Media-small {
+    margin-bottom: 26px;
     text-align: right;
     top: -25px;
 
@@ -341,13 +350,9 @@
 
 .Search-filters {
   display: table;
-  padding: 25px;
+  padding: 36px;
   text-transform: capitalize;
   width: 100%;
-
-  @media @Media-medium {
-    padding: 36px;
-  }
 }
 
 .Search-option-label {

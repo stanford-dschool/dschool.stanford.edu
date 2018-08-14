@@ -18,7 +18,7 @@ class SearchFeatured extends React.Component {
       const titleHTML = card.title || card.highlight.sections
       const title = card.title
       return (
-        <div className="Search-result--main u-size10 u-md-size7">
+        <div className="Search-result--main u-size15 u-sm-size7">
           <div className="Search-result--main-title">
             <span className={classNames(this.props.query.trim().length < 1 && 'u-hide', 't-tag')}>showing results for: "{this.props.query}"</span>
             {
@@ -41,7 +41,7 @@ class SearchFeatured extends React.Component {
             }
           </div>
 
-          <div className="Search-description--main u-md-offset2 u-offset4 u-md-size5 u-size12">
+          <div className="Search-description--main u-sm-offset2 u-offset3 u-md-size5 u-size12">
             { bodyHTML ?
               (<div className="HeyHowdy">
                 <a target="_blank" rel="noopener noreferrer" href={card.url} className="Search-featured-link">
