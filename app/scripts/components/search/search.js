@@ -219,11 +219,11 @@ class Search extends React.Component {
     if (recordCount === 0) {
       if (hasSearchValue) {
         return (
-          <div className="Grid-cell u-offset1 u-md-size8 u-size14 p-CollectionTitle t-title u-themeColor">Your search query did not match any documents.</div>
+          <div className="Container Search-result--none"><div className="p-CollectionTitle t-title Search-list-title">Your search query did not match any documents.</div></div>
         )
       } else if (hasSelectedFilters) {
         return (
-          <div className="Grid-cell u-offset1 u-md-size8 u-size14 p-CollectionTitle t-title u-themeColor">Your prefiltered search did not match any documents.</div>
+          <div className="Container Search-result--none"><div className="p-CollectionTitle t-title Search-list-title">Your prefiltered search did not match any documents.</div></div>
         )
       }
     }
@@ -236,6 +236,10 @@ class Search extends React.Component {
 
     return (
       <SearchResult expand={expandResult}>
+        <div className="Container">
+          <span className={classNames(query.trim().length < 1 && 'u-hide', 't-tag', 'Search-count--results-for')}>showing results for: "{query}"</span>
+          <span className="Search-count--detail t-tag ">{recordCount} results</span>
+        </div>
         { this.renderErrorMessage() }
         { mainCard && recordCount > 0 ?
           <SearchFeatured recordCount={recordCount} query={query} mainCard={mainCard} gridCards={gridCards} />
@@ -267,7 +271,7 @@ class Search extends React.Component {
             <a onClick={this.closeOverlay} className="Search-close" href="" />
           </div>
 
-          <div onClick={() => this.refs.searchInput.focus()} className={classNames('Search-bar', 'u-offset5', 'u-size6', 'u-sm-offset3', 'u-sm-size10', showResult && 'show-result')}>
+          <div onClick={() => this.refs.searchInput.focus()} className={classNames('Search-bar', 'u-offset1', 'u-sm-offset5', 'u-size14', 'u-sm-offset3', 'u-sm-size10', showResult && 'show-result')}>
             <input
               ref="searchInput"
               className="Search-input t-searchInput"

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 const SearchAutocomplete = ({ currentAutocompleteInx, list, onSelect }) =>
   (
-    <ul className="Search-autocomplete u-offset5 u-size6 u-sm-offset3 u-sm-size10">
+    <ul className="Search-autocomplete u-offset1 u-size14 u-sm-offset3 u-sm-size10">
       { list.map((item, key) => (
         <li
           key={key}

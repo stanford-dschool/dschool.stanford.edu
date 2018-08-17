@@ -45,7 +45,11 @@
   z-index: 15;
 
   &.show-result {
-    max-height: 101px;
+    max-height: 150px;
+
+    @media @Media-small  {
+      height: 101px;
+    }
 
     @media @Media-medium  {
       max-height: 130px;
@@ -68,8 +72,12 @@
 .Search-header {
   align-items: center;
   display: flex;
-  height: 101px;
+  height: 110px;
   justify-content: space-between;
+
+  @media @Media-small  {
+    height: 101px;
+  }
 
   @media @Media-medium  {
     height: 130px;
@@ -103,7 +111,7 @@
 .Search-bar {
   border-bottom: 1px solid @Color-redOrange;
   display: flex;
-  margin-top: 38px;
+  margin-top: 83px;
   padding: 10px 0;
   transform: translateY(0);
   transition: transform 500ms cubic-bezier(.84, .175, .025, 1);
@@ -145,6 +153,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 5vw;
+  padding-top: 25px;
 
   .HeyHowdy {
     max-width: none;
@@ -278,6 +287,14 @@
   }
 }
 
+.Search-count--results-for {
+  float: left;
+}
+
+.Search-count--detail {
+  float: right;
+}
+
 .Search-description--main {
   margin-top: 10px;
   position: absolute;
@@ -315,6 +332,10 @@
       width: 100%;
     }
   }
+}
+
+.Search-result--none {
+  clear: both;
 }
 
 .Search-list-title {
