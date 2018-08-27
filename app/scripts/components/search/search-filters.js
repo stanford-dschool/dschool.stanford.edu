@@ -4,7 +4,6 @@ import Checkbox from '../checkbox'
 
 class SearchFilters extends React.Component {
   static propTypes = {
-    openFilters: React.PropTypes.bool,
     facets: React.PropTypes.object,
     filters: React.PropTypes.object,
     onClickHandle: React.PropTypes.func,
@@ -73,12 +72,12 @@ class SearchFilters extends React.Component {
   renderFilter(filterName, index) {
     const name = filterName.split('_').join(' ')
     const optionsObj = this.props.facets[filterName]
-    const isActive = this.props.openFilters && this.props.filters[filterName] ? this.props.filters[filterName].length > 0 : false
+    const isDisabled = Object.keys(optionsObj).length < 1
 
     return (
-      <div className={classNames('Search-filter', Object.keys(optionsObj).length < 1 && 'is-disabled')} key={index}>
-        <button onClick={(event) => this.toggleFilter(event, filterName)} className={classNames('Search-filter-name', 't-filterName', isActive && 'is-active')}>By {name}</button>
-        <div className={classNames('Search-filter-list', isActive && 'is-active')} ref={filterName}>
+      <div className={classNames('Search-filter', isDisabled && 'is-disabled')} key={index}>
+        <button onClick={(event) => this.toggleFilter(event, filterName)} className={classNames('Search-filter-name', 't-filterName', !isDisabled && 'is-active')}>By {name}</button>
+        <div className={classNames('Search-filter-list', !isDisabled && 'is-active')} ref={filterName}>
           { Object.keys(optionsObj).sort().map((optionName, i) => this.renderOption(filterName, optionName, optionsObj[optionName], i))}
         </div>
       </div>

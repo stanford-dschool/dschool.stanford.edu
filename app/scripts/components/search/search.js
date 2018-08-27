@@ -91,7 +91,7 @@ class Search extends React.Component {
     return results[0]._score === 1
   }
 
-  search = (query, page = 1, filters, updateFacets = true, openFilters = false) => {
+  search = (query, page = 1, filters, updateFacets = true) => {
     const url = `https://search-api.swiftype.com/api/v1/public/engines/search.json?q=${query}&engine_key=${Search.engineKey}`
     const params = {
       facets: {
@@ -142,7 +142,6 @@ class Search extends React.Component {
               recordCount: res.data.info.page.total_result_count,
               query,
               filters,
-              openFilters,
               currentPage: page,
               pageCount: res.data.info.page.num_pages,
               showResult: true,
@@ -231,7 +230,7 @@ class Search extends React.Component {
   }
 
   renderResults = () => {
-    const { openFilters, currentPage, facets, filters, recordCount, pageCount, restResults, query, mainCard, gridCards } = this.state
+    const { currentPage, facets, filters, recordCount, pageCount, restResults, query, mainCard, gridCards } = this.state
     const expandResult = Object.keys(filters).length > 0 || query.trim().length > 0 || recordCount > 0
 
     return (
@@ -246,7 +245,7 @@ class Search extends React.Component {
           : null
         }
         <div className="Search-rest Container">
-          { recordCount > 0 ? <SearchFilters openFilters={openFilters} facets={facets} filters={filters} onClickHandle={this.selectFilter} /> : null }
+          { recordCount > 0 ? <SearchFilters facets={facets} filters={filters} onClickHandle={this.selectFilter} /> : null }
           { restResults ?
             (<SearchList currentPage={currentPage} pageCount={pageCount} queryHandle={this.selectPage} results={restResults} />)
             : null
