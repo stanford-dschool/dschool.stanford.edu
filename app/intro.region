@@ -13,11 +13,19 @@
   <meta class="swiftype" name="content_type" data-type="string" {.if collection.typeName}content="{collection.typeName}"{.or}content=""{.end}>
   <meta class="swiftype" name="description" data-type="string" {.if item}{.if item.excerpt}content="{item.excerpt|safe}"{.or}content=""{.end}{.or}{.if collection.description}content="{collection.description|safe}"{.or}content=""{.end}{.end}>
   <meta class="swiftype" name="title" data-type="string" {.if item.title}content="{item.title}"{.or}{.if collection.title}content="{collection.title}"{.or}content=""{.end}{.end}>
-
-  {.repeated section collection.tags}
-    {.var @tag @|truncate 15}
-    {.equal? @tag "search-program-..."}
-      <meta class="swiftype" name="program_type" data-type="string" content="{@}">
+  {.if item}
+    {.repeated section item.tags}
+      {.var @tag @|truncate 15}
+      {.equal? @tag "search-program-..."}
+        <meta class="swiftype" name="program_type" data-type="string" content="{@}">
+      {.end}
+    {.end}
+  {.or}
+    {.repeated section collection.tags}
+      {.var @tag @|truncate 15}
+      {.equal? @tag "search-program-..."}
+        <meta class="swiftype" name="program_type" data-type="string" content="{@}">
+      {.end}
     {.end}
   {.end}
 
