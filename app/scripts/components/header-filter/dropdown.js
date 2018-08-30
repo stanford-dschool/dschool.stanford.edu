@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
 class Dropdown extends React.Component {
+  static propTypes = {
+    headerFilter: PropTypes.object,
+    audienceList: PropTypes.object,
+  }
+
   componentWillMount() {
-    this.headerFilter = document.querySelector('[data-header-filter]')
-    this.audienceList = this.headerFilter.querySelector('ul')
-    this.audienceOptions = this.processList(Array.from(this.audienceList.querySelectorAll('li')))
+    this.audienceOptions = this.processList(Array.from(this.props.audienceList.querySelectorAll('li')))
     if (this.audienceOptions.length > 0) {
       this.setState({ active: false, activeOption: this.audienceOptions[0] })
     }
@@ -13,8 +16,8 @@ class Dropdown extends React.Component {
 
 
   componentDidMount() {
-    this.audienceList.classList.add('is-hidden')
-    this.headerFilter.classList.remove('is-hidden')
+    this.props.audienceList.classList.add('is-hidden')
+    this.props.headerFilter.classList.remove('is-hidden')
   }
 
   processList(audienceListHTML) {

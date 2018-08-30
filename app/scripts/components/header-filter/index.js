@@ -7,11 +7,16 @@ class HeaderFilter extends DOMComponent {
   static selector = '[data-header-filter-dropdown]'
 
   init() {
-    render(
-      <div>
-        <Dropdown />
-      </div>,
+    const headerFilter = document.querySelector('[data-header-filter]')
+    const audienceList = headerFilter.querySelector('ul')
+
+    if (audienceList) {
+      render(
+        <div>
+          <Dropdown audienceList={audienceList} headerFilter={headerFilter} />
+        </div>,
       this.root)
+    }
   }
 }
 

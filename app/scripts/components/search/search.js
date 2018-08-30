@@ -131,7 +131,6 @@ class Search extends React.Component {
     } else {
       axios.post(url, params)
         .then(res => {
-          console.log(res)
           if (res.data.record_count === 0 && Object.entries(this.state.filters).length > 0 && query.length > 0) {
             this.search(query, 1, {}, true)
           } else {
