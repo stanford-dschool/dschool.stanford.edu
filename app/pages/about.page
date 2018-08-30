@@ -1,5 +1,5 @@
 <div class="PageAbout Theme--about">
-  <nav class="QuickNav">
+  <nav class="QuickNav" data-swiftype-index="false">
     <ul class="QuickNav-list">
       <li class="QuickNav-item"><a class="QuickNav-link" href="#what">What We Do</a></li>
       <li class="QuickNav-item"><a class="QuickNav-link" href="#how">How We Do It</a></li>

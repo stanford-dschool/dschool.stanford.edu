@@ -1,6 +1,0 @@
-<div class="Page404 Theme--404">
-  <div class="content404">
-  	<p class="message404">Uh-oh, looks like thats the wrong URL :( </p>
-    <a href="/" class="CtaButton">Back to Home <span class="CtaButton-arrow DirectionalArrow DirectionalArrow--right"></span></a>
-  </div>
-</div>

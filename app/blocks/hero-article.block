@@ -1,4 +1,4 @@
-  <header data-header class="Header Header--article">
+  <header data-swiftype-index=false data-header class="Header Header--article">
     <div class="Header-bg" style="background-image: url({item.assetUrl}); background-position: calc({item.mediaFocalPoint.x} * 100%) calc({item.mediaFocalPoint.y} * 100%);"></div>
 
     <div class="Container u-cf">

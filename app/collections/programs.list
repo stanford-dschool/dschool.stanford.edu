@@ -3,7 +3,6 @@
     relevant page in the "/programs" collection. In case
     the redirect fails, the basic content is shown here.
 {END##}
-
 <script>
   var path = location.pathname.replace(/^\/|\/$/g, '');
   if (path !== 'programs') {
@@ -29,45 +28,45 @@
         <h2 class="t-title">{title}</h2>
 
         {# Overview}
-        {.if customContent.excerptCopy.source}
+        {.if customContent.excerptCopy.html}
         <div class="sqs-block-content p-Program-copy">
-          {customContent.excerptCopy.source}
+          {customContent.excerptCopy.html}
         </div>
         {.end}
 
         {# You should apply if}
-        {.if customContent.excerptFaqs.source}
+        {.if customContent.excerptFaqs.html}
         <div class="p-Faqs">
           <div class="p-Accordion" data-accordion="strong">
-            {customContent.excerptFaqs.source}
+            {customContent.excerptFaqs.html}
           </div>
         </div>
         {.end}
 
         {# Basics list}
-        {.if customContent.excerptBasics.source}
+        {.if customContent.excerptBasics.html}
         {.var @heading customContent.excerptBasicsHeading}
         <div class="p-Program-basics">
           {.if @heading}<p><strong>{@heading}</strong></p>{.end}
           <div class="sqs-block-content p-Program-list">
-            {customContent.excerptBasics.source}
+            {customContent.excerptBasics.html}
           </div>
         </div>
         {.end}
       </div>
 
-      {.if customContent.excerptApplyCopy.source}{.var @hasApply fullUrl}{.end}
-      {.if customContent.excerptApplyCards.source}{.var @hasApply fullUrl}{.end}
+      {.if customContent.excerptApplyCopy.html}{.var @hasApply fullUrl}{.end}
+      {.if customContent.excerptApplyCards.html}{.var @hasApply fullUrl}{.end}
       {.if @hasApply}
       <div class="p-Apply Grid-cell u-md-offset1 u-md-size6">
         <section class="p-Apply">
           <div class="p-FakeTag"></div>
           <div class="p-Cards" data-cta-cards>
-            {customContent.excerptApplyCards.source}
+            {customContent.excerptApplyCards.html}
           </div>
-          {.if customContent.excerptApplyCopy.source}
+          {.if customContent.excerptApplyCopy.html}
           <div class="sqs-block-content p-Apply-copy">
-            {customContent.excerptApplyCopy.source}
+            {customContent.excerptApplyCopy.html}
           </div>
           {.end}
         </section>

@@ -1,7 +1,8 @@
 import Physics from 'physics/src'
 import DOMComponent from '../dom-component'
 import patterns from './patterns'
-import { simpleDebounce, Line, sliceBezier } from './helpers'
+import { Line, sliceBezier } from './helpers'
+import { simpleDebounce } from '../../utilities'
 
 const LINE_COUNT = 50
 const PIVOT_COUNT = 40

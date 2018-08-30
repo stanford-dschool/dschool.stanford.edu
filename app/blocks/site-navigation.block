@@ -92,7 +92,7 @@
 
     <!-- Search -->
     <li class="Navigation-item">
-      <a class="Navigation-link Navigation-icon Navigation-search" href="/search">
+      <a data-navigation-search class="Navigation-link Navigation-icon Navigation-search" href="">
         <span class="Navigation-icon-title">Search</span>
       </a>
     </li>

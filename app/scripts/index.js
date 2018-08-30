@@ -16,6 +16,7 @@ import Form from './components/form'
 import FrameEnhance from './components/frame-enhance'
 import GalleryEnhancement from './components/gallery-enhancements'
 import HeroCarousel from './components/hero-carousel'
+import HeaderFilter from './components/header-filter'
 import HeaderScroll from './components/header-scroll'
 import HeroLines from './components/hero-lines'
 import LinkCardSlider from './components/link-card-slider'
@@ -31,6 +32,7 @@ import ResourceFilter from './components/resource-filter'
 import ResourceList from './components/resource-list'
 import ResourceStatistics from './components/resource-statistics'
 import ResourceSteps from './components/resource-steps'
+import SearchComponent from './components/search'
 import SearchEnhance from './components/search-enhance'
 import Slideshow from './components/slideshow'
 import StorySlider from './components/story-slider'
@@ -58,6 +60,7 @@ FloatingImageEnhance.init()
 Form.init()
 FrameEnhance.init()
 GalleryEnhancement.init()
+HeaderFilter.init()
 HeaderScroll.init()
 HeroCarousel.init()
 HeroLines.init()
@@ -74,6 +77,7 @@ ResourceFilter.init()
 ResourceList.init()
 ResourceStatistics.init()
 ResourceSteps.init()
+SearchComponent.init()
 SearchEnhance.init()
 Slideshow.init()
 StorySlider.init()
