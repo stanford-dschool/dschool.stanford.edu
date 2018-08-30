@@ -20,13 +20,6 @@
         <meta class="swiftype" name="program_type" data-type="string" content="{@}">
       {.end}
     {.end}
-  {.or}
-    {.repeated section collection.tags}
-      {.var @tag @|truncate 15}
-      {.equal? @tag "search-program-..."}
-        <meta class="swiftype" name="program_type" data-type="string" content="{@}">
-      {.end}
-    {.end}
   {.end}
 
 </head>
