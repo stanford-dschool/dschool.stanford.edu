@@ -72,13 +72,13 @@
         </div>
 
         {.if customContent.excerptApplyCopy.source}{.var @hasApply fullUrl}{.end}
-        {.if customContent.excerptApplyCards.source}{.var @hasApply fullUrl}{.end}
+        {.if customContent.excerptApplyCards.html}{.var @hasApply fullUrl}{.end}
         {.if @hasApply}
         <div class="p-Apply Grid-cell u-md-offset1 u-md-size6">
           <section class="p-Apply">
             <div class="p-FakeTag"></div>
             <div class="p-Cards" data-cta-cards>
-              {customContent.excerptApplyCards.source}
+              {customContent.excerptApplyCards.html}
             </div>
             {.if customContent.excerptApplyCopy.source}
             <div class="sqs-block-content p-Apply-copy">
