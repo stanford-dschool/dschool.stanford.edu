@@ -1,4 +1,3 @@
-<script>console.log({item.customContent|json})</script>
 {.if item.tags}
   {.repeated section item.tags}
     {.equal? @ "browse-all"}
