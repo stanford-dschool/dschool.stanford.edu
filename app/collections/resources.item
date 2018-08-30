@@ -1,3 +1,4 @@
+<script>console.log({item.customContent|json})</script>
 {.if item.tags}
   {.repeated section item.tags}
     {.equal? @ "browse-all"}
@@ -64,11 +65,11 @@
                 License: {.if license}{license}{.or}Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International{.end}
             </li>
             {.end}
-            {.if assets.source}
+            {.if assets.html}
             <li class="p-Requirement List-item">
               <img class="List-itemIcon" src="/assets/assets.svg" alt="Assets Source">
               <div>
-                {assets.source}
+                {assets.html}
               </div>
             </li>
             {.end}

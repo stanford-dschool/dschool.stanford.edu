@@ -1,9 +1,8 @@
 <div class="PageProgramCollection">
   {.section item}
   {.var @shortName customContent.shortName}
-
   {.if customContent.applyCopy.source}{.var @hasApply fullUrl}{.end}
-  {.if customContent.applyCards.source}{.var @hasApply fullUrl}{.end}
+  {.if customContent.applyCards.html}{.var @hasApply fullUrl}{.end}
   <div class="Grid p-Overview">
     {.var @headingTag customContent.contentHeadingTag}
     {.var @heading customContent.contentHeading}
@@ -26,7 +25,7 @@
         </div>
         {.end}
         <div class="p-Cards" data-cta-cards>
-          {customContent.applyCards.source}
+          {customContent.applyCards.html}
         </div>
       </section>
     </div>

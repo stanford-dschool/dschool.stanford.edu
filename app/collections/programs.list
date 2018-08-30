@@ -3,7 +3,6 @@
     relevant page in the "/programs" collection. In case
     the redirect fails, the basic content is shown here.
 {END##}
-
 <script>
   var path = location.pathname.replace(/^\/|\/$/g, '');
   if (path !== 'programs') {
