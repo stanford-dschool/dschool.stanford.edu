@@ -13,11 +13,11 @@
       <div class="Pattern Pattern--vertical p-introPattern"></div>
       {item.body}
     </div>
-    {.if item.customContent.related.source}
+    {.if item.customContent.related.html}
       <div class="Grid-cell u-md-size5 u-md-offset2">
         <div class="p-Related">
           <div class="p-RelatedTitle u-underlined">Related</div>
-          <div class="p-RelatedContent">{item.customContent.related.source}</div>
+          <div class="p-RelatedContent">{item.customContent.related.html}</div>
         </div>
       </div>
     {.end}

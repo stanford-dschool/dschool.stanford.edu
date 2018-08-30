@@ -27,9 +27,9 @@
         </div>
       </section>
 
-      {.if item.customContent.faq.source}
+      {.if item.customContent.faq.html}
       <section id="faqs" class="p-Accordion" data-accordion="strong">
-        {item.customContent.faq.source}
+        {item.customContent.faq.html}
       </section>
       {.end}
 
@@ -75,10 +75,10 @@
             {.end}
 
           </ul>
-          {.if related.source}
+          {.if related.html}
             <div class="p-Related">
               <div class="p-RelatedTitle">Related Resources</div>
-              <div class="p-RelatedContent">{related.source}</div>
+              <div class="p-RelatedContent">{related.html}</div>
             </div>
           {.end}
         {.end}
@@ -119,24 +119,24 @@
     {.end}
   {.end}
 
-  {.if item.customContent.steps.source}
+  {.if item.customContent.steps.html}
     {.var @centerTeam true}
     <section id="steps" class="Grid">
       <div class="Grid-cell u-md-size6 {.if @centerTeam}u-md-offset2{.or}u-md-offset5{.end}">
         <div class="p-Steps" data-resource-steps>
-          {item.customContent.steps.source}
+          {item.customContent.steps.html}
         </div>
       </div>
     </section>
   {.end}
 
-  {.if item.customContent.team.source}
+  {.if item.customContent.team.html}
     <section id="team" class="Grid">
       <div class="Grid-cell u-md-size6 {.if @centerTeam}u-md-offset2{.or}u-md-offset5{.end}">
         <span class="t-tag">{item.customContent.teamname}</span>
         <h2 class="t-title">Credits</h2>
         <div class="p-TeamMembers">
-          {item.customContent.team.source}
+          {item.customContent.team.html}
         </div>
       </div>
     </section>

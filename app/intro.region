@@ -20,9 +20,6 @@
       <meta class="swiftype" name="program_type" data-type="string" content="{@}">
     {.end}
   {.end}
-  <script>
-    // console.log({collection|json})
-  </script>
 
 </head>
 

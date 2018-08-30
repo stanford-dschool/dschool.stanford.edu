@@ -78,16 +78,16 @@ class GoogleData {
 
 class GoogleUrl {
   constructor(sourceIdentifier) {
-    this.sourceIdentifier = sourceIdentifier
-    if (this.sourceIdentifier.match(/http(s)*:/)) {
-      this.url = this.sourceIdentifier
+    this.htmlIdentifier = sourceIdentifier
+    if (this.htmlIdentifier.match(/http(s)*:/)) {
+      this.url = this.htmlIdentifier
       try {
         this.key = this.url.match(/key=(.*?)&/)[1]
       } catch (error) {
         this.key = this.url.match(/(cells|list)\/(.*?)\//)[2]
       }
     } else {
-      this.key = this.sourceIdentifier
+      this.key = this.htmlIdentifier
     }
     this.jsonListUrl = "https://spreadsheets.google.com/feeds/list/" + this.key + "/od6/public/values?alt=json"
     this.jsonUrl = this.jsonListUrl
