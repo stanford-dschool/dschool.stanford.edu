@@ -7,7 +7,7 @@
     "lint": "eslint . && gulp styles-lint",
     "test": "npm run lint",
     "build": "gulp --prod",
-    "server": "squarespace-server https://dschool-playground.squarespace.com -d ./template -p 3000 --faster-less --auth",
+    "server": "squarespace-server https://dschool-staging.squarespace.com -d ./template -p 3000 --faster-less --auth",
     "dev": "gulp"
   },
   "optionalDependencies": {
