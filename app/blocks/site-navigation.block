@@ -17,7 +17,7 @@
   </button>
   <ul id="main-navigation" class="Navigation-list" data-navigation-list>
     {.repeated section items}
-      <li {.folder?}data-dropdown-toggle{.end} class="Navigation-item {.folder?}Navigation-dropdown{.end} {.section active}is-active{.end}">
+      <li {.folder?}data-dropdown-toggle{.end} class="Navigation-item {.folder?}Navigation-dropdown Navigation-dropdown--last{.end} {.section active}is-active{.end}">
         <!-- dropdown folder -->
         {.folder?}
           <a

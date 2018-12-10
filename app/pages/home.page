@@ -135,8 +135,9 @@
                 <div class="BorderedBox">
                   <div class="BorderedBox-img" {.main-image?}style="background-image: linear-gradient(to top, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, .4) 100%), url({assetUrl}?format=500w);"{.end}></div>
                   <a href="{fullUrl}" class="BorderedBox-content">
-                    <h3 class="BorderedBox-tag">{.section tags}{@}{.end}</h3>
+                    <!-- <h3 class="BorderedBox-tag">{.section tags}{@}{.end}</h3> -->
                     <h4 class="BorderedBox-title">{title}</h4>
+                    <div class="BorderedBox-excerpt">{excerpt|truncate 150}</div>
                   </a>
                 </div>
               </div>
