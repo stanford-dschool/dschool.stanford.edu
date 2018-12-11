@@ -46,7 +46,7 @@ class TeamMember extends DOMComponent {
   */
   setImage(element, googleDriveUrl) {
     if (element) {
-      const srcUrl = parseGoogleDriveFileUrl(googleDriveUrl.trim())
+      const srcUrl = parseGoogleDriveFileUrl(googleDriveUrl.trim()) || googleDriveUrl.trim();
       if (srcUrl) {
         element.style.backgroundImage = `url(${srcUrl})`
         element.classList.remove('u-hide')
