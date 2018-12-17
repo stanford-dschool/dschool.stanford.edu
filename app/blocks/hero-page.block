@@ -36,10 +36,10 @@
             <div class="Header-carouselInfo">
               <p class="t-tag Header-carouselTag">
                 {.equal? collection.typeName "field-notes"}
-                  {collection.typeName}
+                  Field Notes
                 {.or}
                   {.equal? collection.typeName "classes"}
-                    {collection.typeName}
+                    {collection.typeName}{.equal? item.customContent.inactive true} - archived{.or}{.end}
                   {.or}
                     {.equal? collection.typeName "resources"}
                       <a href="{collection.fullUrl}">{collection.typeName}</a> /
@@ -57,7 +57,7 @@
                         {.equal? collection.typeName "programs"}
                           <a href="{collection.fullUrl}">{collection.typeName}</a> /
                         {.or}
-                          {collection.urlId}
+                          {collection.title}
                         {.end}
                       {.end}
                     {.end}
