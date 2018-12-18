@@ -1,10 +1,6 @@
 <div class="PageNews Theme--about">
   <section id="in-the-press" class="p-HotOffThePress">
     <div class="Grid">
-      <div class="Quote Grid-cell u-md-size8 u-md-offset3">
-        <squarespace:block-field id="news-quote-text" columns="1" />
-        <div class="Pattern Pattern--vertical"></div>
-      </div>
       <div class="PressLinks Grid-cell u-md-size10 u-md-offset6">
         <div class="t-largeHeading p-Heading u-themeColor t-hyphen">In the Press</div>
         <squarespace:block-field id="news-press-links-new" columns="1" />
