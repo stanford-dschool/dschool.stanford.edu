@@ -7,7 +7,7 @@
       </div>
       <div class="PressLinks Grid-cell u-md-size10 u-md-offset6">
         <div class="t-largeHeading p-Heading u-themeColor t-hyphen">In the Press</div>
-        <squarespace:block-field id="news-press-links" columns="1" />
+        <squarespace:block-field id="news-press-links-new" columns="1" />
       </div>
     </div>
   </section>
