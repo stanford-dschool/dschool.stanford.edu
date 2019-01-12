@@ -6,7 +6,7 @@ import DOMComponent from '../dom-component'
 
 
 class GalleryEnhancement extends DOMComponent {
-  static selector = '.sqs-gallery'
+  static selector = '.sqs-gallery-block-stacked'
 
   init() {
     const images = Array.from(this.root.querySelectorAll('.image-wrapper img'))

@@ -9,7 +9,7 @@
     <div class="Grid">
       <div class="Grid-cell u-size8 u-offset1">
         <div class="Header-photoInfo">
-          <p class="t-tag Header-carouselTag">{collection.title}</p>
+          <p class="t-tag Header-carouselTag">Team Member</p>
           <h2 class="t-mainHeading t-capitalize Header-photoTitle" data-member-name></h2>
           <div class="Header-carouselDescription" data-member-title></div>
           {.end}
