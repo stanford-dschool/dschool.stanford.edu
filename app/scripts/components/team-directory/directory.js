@@ -4,16 +4,15 @@ import DirectoryList from './list'
 
 class Directory extends React.Component {
   static filterOptions = {
+    current: 'Currently Active',
+    timeCapsule: 'Time Capsule',
     all: 'All',
-    founding: 'Founding Member',
-    before2014: 'Active Before 2014',
-    since2014: 'Active Since 2014',
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      filterValue: 'all',
+      filterValue: 'current',
       filterActive: false,
       searchValue: '',
     }

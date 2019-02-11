@@ -3,11 +3,11 @@
     <div class="p-Info Grid-cell u-md-offset1 u-md-size8" id="what-i-do">
       <section class="p-Section u-hide" data-member-summary>
         <h1 class="t-heading">What I do</h1>
-        <p class="t-lead" data-section-content></p>
+        <p class="Copy" data-section-content></p>
       </section>
       <section class="p-Section u-hide" data-member-other>
         <h1 class="t-heading">Also</h1>
-        <p class="t-lead" data-section-content></p>
+        <p class="Copy" data-section-content></p>
       </section>
       <section class="p-Section u-hide" data-member-about>
         <h1 class="t-heading">About Me</h1>
