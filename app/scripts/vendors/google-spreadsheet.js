@@ -1,13 +1,16 @@
 class GoogleData {
   constructor() {}
 
-    bless(object) {
+  bless(object) {
     let key, value;
     const result = new GoogleSpreadsheet()
     for (key in object) {
       value = object[key]
       result[key] = value
     }
+
+    console.log("BLESS UP", result)
+
     return result
   }
 
@@ -39,11 +42,15 @@ class GoogleData {
         }
       }
     }
+
     return null;
   };
 
   callbackCells(data) {
-    const googleUrl = new GoogleUrl(data.feed.id.$t)
+    console.log("callbackCells data", data);
+    // const googleUrl = new GoogleUrl(data.feed.id.$t)
+    const googleUrl = new GoogleUrl("https://sheets.googleapis.com/v4/spreadsheets/AIzaSyDAytD_wRnF_zC4_ARJUNf3t2p0-vxHog0/values/Sheet1?alt=json&key=AIzaSyDAytD_wRnF_zC4_ARJUNf3t2p0-vxHog0");
+
     let googleSpreadsheet = this.find({
       jsonUrl: googleUrl.jsonUrl
     })
@@ -53,7 +60,7 @@ class GoogleData {
       googleSpreadsheet.googleUrl(googleUrl)
     }
 
-    googleSpreadsheet.data = this.processData(data.feed.entry)
+    googleSpreadsheet.data = this.processData(data.values)
 
     googleSpreadsheet.save()
     return googleSpreadsheet
@@ -61,17 +68,24 @@ class GoogleData {
 
   processData(ref) {
     const results = {}
-    for (let index = 0; index < ref.length; index++) {
+    console.log("ref: ", ref);
+    console.log("ref.len: ", ref.length);
+    const keys = ref[0];
+
+    for (let index = 2; index < ref.length; index++) {
       const row = ref[index];
       const parsedRow = {}
-      for (const [key, value] of Object.entries(row)) {
-        if (key.includes('gsx$')) {
-          const parsedKey = key.split('gsx$')[1]
-          parsedRow[parsedKey] = value.$t
+
+      row.forEach(function(cellValue, index) {
+        if (cellValue) {
+          const parsedKey = keys[index].replace("_","").trim().toLowerCase();
+          parsedRow[parsedKey] = cellValue;
         }
-      }
+      })
+      
       results[parsedRow.url] = parsedRow
     }
+
     return results
   }
 }
@@ -84,12 +98,15 @@ class GoogleUrl {
       try {
         this.key = this.url.match(/key=(.*?)&/)[1]
       } catch (error) {
-        this.key = this.url.match(/(cells|list)\/(.*?)\//)[2]
+        this.key = this.url.match(/(spreadsheets)\/(.*?)\//)[2]
       }
     } else {
       this.key = this.htmlIdentifier
     }
-    this.jsonListUrl = "https://spreadsheets.google.com/feeds/list/" + this.key + "/od6/public/values?alt=json"
+
+    const apiKey = "AIzaSyDAytD_wRnF_zC4_ARJUNf3t2p0-vxHog0"
+
+    this.jsonListUrl = "https://sheets.googleapis.com/v4/spreadsheets/" + this.key + "/values/Sheet1?alt=json&key=" + apiKey;
     this.jsonUrl = this.jsonListUrl
   }
 }
@@ -113,6 +130,9 @@ class GoogleSpreadsheet {
       result = window.googleData.find({
         jsonUrl: jsonUrl
       })
+
+      console.log("result", result)
+      console.log("safetyCounter", safetyCounter)
 
       if (safetyCounter++ > 20 || ((result != null) && (result.data != null))) {
         clearInterval(intervalId)

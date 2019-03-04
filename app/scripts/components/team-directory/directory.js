@@ -6,13 +6,13 @@ class Directory extends React.Component {
   static filterOptions = {
     current: 'Currently Active',
     timeCapsule: 'Time Capsule',
-    all: 'All',
+    all: 'All'
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      filterValue: 'current',
+      filterValue: 'all',
       filterActive: false,
       searchValue: '',
     }
