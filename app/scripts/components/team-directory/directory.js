@@ -4,7 +4,7 @@ import DirectoryList from './list'
 
 class Directory extends React.Component {
   static filterOptions = {
-    current: 'Currently Active',
+    active: 'Currently Active',
     timeCapsule: 'Time Capsule',
     all: 'All'
   }
@@ -12,7 +12,7 @@ class Directory extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      filterValue: 'all',
+      filterValue: 'active',
       filterActive: false,
       searchValue: '',
     }

@@ -8,15 +8,16 @@ class GoogleData {
       value = object[key]
       result[key] = value
     }
-
-    console.log("BLESS UP", result)
-
     return result
   }
 
   find(params) {
     let itemObject, value;
     try {
+      if(localStorage["GoogleSpreadsheet"]) {
+        let json = JSON.parse(localStorage["GoogleSpreadsheet"]);
+        return this.bless(json)
+      }
       for (let item in localStorage) {
         if (item.match(/^GoogleSpreadsheet\./)) {
           itemObject = JSON.parse(localStorage[item]);
@@ -47,7 +48,6 @@ class GoogleData {
   };
 
   callbackCells(data) {
-    console.log("callbackCells data", data);
     // const googleUrl = new GoogleUrl(data.feed.id.$t)
     const googleUrl = new GoogleUrl("https://sheets.googleapis.com/v4/spreadsheets/AIzaSyDAytD_wRnF_zC4_ARJUNf3t2p0-vxHog0/values/Sheet1?alt=json&key=AIzaSyDAytD_wRnF_zC4_ARJUNf3t2p0-vxHog0");
 
@@ -59,30 +59,33 @@ class GoogleData {
       googleSpreadsheet = new GoogleSpreadsheet()
       googleSpreadsheet.googleUrl(googleUrl)
     }
-
     googleSpreadsheet.data = this.processData(data.values)
-
     googleSpreadsheet.save()
     return googleSpreadsheet
   }
 
   processData(ref) {
+    const keys = Object.values(ref[0]) // the header columns of the spreadsheet
     const results = {}
-    console.log("ref: ", ref);
-    console.log("ref.len: ", ref.length);
-    const keys = ref[0];
-
-    for (let index = 2; index < ref.length; index++) {
+    //ref[0] {0: "url", }
+    // index is 2 because we have 2 burned rows at the top of the sheet
+    for (let index = 3; index < ref.length; index++) {
       const row = ref[index];
       const parsedRow = {}
-
+      keys.forEach(function(key, index) {
+        const parsedKey = key.replace("_", "").trim().toLowerCase();
+        parsedRow[parsedKey] = row[index];
+       })
+     /*
       row.forEach(function(cellValue, index) {
         if (cellValue) {
+          console.log("cellValue: ", cellValue)
           const parsedKey = keys[index].replace("_","").trim().toLowerCase();
           parsedRow[parsedKey] = cellValue;
         }
       })
-      
+      */
+
       results[parsedRow.url] = parsedRow
     }
 
@@ -131,15 +134,11 @@ class GoogleSpreadsheet {
         jsonUrl: jsonUrl
       })
 
-      console.log("result", result)
-      console.log("safetyCounter", safetyCounter)
-
-      if (safetyCounter++ > 20 || ((result != null) && (result.data != null))) {
+      if (safetyCounter++ > 21 || ((result != null) && (result.data != null))) {
         clearInterval(intervalId)
         return callback(result)
       }
     }, 200)
-
     if (typeof result != "undefined" && result !== null) {
       return result
     }
@@ -160,7 +159,8 @@ class GoogleSpreadsheet {
   }
 
   save() {
-    return localStorage["GoogleSpreadsheet." + this.type] = JSON.stringify(this)
+    //return localStorage["GoogleSpreadsheet." + this.type] = JSON.stringify(this)
+    return localStorage["GoogleSpreadsheet"] = JSON.stringify(this)
   }
 }
 
