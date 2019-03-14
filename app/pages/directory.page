@@ -113,7 +113,7 @@
     </div>
 
     <!-- what is this about content -->
-    <div class="p-CollectionDetails HeyHowdy Grid-cell u-md-size8 u-md-offset1" data-parallax>
+    <div class="p-CollectionDetails HeyHowdy Grid-cell u-md-size9 u-md-offset1" data-parallax>
       <squarespace:block-field id="search-description-{collection.id}" columns="1" />
     </div>
 

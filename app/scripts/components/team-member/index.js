@@ -97,7 +97,7 @@ class TeamMember extends DOMComponent {
           const periodElement = document.createElement('div')
           periodElement.classList.add('t-period')
 
-          linkElement.innerHTML = parsedValue[0].trim()
+          linkElement.innerHTML = parsedValue[0].replace("|",",").trim()
           if (parsedValue[1]) {
             linkElement.setAttribute('href', parseUrl(parsedValue[1].trim()))
             linkElement.setAttribute('target', '_blank')

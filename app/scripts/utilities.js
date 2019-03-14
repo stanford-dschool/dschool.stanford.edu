@@ -161,9 +161,12 @@ export function calculateScrollbarWidth({ selector = '.u-noScroll', mediaQuery =
 */
 export function getSpreadsheetData(callback) {
   localStorage.clear()
-  const sampleUrl = 'https://spreadsheets.google.com/feeds/cells/1-wJSwGoUtVqgcRdg8csqTZOmuSWIpmoqZJx4rjkkpYw/od6/public/values?alt=json'
+
+  const apiKey = 'AIzaSyDAytD_wRnF_zC4_ARJUNf3t2p0-vxHog0'
+  const url = 'https://sheets.googleapis.com/v4/spreadsheets/1-wJSwGoUtVqgcRdg8csqTZOmuSWIpmoqZJx4rjkkpYw/values/Sheet1?alt=json&key=' + apiKey
   const googleSpreadsheet = new GoogleSpreadsheet()
-  googleSpreadsheet.url(sampleUrl)
+  
+  googleSpreadsheet.url(url)
   googleSpreadsheet.load((result) => {
     if (callback) {
       callback(result)
