@@ -67,25 +67,14 @@ class GoogleData {
   processData(ref) {
     const keys = Object.values(ref[0]) // the header columns of the spreadsheet
     const results = {}
-    //ref[0] {0: "url", }
     // index is 2 because we have 2 burned rows at the top of the sheet
     for (let index = 3; index < ref.length; index++) {
       const row = ref[index];
       const parsedRow = {}
       keys.forEach(function(key, index) {
-        const parsedKey = key.replace("_", "").trim().toLowerCase();
+        const parsedKey = key.replace('_', '').trim().toLowerCase();
         parsedRow[parsedKey] = row[index];
        })
-     /*
-      row.forEach(function(cellValue, index) {
-        if (cellValue) {
-          console.log("cellValue: ", cellValue)
-          const parsedKey = keys[index].replace("_","").trim().toLowerCase();
-          parsedRow[parsedKey] = cellValue;
-        }
-      })
-      */
-
       results[parsedRow.url] = parsedRow
     }
 
