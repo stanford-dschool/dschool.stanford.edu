@@ -61,7 +61,7 @@
         </div>
         <div class="Footer-meta">
           <p class="Footer-copyright">
-            © <script type="text/javascript">document.write(new Date().getFullYear());</script> Hasso Plattner Institute of Design at Stanford University<span class="no-mobile">. All Rights Reserved.</span>
+            © <script type="text/javascript">document.write(new Date().getFullYear());</script> Hasso Plattner Institute of Design at Stanford University<span class="no-mobile">. All Rights Reserved.</span> <a target="_blank" href="https://www.stanford.edu/site/privacy/">Privacy Policy</a>.
           </p>
           <div class="Footer-social">
             <div class="SocialIcons">

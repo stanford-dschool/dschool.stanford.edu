@@ -53,7 +53,7 @@
         <!-- 4th big white -->
         <a class="Spotlight-card Spotlight-card-huge shadow" href="" data-team-spotlight-image-back data-team-spotlight-link>
           <div class="Spotlight-background" data-team-spotlight-image-front></div>
-          <div class="Spotlight-content huge">
+          <div class="Spotlight-content">
             <p data-team-spotlight-text></p>
             <h4 data-team-spotlight-name></h4>
             <div class="Spotlight-arrow"></div>
@@ -117,10 +117,6 @@
       <squarespace:block-field id="search-description-{collection.id}" columns="1" />
     </div>
 
-    <!-- right image -->
-    <div class="p-Image Grid-cell u-md-size7 u-md-offset9" data-parallax>
-      <squarespace:block-field id="search-image-{collection.id}" columns="1" />
-    </div>
   </section>
   <section class="Container">
     <div class="Grid Directory-browse" data-directory></div>

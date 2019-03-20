@@ -39,13 +39,13 @@ class DirectoryList extends React.Component {
   renderList() {
     return this.state.items.map((personData, index) => {
       // personData.tags = "thing1, thing2";
-      if(typeof(personData.tags) === 'undefined') {
-        personData.tags = 'timeCapsule';
+      if (typeof (personData.tags) === 'undefined') {
+        personData.tags = 'timeCapsule'
       }
       const tagValues = personData.tags.split(',').map(tag => tag.trim())
-      if(personData.tags.indexOf('hidden') > -1) { return null } // sorry
+      if (personData.tags.indexOf('hidden') > -1) { return null } // sorry
       if (!this.props.filterValue || this.props.filterValue === 'all' || tagValues.includes(this.props.filterValue)) {
-        if(personData.tags.indexOf('timeCapsule') > -1) {
+        if (personData.tags.indexOf('timeCapsule') > -1) {
           return (
             <DirectoryItem
               url={personData.url}
@@ -64,7 +64,7 @@ class DirectoryList extends React.Component {
             />
           )
         }
-       }
+      }
       return null
     })
   }

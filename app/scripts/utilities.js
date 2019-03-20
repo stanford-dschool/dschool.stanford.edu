@@ -165,7 +165,7 @@ export function getSpreadsheetData(callback) {
   const apiKey = 'AIzaSyDAytD_wRnF_zC4_ARJUNf3t2p0-vxHog0'
   const url = 'https://sheets.googleapis.com/v4/spreadsheets/1-wJSwGoUtVqgcRdg8csqTZOmuSWIpmoqZJx4rjkkpYw/values/Sheet1?alt=json&key=' + apiKey
   const googleSpreadsheet = new GoogleSpreadsheet()
-  
+
   googleSpreadsheet.url(url)
   googleSpreadsheet.load((result) => {
     if (callback) {

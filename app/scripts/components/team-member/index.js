@@ -13,7 +13,7 @@ class TeamMember extends DOMComponent {
     this.other = this.root.querySelector('[data-member-other]')
     this.about = this.root.querySelector('[data-member-about]')
     this.classes = this.root.querySelector('[data-member-classes]')
-    this.learMoreConnect = this.root.querySelector('[data-learn-more-connect]')
+    this.learnMoreConnect = this.root.querySelector('[data-learn-more-connect]')
     this.latestWork = this.root.querySelector('[data-latest-work]')
 
     this.load = this.load.bind(this)
@@ -34,7 +34,7 @@ class TeamMember extends DOMComponent {
         this.setSectionContent(this.other, person.other)
         this.setSectionContent(this.about, person.about)
         this.setListContent(this.classes, person.classes)
-        this.setListContent(this.learMoreConnect, person.learnmoreconnect)
+        this.setListContent(this.learnMoreConnect, person.learnmoreconnect)
         this.setColumnContent(this.latestWork, person.latestwork)
         this.setImage(this.photo, person.photo)
       }
@@ -46,7 +46,7 @@ class TeamMember extends DOMComponent {
   */
   setImage(element, googleDriveUrl) {
     if (element) {
-      const srcUrl = parseGoogleDriveFileUrl(googleDriveUrl.trim()) || googleDriveUrl.trim();
+      const srcUrl = parseGoogleDriveFileUrl(googleDriveUrl.trim()) || googleDriveUrl.trim()
       if (srcUrl) {
         element.style.backgroundImage = `url(${srcUrl})`
         element.classList.remove('u-hide')
@@ -93,11 +93,11 @@ class TeamMember extends DOMComponent {
             listElement.classList.add('List-item')
           }
           const linkElement = document.createElement('a')
-          linkElement.classList.add('t-capitalize')
           const periodElement = document.createElement('div')
           periodElement.classList.add('t-period')
 
-          linkElement.innerHTML = parsedValue[0].replace("|",",").trim()
+          const verticalSeparator = /\|/g
+          linkElement.innerHTML = parsedValue[0].replace(verticalSeparator, ',').trim()
           if (parsedValue[1]) {
             linkElement.setAttribute('href', parseUrl(parsedValue[1].trim()))
             linkElement.setAttribute('target', '_blank')
