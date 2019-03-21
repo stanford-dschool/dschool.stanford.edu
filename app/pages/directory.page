@@ -19,7 +19,7 @@
         <!-- 1st small -->
         <a class="Spotlight-card" href="" data-team-spotlight-image-back data-team-spotlight-link>
           <div class="Spotlight-background" data-team-spotlight-image-front></div>
-          <div class="Spotlight-content">
+          <div class="Spotlight-content Spotlight-content-small">
             <h4 data-team-spotlight-name></h4>
             <p data-team-spotlight-text></p>
             <div class="Spotlight-arrow"></div>
@@ -28,10 +28,10 @@
       </div>
 
       <div class="Grid-cell u-md-size5" data-parallax data-team-spotlight-2>
-        <!-- 2nd small -->
+        <!-- 2nd medium -->
         <a class="Spotlight-card" href="" data-team-spotlight-image-back data-team-spotlight-link>
           <div class="Spotlight-background" data-team-spotlight-image-front></div>
-          <div class="Spotlight-content">
+          <div class="Spotlight-content Spotlight-content-medium">
             <h4 data-team-spotlight-name></h4>
             <p data-team-spotlight-text></p>
             <div class="Spotlight-arrow"></div>
@@ -50,12 +50,12 @@
 
     <div class="Grid">
       <div class="p-Overlay Grid-cell u-md-size8 u-md-offset1" data-parallax data-team-spotlight-3>
-        <!-- 4th big white -->
+        <!-- 3rd large -->
         <a class="Spotlight-card Spotlight-card-huge shadow" href="" data-team-spotlight-image-back data-team-spotlight-link>
           <div class="Spotlight-background" data-team-spotlight-image-front></div>
-          <div class="Spotlight-content">
-            <p data-team-spotlight-text></p>
+          <div class="Spotlight-content Spotlight-content-large">
             <h4 data-team-spotlight-name></h4>
+            <p data-team-spotlight-text></p>
             <div class="Spotlight-arrow"></div>
           </div>
         </a>
@@ -63,10 +63,10 @@
 
       <div class="Grid-cell u-md-size3">
         <div class="" data-parallax data-team-spotlight-4>
-          <!-- 5th small -->
+          <!-- 4th small -->
           <a class="Spotlight-card" href="" data-team-spotlight-image-back data-team-spotlight-link>
             <div class="Spotlight-background" data-team-spotlight-image-front></div>
-            <div class="Spotlight-content">
+            <div class="Spotlight-content Spotlight-content-small">
               <h4 data-team-spotlight-name></h4>
               <p data-team-spotlight-text></p>
               <div class="Spotlight-arrow"></div>
@@ -77,10 +77,10 @@
         <div></div>
 
         <div class="" data-parallax data-team-spotlight-5>
-          <!-- 6th small -->
+          <!-- 5th small -->
           <a class="Spotlight-card" href="" data-team-spotlight-image-back data-team-spotlight-link>
             <div class="Spotlight-background" data-team-spotlight-image-front></div>
-            <div class="Spotlight-content">
+            <div class="Spotlight-content Spotlight-content-small">
               <h4 data-team-spotlight-name></h4>
               <p data-team-spotlight-text></p>
               <div class="Spotlight-arrow"></div>
@@ -90,10 +90,10 @@
       </div>
 
       <div class=" Grid-cell u-md-size4" data-parallax data-team-spotlight-6>
-        <!-- 7th white -->
+        <!-- 6th medium -->
         <a class="Spotlight-card" href="" data-team-spotlight-image-back data-team-spotlight-link>
           <div class="Spotlight-background" data-team-spotlight-image-front></div>
-          <div class="Spotlight-content">
+          <div class="Spotlight-content Spotlight-content-medium">
             <h4 data-team-spotlight-name></h4>
             <p data-team-spotlight-text></p>
             <div class="Spotlight-arrow"></div>

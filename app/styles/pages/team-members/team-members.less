@@ -39,7 +39,15 @@ body.Theme--teammembers {
   }
 
   .p-Section {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media @Media-small {
+      margin-bottom: 100px;
+    }
   }
 
 }
