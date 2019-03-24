@@ -141,7 +141,8 @@ class TeamMember extends DOMComponent {
           if (parsedValue[1]) {
             linkElement.setAttribute('href', parseUrl(parsedValue[1].trim()))
           }
-          this.setElementContent(titleElement, parsedValue[0].trim())
+          const verticalSeparator = /\|/g
+          this.setElementContent(titleElement, parsedValue[0].replace(verticalSeparator, ',').trim())
           linkElement.appendChild(tagElement)
           linkElement.appendChild(titleElement)
 

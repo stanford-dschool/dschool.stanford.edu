@@ -104,7 +104,7 @@
   </section>
 
   <section class="p-DirectoryBlock">
-    <h1 class="t-mainHeading p-Title u-md-offset1">Browse or Search</h1>
+    <h1 class="t-mainHeading p-Title u-md-offset1">Browse</h1>
     <div class="p-Vertical VerticalBar VerticalBar--left">
       <div class="VerticalBar-intro">
         <span class="VerticalBar-color">directory</span>
