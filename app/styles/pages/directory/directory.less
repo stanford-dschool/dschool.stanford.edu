@@ -1,3 +1,9 @@
+.Theme--directory-new, .Theme--directory {
+  .Header-figure {
+    left: 30%;
+  }
+}
+
 .PageDirectory {
 
   .p-Title {
@@ -5,6 +11,12 @@
   }
 
   .p-DirectoryBlock {
+    h1.t-mainHeading {
+      @media @Mobile {
+        margin-bottom: 0;
+      }
+    }
+
     div.p-CollectionDetails.HeyHowdy {
       max-width: 100%;
       @media (min-width: 950px) {

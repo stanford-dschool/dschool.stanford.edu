@@ -57,13 +57,40 @@
     }
   }
 
-  @media @Mobile {
+  @media @Tablet-size {
     .Grid-cell {
       margin: 0;
     }
 
     .Spotlight-card {
-      margin: 0 0 40px 0;
+      margin: 0 0 75px 0;
+      overflow: visible;
+
+      .Spotlight-content {
+        opacity: 1;
+        top: unset;
+        bottom: -50px;
+        transform: none;
+        padding: 8px 10px 10px 10px !important;
+
+        h4, p {
+          font-size: 14px !important;
+          line-height: 18px !important;
+        }
+
+        .Spotlight-arrow {
+          width: 16px;
+          margin-top: 10px !important;
+
+          &::before {
+            width: 15px;
+          }
+
+          &::after {
+
+          }
+        }
+      }
     }
   }
 
@@ -134,23 +161,24 @@
     }
 
     p {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 300;
-      line-height: 30px;
+      line-height: 26px;
       margin-top: 6px;
     }
 
     &.Spotlight-content-small {
-      padding: 12px 20px;
+      padding: 12px 16px;
 
       h4 {
         font-size: 16px;
-        line-height: 32px;
+        line-height: 20px;
+        margin-bottom: 3px;
       }
 
       p {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 12px;
+        line-height: 20px;
         margin-top: 3px;
       }
     }

@@ -7,6 +7,27 @@
 //   }
 // }
 
+header.Header--team-member {
+  .Header-photoInfo {
+    position: relative;
+
+    @media @Media-small {
+      position: absolute;
+    }
+  }
+
+  .Header-photo {
+    margin: 0;
+    padding-bottom: 350px;
+    position: relative;
+
+    @media @Media-small {
+      margin: 0 -1rem -80px;
+      padding-bottom: 448px;
+    }
+  }
+}
+
 body.Theme--teammembers {
   .TeamMember {
     flex-basis: 75%;
