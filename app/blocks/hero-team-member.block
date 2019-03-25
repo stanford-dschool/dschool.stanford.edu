@@ -7,15 +7,15 @@
     </div>
 
     <div class="Grid">
-      <div class="Grid-cell u-size8 u-offset1">
+      <div class="Grid-cell u-size12 u-sm-size8 u-sm-offset1">
         <div class="Header-photoInfo">
-          <p class="t-tag Header-carouselTag">Team Member</p>
+          <p class="t-tag Header-carouselTag"><a href="directory/new">Directory</a> / Team Member /</p>
           <h2 class="t-mainHeading t-capitalize Header-photoTitle" data-member-name></h2>
           <div class="Header-carouselDescription" data-member-title></div>
           {.end}
         </div>
       </div>
-      <div class="Grid-cell u-size6 u-offset10 u-md-offset10">
+      <div class="Grid-cell u-size12 u-sm-size6 u-sm-offset10 u-md-offset10">
         <div class="Header-photo {.if collection.typeName}Header-{collection.typeName}{.end}">
           <div data-member-photo
             class="Header-carouselImage u-hide"

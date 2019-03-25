@@ -94,15 +94,21 @@
     padding-left: 312.5%;
   }
 }
+
 .Header--team-member {
   .Header-carouselImage {
     height: 100%;
-    max-height: 30vw;
-    max-width: 30vw;
+    max-height: 70vw;
+    max-width: 70vw;
     width: 100%;
 
     &::after {
       background: none;
+    }
+
+    @media @Media-small {
+      max-height: 30vw;
+      max-width: 30vw;
     }
   }
 }
