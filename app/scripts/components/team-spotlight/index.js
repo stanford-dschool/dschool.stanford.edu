@@ -61,7 +61,7 @@ export default class TeamSpotlight extends DOMComponent {
       }, isInit ? 0 : 150 * i)
     }
 
-    window.setTimeout(this.updateCards, 15000)
+    window.setTimeout(this.updateCards, 20000)
   }
 
   updateCard(cardElem, cardData) {
