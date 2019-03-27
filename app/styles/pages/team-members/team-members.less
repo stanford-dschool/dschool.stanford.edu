@@ -72,4 +72,82 @@ body.Theme--teammembers {
     }
   }
 
+  // styles for the directory block
+  .p-DirectoryBlock {
+    h1.t-mainHeading {
+      @media @Mobile {
+        margin-bottom: 0;
+      }
+    }
+
+    div.p-CollectionDetails.HeyHowdy {
+      max-width: 100%;
+      @media (min-width: 950px) {
+        max-width: 850px;
+      }
+    }
+  }
+
+  .Directory-content {
+    z-index: 1;
+  }
+
+  .Directory-filter {
+    margin-bottom: 70px;
+  }
+
+  .Directory-browse {
+    background: @Color-black;
+    color: @Color-white;
+    min-height: 300px;
+    padding-bottom: 10%;
+    z-index: 1;
+
+    &::before {
+      background-color: @Color-black;
+      bottom: 0;
+      content: '';
+      display: block;
+      left: -50%;
+      position: absolute;
+      top: -7vw;
+      width: 200vw;
+      z-index: -1;
+    }
+  }
+
+  .Directory-list-content {
+    column-count: 3;
+
+    @media @Media-small {
+      column-count: 5;
+    }
+  }
+
+  .Directory-list-item {
+    column-fill: balance;
+    margin: 0 0 1.8em 0;
+    padding: 0;
+  }
+
+  .FilterOption {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+
+  .FilterOption-label {
+    color: @Color-white;
+    text-align: left;
+  }
+
+  .FilterOption-select {
+    border-bottom: 1px solid @Color-white;
+    width: 100%;
+
+    &::before, &::after {
+      background: @Color-white;
+    }
+  }
+
 }
