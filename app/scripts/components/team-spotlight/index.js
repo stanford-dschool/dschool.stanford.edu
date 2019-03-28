@@ -118,7 +118,6 @@ export default class TeamSpotlight extends DOMComponent {
       }
       randomIndices.push(randomIndex)
     }
-    console.log('random indicies: ', randomIndices)
     return randomIndices
   }
 }

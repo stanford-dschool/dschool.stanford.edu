@@ -10,9 +10,7 @@ class SearchList extends React.Component {
     queryHandle: React.PropTypes.func,
   }
 
-
   renderResult = (result, index) => {
-    console.log('result: ', result)
     const theme = result.theme_type
     let description = extractContent(result.description) || result.highlight.body || result.highlight.sections
     const titleHTML = result.highlight.sections || result.highlight.title
@@ -28,7 +26,7 @@ class SearchList extends React.Component {
       <li key={index} className="Search-list-item">
         <div className="Search-list-item-img" style={{ backgroundImage: `url('${result.image}')` }} />
         <div className="Search-list-item-content">
-          <p className={`t-tag Color--${theme}`}>{header} <span> | {date}</span></p>
+          <p className={`t-tag Color--${theme}`}>{header}</p>
           {
             title ?
               (<a
